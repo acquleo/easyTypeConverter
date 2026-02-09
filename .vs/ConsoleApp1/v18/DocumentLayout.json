@@ -1,0 +1,614 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0A7E8AF8-91B7-418F-83C4-A32B69AAE82C}|TestProject1\\TestProject1.csproj|e:\\commesse\\github\\easytypeconverter\\testproject1\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A7E8AF8-91B7-418F-83C4-A32B69AAE82C}|TestProject1\\TestProject1.csproj|solutionrelative:testproject1\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|e:\\commesse\\github\\easytypeconverter\\consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\typeconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\typeconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\booleanstringconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\booleanstringconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\filters\\stringtrimfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\filters\\stringtrimfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\filters\\stringprefixremoverfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\filters\\stringprefixremoverfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\filters\\stringregexmatchreplacefilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\filters\\stringregexmatchreplacefilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\filters\\stringreplacefilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\filters\\stringreplacefilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\filters\\stringnumericbooleanfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\filters\\stringnumericbooleanfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\filters\\options\\stringreplacefilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\filters\\options\\stringreplacefilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\filters\\options\\stringtrimfilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\filters\\options\\stringtrimfilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\stringuint32converter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\stringuint32converter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\filters\\options\\optionsextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\filters\\options\\optionsextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\filters\\options\\stringnumericbooleanfilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\filters\\options\\stringnumericbooleanfilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\filters\\options\\stringremoveprefixfilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\filters\\options\\stringremoveprefixfilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\filters\\options\\stringregexmatchreplacefilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\filters\\options\\stringregexmatchreplacefilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\stringsbyteconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\stringsbyteconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\stringuint16converter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\stringuint16converter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\options\\stringbyteconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\options\\stringbyteconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\stringnumericconverterbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\stringnumericconverterbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\stringint32converter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\stringint32converter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\stringint16converter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\stringint16converter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\stringbyteconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\stringbyteconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\options\\stringsbyteconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\options\\stringsbyteconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\stringbooleanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\stringbooleanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\options\\stringbooleanconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\options\\stringbooleanconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\options\\booleanstringconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\options\\booleanstringconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\int32stringconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\int32stringconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\options\\stringnumericconverterbaseoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\options\\stringnumericconverterbaseoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\options\\optionsextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\options\\optionsextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\options\\int32stringconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\options\\int32stringconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\converter\\options\\itypeconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\converter\\options\\itypeconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\convertdelegate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\convertdelegate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|e:\\commesse\\github\\easytypeconverter\\easytypeconverter\\filter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\filter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Test1.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\TestProject1\\Test1.cs",
+              "RelativeDocumentMoniker": "TestProject1\\Test1.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\TestProject1\\Test1.cs",
+              "RelativeToolTip": "TestProject1\\Test1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:08:48.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\ConsoleApp1\\Program.cs",
+              "RelativeDocumentMoniker": "ConsoleApp1\\Program.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\ConsoleApp1\\Program.cs",
+              "RelativeToolTip": "ConsoleApp1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:08:29.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TypeConverter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\TypeConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\TypeConverter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\TypeConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\TypeConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:08:07.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StringTrimFilter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\StringTrimFilter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Filters\\StringTrimFilter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\StringTrimFilter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Filters\\StringTrimFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:08:02.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StringPrefixRemoverFilter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\StringPrefixRemoverFilter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Filters\\StringPrefixRemoverFilter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\StringPrefixRemoverFilter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Filters\\StringPrefixRemoverFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:07:57.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StringRegexMatchReplaceFilter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\StringRegexMatchReplaceFilter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Filters\\StringRegexMatchReplaceFilter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\StringRegexMatchReplaceFilter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Filters\\StringRegexMatchReplaceFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:07:53.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StringReplaceFilter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\StringReplaceFilter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Filters\\StringReplaceFilter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\StringReplaceFilter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Filters\\StringReplaceFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:07:46.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StringNumericBooleanFilter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\StringNumericBooleanFilter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Filters\\StringNumericBooleanFilter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\StringNumericBooleanFilter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Filters\\StringNumericBooleanFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:07:40.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StringReplaceFilterOptions.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\Options\\StringReplaceFilterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Filters\\Options\\StringReplaceFilterOptions.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\Options\\StringReplaceFilterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Filters\\Options\\StringReplaceFilterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:07:34.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "StringTrimFilterOptions.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\Options\\StringTrimFilterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Filters\\Options\\StringTrimFilterOptions.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\Options\\StringTrimFilterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Filters\\Options\\StringTrimFilterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:07:30.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "StringUInt32Converter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringUInt32Converter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\StringUInt32Converter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringUInt32Converter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\StringUInt32Converter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:07:26.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OptionsExtensions.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\Options\\OptionsExtensions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Filters\\Options\\OptionsExtensions.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\Options\\OptionsExtensions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Filters\\Options\\OptionsExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:07:21.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "StringNumericBooleanFilterOptions.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\Options\\StringNumericBooleanFilterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Filters\\Options\\StringNumericBooleanFilterOptions.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\Options\\StringNumericBooleanFilterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Filters\\Options\\StringNumericBooleanFilterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:07:14.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "StringRemovePrefixFilterOptions.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\Options\\StringRemovePrefixFilterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Filters\\Options\\StringRemovePrefixFilterOptions.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\Options\\StringRemovePrefixFilterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Filters\\Options\\StringRemovePrefixFilterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:07:08.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "StringRegexMatchReplaceFilterOptions.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\Options\\StringRegexMatchReplaceFilterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Filters\\Options\\StringRegexMatchReplaceFilterOptions.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filters\\Options\\StringRegexMatchReplaceFilterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Filters\\Options\\StringRegexMatchReplaceFilterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:07:00.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "StringSByteConverter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringSByteConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\StringSByteConverter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringSByteConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\StringSByteConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:06:52.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "StringUInt16Converter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringUInt16Converter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\StringUInt16Converter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringUInt16Converter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\StringUInt16Converter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:06:43.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "StringByteConverterOptions.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\StringByteConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\Options\\StringByteConverterOptions.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\StringByteConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\Options\\StringByteConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:06:37.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "StringNumericConverterBase.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringNumericConverterBase.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\StringNumericConverterBase.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringNumericConverterBase.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\StringNumericConverterBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:06:27.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "StringInt32Converter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringInt32Converter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\StringInt32Converter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringInt32Converter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\StringInt32Converter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:06:18.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "StringInt16Converter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringInt16Converter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\StringInt16Converter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringInt16Converter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\StringInt16Converter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:06:12.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "StringSByteConverterOptions.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\StringSByteConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\Options\\StringSByteConverterOptions.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\StringSByteConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\Options\\StringSByteConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:06:02.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "StringByteConverter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringByteConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\StringByteConverter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringByteConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\StringByteConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:05:55.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "StringBooleanConverter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringBooleanConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\StringBooleanConverter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\StringBooleanConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\StringBooleanConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:05:46.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "BooleanStringConverterOptions.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\BooleanStringConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\Options\\BooleanStringConverterOptions.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\BooleanStringConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\Options\\BooleanStringConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:05:41.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Int32StringConverter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Int32StringConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\Int32StringConverter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Int32StringConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\Int32StringConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:05:32.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BooleanStringConverter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\BooleanStringConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\BooleanStringConverter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\BooleanStringConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\BooleanStringConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:05:21.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "StringBooleanConverterOptions.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\StringBooleanConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\Options\\StringBooleanConverterOptions.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\StringBooleanConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\Options\\StringBooleanConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:05:15.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "StringNumericConverterBaseOptions.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\StringNumericConverterBaseOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\Options\\StringNumericConverterBaseOptions.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\StringNumericConverterBaseOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\Options\\StringNumericConverterBaseOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:05:07.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "OptionsExtensions.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\OptionsExtensions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\Options\\OptionsExtensions.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\OptionsExtensions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\Options\\OptionsExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:04:59.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Int32StringConverterOptions.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\Int32StringConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\Options\\Int32StringConverterOptions.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\Int32StringConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\Options\\Int32StringConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:04:49.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ITypeConverterOptions.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\ITypeConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Converter\\Options\\ITypeConverterOptions.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Converter\\Options\\ITypeConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Converter\\Options\\ITypeConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:04:38.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ConvertDelegate.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\ConvertDelegate.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\ConvertDelegate.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\ConvertDelegate.cs",
+              "RelativeToolTip": "easyTypeConverter\\ConvertDelegate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:04:04.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Filter.cs",
+              "DocumentMoniker": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Filter.cs",
+              "ToolTip": "E:\\COMMESSE\\GitHub\\easyTypeConverter\\easyTypeConverter\\Filter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Filter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:03:55.818Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

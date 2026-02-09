@@ -1,10 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using ConsoleApp1;
-using ConsoleApp1.Conversion;
-using ConsoleApp1.Conversion.Converter;
-using ConsoleApp1.Conversion.Converter.Options;
-using ConsoleApp1.Conversion.Filters;
-using ConsoleApp1.Conversion.Filters.Options;
+using easyTypeConverter;
+using easyTypeConverter.Converter;
+using easyTypeConverter.Converter.Options;
+using easyTypeConverter.Filters;
+using easyTypeConverter.Filters.Options;
 using System.Globalization;
 
 Console.WriteLine("Hello, World!");
@@ -14,19 +13,25 @@ TypeConverterHandler handler = new TypeConverterHandler();
 
 handler.AddConverter(new StringBooleanConverter(new StringBooleanConverterOptions()
     .AddInputFilter(new StringNumericBooleanFilterOptions())));
+
 handler.AddConverter(new BooleanStringConverter(new  BooleanStringConverterOptions()));
+
 handler.AddConverter(new Int32StringConverter());
 
 var opt2 = new StringBooleanConverterOptions()
     .AddInputFilter(new StringTrimFilterOptions())
     .AddInputFilter(new StringRegexMatchReplaceFilterOptions()
         .WithReplace("True",".* ACTIVATED")
-        .WithReplace("False", ".* DEACTIVATED"))
+        .WithReplace("False", ".* DEACTIVATED")
+        .WithExitOnMatch())
     .AddInputFilter(new StringReplaceFilterOptions()
         .WithComparer(StringComparison.InvariantCultureIgnoreCase)
         .WithReplace("True", "on", "positive")
-        .WithReplace("False", "off", "negative"))
-    .AddInputFilter(new StringNumericBooleanFilterOptions());
+        .WithReplace("False", "off", "negative")
+        .WithExitOnMatch())
+    .AddInputFilter(new StringNumericBooleanFilterOptions()
+    .WithExitOnMatch());
+
 
 handler.AddConverter(new StringBooleanConverter(opt2));
 
