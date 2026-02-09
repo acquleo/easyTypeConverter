@@ -11,12 +11,12 @@ Console.WriteLine("Hello, World!");
 
 TypeConverterHandler handler = new TypeConverterHandler();
 
-handler.AddConverter(new StringBooleanConverter(new StringBooleanConverterOptions()
-    .AddInputFilter(new StringNumericBooleanFilterOptions())));
+handler.AddConverter(new StringBooleanConverterOptions()
+    .AddInputFilter(new StringNumericBooleanFilterOptions()));
 
-handler.AddConverter(new BooleanStringConverter(new  BooleanStringConverterOptions()));
+handler.AddConverter(new BooleanStringConverterOptions());
 
-handler.AddConverter(new Int32StringConverter());
+handler.AddConverter(new Int32StringConverterOptions());
 
 var opt2 = new StringBooleanConverterOptions()
     .AddInputFilter(new StringTrimFilterOptions())
@@ -33,22 +33,21 @@ var opt2 = new StringBooleanConverterOptions()
     .WithExitOnMatch());
 
 
-handler.AddConverter(new StringBooleanConverter(opt2));
+handler.AddConverter(opt2);
 
 opt2.Build().Convert("poloo ACTIVATED", out var res);
 opt2.Build().Convert("0", out var resa);
 opt2.Build().Convert("12", out var resb);
 
-handler.AddConverter(new StringByteConverter(
-    new StringByteConverterOptions()));
+handler.AddConverter(new StringNumericConverterOptions());
 
-var opt = new StringByteConverterOptions();
+var opt = new StringNumericConverterOptions();
 opt.NumberStyle = NumberStyles.HexNumber;
 opt.InputFilters.Add(new StringRemovePrefixFilterOptions()
 {
     Prefix = "0x"
 });
-handler.AddConverter(opt.Build());
+handler.AddConverter(opt);
 
 object? result = null;
 handler.Convert("0", typeof(Boolean), out result);

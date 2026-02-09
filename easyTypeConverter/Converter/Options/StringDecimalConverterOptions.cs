@@ -9,13 +9,12 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Converter.Options
 {
-    public class StringSByteConverterOptions :
-        StringNumericConverterBaseOptions
+    public class StringDecimalConverterOptions : StringNumericConverterBaseOptions
     {
-
         public override TypeConverter OnBuild()
         {
-            return new StringSByteConverter(this);
+            return new StringDecimalConverter(this);
         }
+
     }
 }

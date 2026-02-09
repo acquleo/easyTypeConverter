@@ -17,9 +17,9 @@ namespace easyTypeConverter.Converter
             this.options = options;
         }
 
-        public abstract bool OnNumericConvert(object inData, [NotNullWhen(true)] out object? outData, NumberStyles numberStyle);
+        public abstract bool OnNumericConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData, NumberStyles numberStyle);
 
-        public override bool OnConvert(object inData, [NotNullWhen(true)] out object? outData)
+        public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
         {
             if (this.options.HexDetection)
             {
@@ -30,12 +30,12 @@ namespace easyTypeConverter.Converter
 
                     if (match != null)
                     {
-                        return OnNumericConvert(strData.Substring(match.Length), out outData, NumberStyles.HexNumber);
+                        return OnNumericConvert(strData.Substring(match.Length), targetType, out outData, NumberStyles.HexNumber);
                     }
                 }
             }
 
-            return OnNumericConvert(inData, out outData, options.NumberStyle);
+            return OnNumericConvert(inData, targetType, out outData, options.NumberStyle);
         }
 
     }

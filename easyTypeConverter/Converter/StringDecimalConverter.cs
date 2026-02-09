@@ -2,38 +2,45 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace easyTypeConverter.Converter
 {
-    /// <summary>
-    /// Converte una string True False in boolean
-    /// </summary>
-    public class StringBooleanConverter : TypeConverter
+    public class StringDecimalConverter : TypeConverter
     {
-        readonly StringBooleanConverterOptions options;
-        public StringBooleanConverter(StringBooleanConverterOptions options):base(options) 
+        StringDecimalConverterOptions options;
+        public StringDecimalConverter(StringDecimalConverterOptions options) : base(options)
         {
             this.options = options;
+
         }
 
-        public StringBooleanConverter():this(new StringBooleanConverterOptions()) { }
+        public StringDecimalConverter(): this(new StringDecimalConverterOptions())
+        {
+            
+        }
 
         public override List<Type> SourceTypeList { get => new List<Type>() { typeof(string) }; }
-        public override List<Type> TargetTypeList { get => new List<Type>() { typeof(bool) }; }
+        public override List<Type> TargetTypeList { get => new List<Type>() { typeof(decimal) }; }
+
 
         public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
         {
             outData = default;
 
-            if (!bool.TryParse((string)inData, out var toutData))
+            if (!decimal.TryParse((string)inData, options.NumberStyle,
+                this.options.Culture, out var decimalParsed))
                 return false;
 
-            outData = toutData;
+
+            outData = decimalParsed;
             return true;
         }
+
+
 
     }
 }

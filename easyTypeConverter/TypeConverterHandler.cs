@@ -1,4 +1,5 @@
-﻿using System;
+﻿using easyTypeConverter.Converter.Options;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -20,15 +21,24 @@ namespace easyTypeConverter
 
         }
 
-        public void AddConverter(TypeConverter typeConverter)
+        public void AddConverter(ITypeConverterOptions options)
         {
-            var key = new Tuple<Type, Type>(typeConverter.SourceType, typeConverter.TargetType);
-            if (!converters.ContainsKey(key))
-            {
-                converters.TryAdd(key, new List<TypeConverter>());
-            }
+            var typeConverter = options.Build();
 
-            converters[key].Add(typeConverter);
+            foreach (var sourceType in typeConverter.SourceTypeList)
+            {
+                foreach(var targetType in typeConverter.TargetTypeList)
+                {
+                    var key = new Tuple<Type, Type>(sourceType, targetType);
+                    if (!converters.ContainsKey(key))
+                    {
+                        converters.TryAdd(key, new List<TypeConverter>());
+                    }
+
+                    converters[key].Add(typeConverter);
+                }
+            }
+            
         }
 
         bool FindConverter(Type inType, Type outType, [NotNullWhen(true)] out List<TypeConverter>? typeConverters)
@@ -37,21 +47,23 @@ namespace easyTypeConverter
             return converters.TryGetValue(key, out typeConverters);
         }
 
-        Func<object?, (bool, object?)> GetFunction(TypeConverter converter, Type inType, Type outType)
+        Func<object?, Type, (bool, object?)> GetFunction(TypeConverter converter, Type inType, Type outType)
         {
             if (!_cache.TryGetValue(converter, out var del))
             {
                 var convType = converter.GetType();
-                var method = convType.GetMethod("Convert")!;
+                var methosd = convType.GetMethods();
+                var method = convType.GetMethod("Convert", new Type[] {typeof(object), typeof(Type), typeof(object).MakeByRefType()})!;
 
                 // parametri lambda: object? input
                 var inParam = Expression.Parameter(typeof(object), "inData");
+                var inParam2 = Expression.Parameter(typeof(Type), "targetType");
 
                 // variabile per outData
                 var outVar = Expression.Variable(typeof(object), "outData");
 
                 // chiamata Convert
-                var call = Expression.Call(Expression.Constant(converter), method, inParam, outVar);
+                var call = Expression.Call(Expression.Constant(converter), method, inParam, inParam2, outVar);
 
                 // corpo lambda: restituisce tuple (bool, object?)
                 var body = Expression.New(
@@ -67,15 +79,16 @@ namespace easyTypeConverter
                 );
 
                 // Creazione della lambda
-                var lambda = Expression.Lambda<Func<object?, (bool, object?)>>(
+                var lambda = Expression.Lambda<Func<object?,Type, (bool, object?)>>(
                     block,
-                    inParam
+                    inParam,
+                    inParam2
                 );
 
                 del = lambda.Compile();
                 _cache[converter] = del;
             }
-            return (Func<object?, (bool, object?)>)del;
+            return (Func<object?, Type,  (bool, object?)>)del;
         }
 
         public bool CanConvert(object inData, Type outType)
@@ -107,7 +120,7 @@ namespace easyTypeConverter
                 var function = GetFunction(converter, inType, outType);
                 try
                 {
-                    var result = function(inData);
+                    var result = function(inData, outType);
 
                     if (!result.Item1)
                         continue;

@@ -16,10 +16,10 @@ namespace easyTypeConverter.Converter
         
         }
         public Int32StringConverter():this(new Int32StringConverterOptions()) { }
-        public override Type SourceType { get => typeof(Int32); }
-        public override Type TargetType { get => typeof(string); }
+        public override List<Type> SourceTypeList { get => new List<Type>() { typeof(Int32) }; }
+        public override List<Type> TargetTypeList { get => new List<Type>() { typeof(string) }; }
 
-        public override bool OnConvert(object inData, [NotNullWhen(true)] out object? outData)
+        public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
         {
             outData = ((Int32)inData).ToString(System.Globalization.CultureInfo.InvariantCulture);
             return true;

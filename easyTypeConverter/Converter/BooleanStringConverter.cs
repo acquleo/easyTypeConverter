@@ -16,10 +16,10 @@ namespace easyTypeConverter.Converter
         }
         public BooleanStringConverter():this(new BooleanStringConverterOptions()) { }
 
-        public override Type SourceType { get => typeof(bool); }
-        public override Type TargetType { get => typeof(string); }
+        public override List<Type> SourceTypeList { get => new List<Type>() { typeof(bool) }; }
+        public override List<Type> TargetTypeList { get => new List<Type>() { typeof(string) }; }
 
-        public override bool OnConvert(object inData, [NotNullWhen(true)] out object? outData)
+        public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
         {
             outData = ((bool)inData).ToString(this.options.Culture);
 

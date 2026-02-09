@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Converter.Options
 {
-    public class StringByteConverterOptions :
+    public class StringNumericConverterOptions :
 
         StringNumericConverterBaseOptions
     {
                
         public override TypeConverter OnBuild()
         {
-            return new StringByteConverter(this);
+            return new StringNumericConverter(this);
         }
 
     }
