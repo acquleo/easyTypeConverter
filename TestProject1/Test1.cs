@@ -436,44 +436,76 @@ namespace TestProject1
         [TestMethod]
         public void TestDecimalConverter()
         {
-            var outType = typeof(decimal);
-
             TypeConverterHandler handler = new TypeConverterHandler();
             handler.AddConverter(new StringDecimalConverterOptions()
                 .AddInputFilter(new StringTrimFilterOptions()));
 
 
+            for (int i = 0; i < 1000000; i++)
+            {
+                var outType = typeof(decimal);
+                                
+
+                object? result = null;
+                handler.Convert($@"10.12345678", outType, out result);
+
+                Assert.IsNotNull(result);
+                Assert.AreEqual((decimal)10.12345678, result);
+
+                handler.Convert($@"{decimal.MinValue}", outType, out result);
+
+                Assert.IsNotNull(result);
+                Assert.AreEqual((decimal)decimal.MinValue, result);
+
+
+                handler.Convert($@"{decimal.MaxValue}", outType, out result);
+
+                Assert.IsNotNull(result);
+                Assert.AreEqual((decimal)decimal.MaxValue, result);
+
+                handler.Convert($@"{decimal.MinusOne}", outType, out result);
+
+                Assert.IsNotNull(result);
+                Assert.AreEqual((decimal)decimal.MinusOne, result);
+
+                handler.Convert($@"{decimal.One}", outType, out result);
+
+                Assert.IsNotNull(result);
+                Assert.AreEqual((decimal)decimal.One, result);
+
+                handler.Convert($@"{decimal.Zero}", outType, out result);
+
+                Assert.IsNotNull(result);
+                Assert.AreEqual((decimal)decimal.Zero, result);
+            }
+        }
+
+        [TestMethod]
+        public void TestNumericConverter()
+        {
+            
+            TypeConverterHandler handler = new TypeConverterHandler();
+            handler.AddConverter(new NumericConverterOptions());
+
+
             object? result = null;
-            handler.Convert($@"10.12345678", outType, out result);
+            handler.Convert((int)3, typeof(byte), out result);
 
             Assert.IsNotNull(result);
-            Assert.AreEqual((decimal)10.12345678, result);
+            Assert.AreEqual((byte)3, result);
+            Assert.AreEqual(result.GetType(), typeof(byte));
 
-            handler.Convert($@"{decimal.MinValue}", outType, out result);
-
-            Assert.IsNotNull(result);
-            Assert.AreEqual((decimal)decimal.MinValue, result);
-
-
-            handler.Convert($@"{decimal.MaxValue}", outType, out result);
+            handler.Convert((int)300, typeof(short), out result);
 
             Assert.IsNotNull(result);
-            Assert.AreEqual((decimal)decimal.MaxValue, result);
+            Assert.AreEqual((short)300, result);
+            Assert.AreEqual(result.GetType(), typeof(short));
 
-            handler.Convert($@"{decimal.MinusOne}", outType, out result);
+            Assert.ThrowsException<TypeConverterException>(() =>
+            {
+                handler.Convert((int)-100, typeof(ushort), out result);
+            });
 
-            Assert.IsNotNull(result);
-            Assert.AreEqual((decimal)decimal.MinusOne, result);
-
-            handler.Convert($@"{decimal.One}", outType, out result);
-
-            Assert.IsNotNull(result);
-            Assert.AreEqual((decimal)decimal.One, result);
-
-            handler.Convert($@"{decimal.Zero}", outType, out result);
-
-            Assert.IsNotNull(result);
-            Assert.AreEqual((decimal)decimal.Zero, result);
         }
     }
 }

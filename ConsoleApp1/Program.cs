@@ -73,3 +73,38 @@ Console.WriteLine(result);
 
 handler.Convert("0xF", typeof(byte), out result);
 Console.WriteLine(result);
+
+TypeConverterHandler handlertest = new TypeConverterHandler();
+handlertest.AddConverter(new StringDecimalConverterOptions()
+    .AddInputFilter(new StringTrimFilterOptions()));
+
+
+long hit = 0;
+for (int i = 0; i < 1000000; i++)
+{
+    var outType = typeof(decimal);
+
+    if (handlertest.Convert($@"10.12345678", outType, out result)) hit++;
+
+
+    if (handlertest.Convert($@"{decimal.MinValue}", outType, out result)) hit++;
+
+
+
+    if (handlertest.Convert($@"{decimal.MaxValue}", outType, out result)) hit++;
+
+
+
+    if (handlertest.Convert($@"{decimal.MinusOne}", outType, out result)) hit++;
+
+
+    if (handlertest.Convert($@"{decimal.One}", outType, out result)) hit++;
+
+
+
+    if (handlertest.Convert($@"{decimal.Zero}", outType, out result)) hit++;
+
+    
+}
+
+Console.WriteLine(hit);

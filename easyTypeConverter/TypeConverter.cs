@@ -48,6 +48,11 @@ namespace easyTypeConverter
             outputFilters.Add(outputFilter);
         }
 
+        protected bool IsSourceType(Type type)
+        { return sourceTypes.Contains(type); }
+        protected bool IsTargetType(Type type)
+        { return targetTypes.Contains(type); }
+
         public abstract List<Type> SourceTypeList { get; }
         public abstract List<Type> TargetTypeList { get; }
         public abstract bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData);
@@ -59,7 +64,6 @@ namespace easyTypeConverter
 
             return Convert(inData, targetType, out outData);
         }
-
         public bool Convert(object? inData, Type targetType, out object? outData)
         {
             if (inData == null)
@@ -68,13 +72,13 @@ namespace easyTypeConverter
                 return true;
             }
 
-            if (!sourceTypes.Contains(inData.GetType()))
+            if (!IsSourceType(inData.GetType()))
             {
                 outData = null;
                 return false;
             }
 
-            if (!targetTypes.Contains(targetType))
+            if (!IsTargetType(targetType))
             {
                 outData = null;
                 return false;
