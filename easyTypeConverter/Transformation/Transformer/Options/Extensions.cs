@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,68 @@ namespace easyTypeConverter.Transformation.Transformer.Options
                where T : DataUnitTransformerOptions
         {
             obj.TargetUnit = unit;
+            return obj;
+        }
+    }
+
+    public static class AutoScaleDataUnitTransformerOptionsExtensions
+    {
+        public static T WithSourceDataUnit<T>(this T obj, DataUnit unit)
+               where T : AutoScaleDataUnitTransformerOptions
+        {
+            obj.SourceUnit = unit;
+            return obj;
+        }
+
+        public static T WithScaleThreshold<T>(this T obj, double treshold)
+               where T : AutoScaleDataUnitTransformerOptions
+        {
+            obj.ScaleThreshold = treshold;
+            return obj;
+        }
+
+        public static T WithUseBinary<T>(this T obj, bool binary = true)
+               where T : AutoScaleDataUnitTransformerOptions
+        {
+            obj.UseBinary= binary;
+            return obj;
+        }
+        public static T WithDecimal<T>(this T obj)
+               where T : AutoScaleDataUnitTransformerOptions
+        {
+            obj.UseBinary = false;
+            return obj;
+        }
+
+    }
+
+    public static class RangeTransformerOptionsExtensions
+    {
+        public static T WithOutputMin<T>(this T obj, double value)
+               where T : RangeTransformerOptions
+        {
+            obj.OutputMin = value;
+            return obj;
+        }
+
+        public static T WithOutputMax<T>(this T obj, double value)
+               where T : RangeTransformerOptions
+        {
+            obj.OutputMax = value;
+            return obj;
+        }
+
+        public static T WithInputMin<T>(this T obj, double value)
+               where T : RangeTransformerOptions
+        {
+            obj.InputMin = value;
+            return obj;
+        }
+
+        public static T WithInputMax<T>(this T obj, double value)
+               where T : RangeTransformerOptions
+        {
+            obj.InputMax = value;
             return obj;
         }
     }

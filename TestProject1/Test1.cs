@@ -540,7 +540,7 @@ namespace TestProject1
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)1.5, rtesult.Value);
 
-            transformer.Transform(1_048_576.0, out rtesult);
+            transformer.Transform((int)1_048_576, out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)1.00, rtesult.Value);
@@ -554,6 +554,37 @@ namespace TestProject1
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)1.00, rtesult.Value);
+        }
+
+        [TestMethod]
+        public void TestRangeTransform()
+        {
+            RangeTransformerOptions options = new RangeTransformerOptions()
+                .WithInputMin(0).WithInputMax(65000)
+                .WithOutputMin(-50).WithOutputMax(200);
+
+            var transformer = options.Build();
+
+            transformer.Transform(512.0, out var rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((double)-48.030769230769231, rtesult.Value);
+
+            transformer.Transform(0, out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((double)-50, rtesult.Value);
+
+            transformer.Transform(65000, out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((double)200, rtesult.Value);
+
+            transformer.Transform((int)13000, out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((double)0, rtesult.Value);
+
         }
     }
 }
