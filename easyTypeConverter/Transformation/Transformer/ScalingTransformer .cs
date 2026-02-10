@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Transformation.Transformer
 {
-    public class PercentageNormalizerTransformer : DataTransformer
+    public class ScalingTransformer : DataTransformer
     {
-        readonly PercentageNormalizerTransformerOptions options;
+        readonly ScalingTransformerOptions options;
 
-        public PercentageNormalizerTransformer(PercentageNormalizerTransformerOptions options) : base(options)
+        public ScalingTransformer (ScalingTransformerOptions options) : base(options)
         {
             this.options = options;
         }
 
-        public PercentageNormalizerTransformer():this(new PercentageNormalizerTransformerOptions())
+        public ScalingTransformer ():this(new ScalingTransformerOptions())
         {
 
         }
@@ -26,9 +26,12 @@ namespace easyTypeConverter.Transformation.Transformer
 
         protected override bool OnTransform(DataTransformOutput inData, [NotNullWhen(true)] out DataTransformOutput? outData)
         {
-            var doubleValue = (double)Convert.ChangeType(inData, typeof(double));
 
-            outData = DataTransformOutput.From((doubleValue - options.Min) / (options.Max - options.Min), inData.ValueUnit);
+            var doubleValue = (double)Convert.ChangeType(inData.Value, typeof(double));
+
+            var normalized = (doubleValue - options.InputMin) / (options.InputMax - options.InputMin);
+            var outValue = normalized * (options.OutputMax - options.OutputMin) + options.OutputMin;
+            outData = DataTransformOutput.From(outValue, inData.ValueUnit);
             return true;
         }
     }

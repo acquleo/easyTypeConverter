@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace easyTypeConverter.Transformation.Transformer.Options
 {
     
-    public class RangeTransformerOptions : IDataTransformerOptions
+    public class ScalingTransformerOptions : IDataTransformerOptions
     {
         public double InputMin { get; set; } = 0;
         public double InputMax { get; set; } = 1.0;
@@ -16,7 +16,7 @@ namespace easyTypeConverter.Transformation.Transformer.Options
 
         public DataTransformer Build()
         {
-            return new RangeTransformer(this);
+            return new ScalingTransformer(this);
         }
     }
 }

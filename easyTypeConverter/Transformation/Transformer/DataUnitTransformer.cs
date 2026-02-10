@@ -53,14 +53,14 @@ namespace easyTypeConverter.Transformation.Transformer
 
         }
         public override List<Type> SourceTypeList { get => new List<Type>() { typeof(byte), typeof(sbyte), typeof(ushort), typeof(short), typeof(uint), typeof(int), typeof(ulong), typeof(long), typeof(float), typeof(double) }; }
-        public override Type TargetType { get { return typeof(double); } }
-        protected override bool OnTransform(object inData, [NotNullWhen(true)] out DataTransformOutput? outData)
+        protected override bool OnTransform(DataTransformOutput inData, [NotNullWhen(true)] out DataTransformOutput? outData)
         {
-            var doubleValue = (double)Convert.ChangeType(inData, typeof(double));
+            var doubleValue = (double)Convert.ChangeType(inData.Value, typeof(double));
 
             // Converti a byte, poi all'unità target
             var bytes = doubleValue * _toBytesMultiplier[options.SourceUnit];
-            outData = new DataTransformOutput(bytes / _toBytesMultiplier[options.TargetUnit], options.TargetUnit.ToString());
+            var outValue = bytes / _toBytesMultiplier[options.TargetUnit];
+            outData = DataTransformOutput.From(outValue, AutoScaleDataUnitTransformer.GetUnit(options.TargetUnit));
             return true;
         }
     }

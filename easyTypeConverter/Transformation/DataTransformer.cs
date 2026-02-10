@@ -26,9 +26,8 @@ namespace easyTypeConverter.Transformation
         { return sourceTypes.Contains(type); }
 
         public abstract List<Type> SourceTypeList { get; }
-        public abstract Type TargetType { get; }
-        protected abstract bool OnTransform(object inData, [NotNullWhen(true)] out DataTransformOutput? outData);
-        public bool Transform(object? inData, out DataTransformOutput? outData)
+        protected abstract bool OnTransform(DataTransformOutput inData, [NotNullWhen(true)] out DataTransformOutput? outData);
+        public bool Transform(DataTransformOutput? inData, out DataTransformOutput? outData)
         {
             if (inData == null)
             {
@@ -36,7 +35,7 @@ namespace easyTypeConverter.Transformation
                 return true;
             }
 
-            if (!IsSourceType(inData.GetType()))
+            if (!IsSourceType(inData.Value.GetType()))
             {
                 outData = null;
                 return false;

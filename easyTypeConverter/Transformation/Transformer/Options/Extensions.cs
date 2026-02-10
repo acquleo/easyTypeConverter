@@ -59,31 +59,42 @@ namespace easyTypeConverter.Transformation.Transformer.Options
     public static class RangeTransformerOptionsExtensions
     {
         public static T WithOutputMin<T>(this T obj, double value)
-               where T : RangeTransformerOptions
+               where T : ScalingTransformerOptions
         {
             obj.OutputMin = value;
             return obj;
         }
 
         public static T WithOutputMax<T>(this T obj, double value)
-               where T : RangeTransformerOptions
+               where T : ScalingTransformerOptions
         {
             obj.OutputMax = value;
             return obj;
         }
 
         public static T WithInputMin<T>(this T obj, double value)
-               where T : RangeTransformerOptions
+               where T : ScalingTransformerOptions
         {
             obj.InputMin = value;
             return obj;
         }
 
         public static T WithInputMax<T>(this T obj, double value)
-               where T : RangeTransformerOptions
+               where T : ScalingTransformerOptions
         {
             obj.InputMax = value;
             return obj;
         }
+    }
+
+    public static class DeadbandTransformerOptionsExtensions
+    {
+        public static T WithDeadband<T>(this T obj, double deadband)
+               where T : DeadbandTransformerOptions
+        {
+            obj.Deadband = deadband;
+            return obj;
+        }
+
     }
 }

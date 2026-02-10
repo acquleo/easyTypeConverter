@@ -3,6 +3,7 @@ using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Filters.Options;
 using easyTypeConverter.Conversion.Converter.Options;
 using easyTypeConverter.Transformation.Transformer.Options;
+using easyTypeConverter.Transformation;
 
 namespace TestProject1
 {
@@ -513,7 +514,7 @@ namespace TestProject1
             DataUnitTransformerOptions options = new DataUnitTransformerOptions();
             var transformer = options.Build();
 
-            transformer.Transform(1000000, out var rtesult);
+            transformer.Transform(DataTransformOutput.From(1000000), out var rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)1, rtesult.Value);
@@ -525,32 +526,32 @@ namespace TestProject1
             AutoScaleDataUnitTransformerOptions options = new AutoScaleDataUnitTransformerOptions();
             var transformer = options.Build();
 
-            transformer.Transform(512.0, out var rtesult);
+            transformer.Transform(DataTransformOutput.From(512.0), out var rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)512.0, rtesult.Value);
 
-            transformer.Transform(1024.0, out rtesult);
+            transformer.Transform(DataTransformOutput.From(1024.0), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)1.0, rtesult.Value);
 
-            transformer.Transform(1536.0, out rtesult);
+            transformer.Transform(DataTransformOutput.From(1536.0), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)1.5, rtesult.Value);
 
-            transformer.Transform((int)1_048_576, out rtesult);
+            transformer.Transform(DataTransformOutput.From((int)1_048_576), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)1.00, rtesult.Value);
 
-            transformer.Transform(1_610_612_736.0, out rtesult);
+            transformer.Transform(DataTransformOutput.From(1_610_612_736.0), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)1.50, rtesult.Value);
 
-            transformer.Transform(1_099_511_627_776.0, out rtesult);
+            transformer.Transform(DataTransformOutput.From(1_099_511_627_776.0), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)1.00, rtesult.Value);
@@ -559,31 +560,92 @@ namespace TestProject1
         [TestMethod]
         public void TestRangeTransform()
         {
-            RangeTransformerOptions options = new RangeTransformerOptions()
+            ScalingTransformerOptions options = new ScalingTransformerOptions()
                 .WithInputMin(0).WithInputMax(65000)
                 .WithOutputMin(-50).WithOutputMax(200);
 
             var transformer = options.Build();
 
-            transformer.Transform(512.0, out var rtesult);
+            transformer.Transform(DataTransformOutput.From(512.0), out var rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)-48.030769230769231, rtesult.Value);
+            Assert.AreEqual(typeof(double), rtesult.Value.GetType());
 
-            transformer.Transform(0, out rtesult);
+            transformer.Transform(DataTransformOutput.From(0), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)-50, rtesult.Value);
+            Assert.AreEqual(typeof(double), rtesult.Value.GetType());
 
-            transformer.Transform(65000, out rtesult);
+            transformer.Transform(DataTransformOutput.From(65000), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)200, rtesult.Value);
+            Assert.AreEqual(typeof(double), rtesult.Value.GetType());
 
-            transformer.Transform((int)13000, out rtesult);
+            transformer.Transform(DataTransformOutput.From((int)13000), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)0, rtesult.Value);
+            Assert.AreEqual(typeof(double), rtesult.Value.GetType());
+
+        }
+
+        [TestMethod]
+        public void TestDeadbandTransform()
+        {
+            DataTransformerHandler handler = new DataTransformerHandler();
+            handler.AddTransformer(new ScalingTransformerOptions()
+                .WithInputMin(0).WithInputMax(100)
+                .WithOutputMin(0).WithOutputMax(100));
+            handler.AddTransformer(new DeadbandTransformerOptions()
+                .WithDeadband(10.0));
+
+            handler.Transform(DataTransformOutput.From((double)0), out var rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((double)0, rtesult.Value);
+            Assert.AreEqual(typeof(double), rtesult.Value.GetType());
+
+            handler.Transform(DataTransformOutput.From((double)6), out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((double)0, rtesult.Value);
+            Assert.AreEqual(typeof(double), rtesult.Value.GetType());
+
+            handler.Transform(DataTransformOutput.From((int)11), out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((double)11, rtesult.Value);
+            Assert.AreEqual(typeof(double), rtesult.Value.GetType());
+
+        }
+
+        [TestMethod]
+        public void TestDeadbandIntegralTransform()
+        {
+            DataTransformerHandler handler = new DataTransformerHandler();
+            handler.AddTransformer(new DeadbandTransformerOptions()
+                .WithDeadband(10.0));
+
+            handler.Transform(DataTransformOutput.From((int)0), out var rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((int)0, rtesult.Value);
+            Assert.AreEqual(typeof(int), rtesult.Value.GetType());
+
+            handler.Transform(DataTransformOutput.From((int)6), out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((int)0, rtesult.Value);
+            Assert.AreEqual(typeof(int), rtesult.Value.GetType());
+
+            handler.Transform(DataTransformOutput.From((int)11), out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((int)11, rtesult.Value);
+            Assert.AreEqual(typeof(int), rtesult.Value.GetType());
 
         }
     }

@@ -63,8 +63,7 @@ namespace easyTypeConverter.Transformation.Transformer
         }
 
         public override List<Type> SourceTypeList { get => new List<Type>() { typeof(byte), typeof(sbyte), typeof(ushort), typeof(short), typeof(uint), typeof(int), typeof(ulong), typeof(long), typeof(float), typeof(double) }; }
-        public override Type TargetType { get { return typeof(double); } }
-
+        
         private DataUnit[] GetScale()
         {
             return (_family, _useBinary) switch
@@ -72,7 +71,9 @@ namespace easyTypeConverter.Transformation.Transformer
                 (DataUnitFamily.Bytes, true) => _binaryByteScale,
                 (DataUnitFamily.Bytes, false) => _decimalByteScale,
                 (DataUnitFamily.Bits, true) => _binaryBitScale,
-                (DataUnitFamily.Bits, false) => _decimalBitScale
+                (DataUnitFamily.Bits, false) => _decimalBitScale,
+                    _ => throw new InvalidOperationException("Invalid data unit family or binary/decimal choice.")
+
             };
         }
         private static DataUnitFamily DetectFamily(DataUnit unit)
@@ -85,15 +86,53 @@ namespace easyTypeConverter.Transformation.Transformer
                 _ => DataUnitFamily.Bytes
             };
         }
-        protected override bool OnTransform(object inData, [NotNullWhen(true)] out DataTransformOutput? outData)
+
+        public static Unit GetUnit(DataUnit dataUnit)
         {
-            var doubleValue = (double)Convert.ChangeType(inData, typeof(double));
+            switch (dataUnit)
+            {
+                case DataUnit.Bit:
+                    return Units.Data.Bit;
+                case DataUnit.Byte:
+                    return Units.Data.Byte;
+                case DataUnit.Kilobit:
+                    return Units.Data.Kilobit;
+                case DataUnit.Kilobyte:
+                    return Units.Data.Kilobyte;
+                case DataUnit.Megabit:
+                    return Units.Data.Megabit;
+                case DataUnit.Megabyte:
+                    return Units.Data.Megabyte;
+                case DataUnit.Gigabit:
+                    return Units.Data.Gigabit;
+                case DataUnit.Gigabyte:
+                    return Units.Data.Gigabyte;
+                case DataUnit.Terabyte:
+                    return Units.Data.Terabyte;
+                case DataUnit.Petabyte:
+                    return Units.Data.Petabyte;
+                case DataUnit.Kibibit:
+                    return Units.Data.Kibibit;
+                case DataUnit.Kibibyte:
+                    return Units.Data.Kibibyte;
+                case DataUnit.Mebibit:
+                    return Units.Data.Mebibit;
+                case DataUnit.Mebibyte:
+                    return Units.Data.Mebibyte;
+            }
+
+            return new Unit { Symbol = dataUnit.ToString(), Name = dataUnit.ToString(), Category = UnitCategory.Data, IsBinary = false };
+        }
+
+        protected override bool OnTransform(DataTransformOutput inData, [NotNullWhen(true)] out DataTransformOutput? outData)
+        {
+            var doubleValue = (double)Convert.ChangeType(inData.Value, typeof(double));
 
             var scale = GetScale();
             DataUnit bestUnit = scale[0];
 
             var baseTransformer = new DataUnitTransformer(new DataUnitTransformerOptions().WithSourceDataUnit(options.SourceUnit).WithTargetDataUnit(bestUnit));
-            if(!baseTransformer.Transform(doubleValue, out var transformedDoubleValue))
+            if(!baseTransformer.Transform(DataTransformOutput.From(doubleValue,inData.ValueUnit), out var transformedDoubleValue))
             {
                 outData = null;
                 return false;
@@ -110,7 +149,7 @@ namespace easyTypeConverter.Transformation.Transformer
             for (int i = 1; i < scale.Length; i++)
             {
                 var testTransformer = new DataUnitTransformer(new DataUnitTransformerOptions().WithSourceDataUnit(scale[0]).WithTargetDataUnit(scale[i]));
-                if (!testTransformer.Transform(doubleValue, out var test_transformedDoubleValue))
+                if (!testTransformer.Transform(DataTransformOutput.From(doubleValue, inData.ValueUnit), out var test_transformedDoubleValue))
                 {
                     outData = null;
                     return false;
@@ -136,7 +175,7 @@ namespace easyTypeConverter.Transformation.Transformer
                 }
             }
 
-            outData = new DataTransformOutput(bestValue,bestUnit.ToString());
+            outData = DataTransformOutput.From(bestValue, GetUnit(bestUnit));
             return true;
         }
     }
