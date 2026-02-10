@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Conversion.Converter
 {
-    public class StringNumericConverter : StringNumericConverterBase
+    public class StringIntegralConverter : StringIntegralConverterBase
     {
         StringNumericConverterOptions options;
-        public StringNumericConverter(StringNumericConverterOptions options) : base(options)
+        public StringIntegralConverter(StringNumericConverterOptions options) : base(options)
         {
             this.options = options;
 
         }
 
-        public StringNumericConverter(): this(new StringNumericConverterOptions())
+        public StringIntegralConverter(): this(new StringNumericConverterOptions())
         {
             
         }
@@ -26,7 +26,7 @@ namespace easyTypeConverter.Conversion.Converter
         public override List<Type> SourceTypeList { get => new List<Type>() { typeof(string) }; }
         public override List<Type> TargetTypeList { get => new List<Type>() { typeof(byte), typeof(sbyte), typeof(ushort), typeof(short), typeof(uint), typeof(int), typeof(ulong), typeof(long) }; }
 
-        bool IsSigned(Type type)
+        static bool IsSigned(Type type)
         {
             switch (Type.GetTypeCode(type))
             {

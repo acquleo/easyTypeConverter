@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public interface IStringNumericConverterBaseOptions : ITypeConverterOptions
+    public interface IStringIntegralConverterBaseOptions : ITypeConverterOptions
     {
             NumberStyles NumberStyle { get; set; }
             CultureInfo Culture { get; set; }
