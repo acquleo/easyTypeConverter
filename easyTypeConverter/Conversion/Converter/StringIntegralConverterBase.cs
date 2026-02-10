@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Conversion.Converter
 {
-    public abstract class StringNumericConverterBase : TypeConverter
+    public abstract class StringIntegralConverterBase : TypeConverter
     {
-        readonly IStringNumericConverterBaseOptions options;
-        public StringNumericConverterBase(IStringNumericConverterBaseOptions options) : base(options)
+        readonly IStringIntegralConverterBaseOptions options;
+        public StringIntegralConverterBase(IStringIntegralConverterBaseOptions options) : base(options)
         {
             this.options = options;
         }

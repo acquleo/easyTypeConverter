@@ -15,7 +15,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
                
         public override TypeConverter OnBuild()
         {
-            return new StringNumericConverter(this);
+            return new StringIntegralConverter(this);
         }
 
     }

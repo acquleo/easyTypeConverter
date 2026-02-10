@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public class NumericConverterOptions : ITypeConverterOptions
+    public class IntegralConverterOptions : ITypeConverterOptions
     {
         public List<IFilterOptions> InputFilters { get; set; } = new();
 
@@ -17,7 +17,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
 
         public TypeConverter Build()
         {
-            return new NumericConverter(this);
+            return new IntegralConverter(this);
         }
 
     }

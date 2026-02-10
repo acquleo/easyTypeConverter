@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Conversion.Converter
 {
-    public class NumericConverter : TypeConverter
+    public class IntegralConverter : TypeConverter
     {
-        NumericConverterOptions options;
-        public NumericConverter(NumericConverterOptions options) : base(options)
+        IntegralConverterOptions options;
+        public IntegralConverter(IntegralConverterOptions options) : base(options)
         {
             this.options = options;
 
         }
 
-        public NumericConverter(): this(new NumericConverterOptions())
+        public IntegralConverter(): this(new IntegralConverterOptions())
         {
             
         }
