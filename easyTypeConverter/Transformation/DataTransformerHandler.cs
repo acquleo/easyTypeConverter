@@ -22,7 +22,7 @@ namespace easyTypeConverter.Transformation
 
         }
 
-        public void AddTransformer(IDataTransformerOptions options)
+        public void AddTransformer(DataTransformerOptions options)
         {
             var dataTransformer = options.Build();
             transformers.Add(dataTransformer);            

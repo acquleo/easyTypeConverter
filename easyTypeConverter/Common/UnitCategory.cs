@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace easyTypeConverter.Transformation
+namespace easyTypeConverter.Common
 {
     // Categoria separata dall'unità
     public enum UnitCategory

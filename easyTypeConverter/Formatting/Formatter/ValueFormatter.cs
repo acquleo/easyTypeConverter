@@ -8,9 +8,19 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Formatting.Formatter
 {
+    /// <summary>
+    /// base class for a value formatter
+    /// </summary>
     public abstract class ValueFormatter
     {
         protected abstract bool OnFormat(FormatterContext inData, [NotNullWhen(true)] out string? outData);
+
+        /// <summary>
+        /// format the input data context
+        /// </summary>
+        /// <param name="inData">data context</param>
+        /// <param name="outData">ouput formatted string</param>
+        /// <returns></returns>
         public bool Format(FormatterContext? inData, out string? outData)
         {
             if (inData == null)

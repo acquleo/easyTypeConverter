@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace easyTypeConverter.Transformation
-{
+{        
     public abstract class DataTransformer
     {
         readonly HashSet<Type> sourceTypes = new HashSet<Type>();
-        readonly IDataTransformerOptions options;
-        public DataTransformer(IDataTransformerOptions options)
+        readonly DataTransformerOptions options;
+        public DataTransformer(DataTransformerOptions options)
         {
             this.options = options;
             

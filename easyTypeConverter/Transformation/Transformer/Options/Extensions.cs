@@ -8,6 +8,17 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Transformation.Transformer.Options
 {
+    
+    public static class DataTransformerHandlerOptionsExtensions
+    {
+        public static T AddTransformer<T>(this T obj, DataTransformerOptions options)
+               where T : DataTransformerHandlerOptions
+        {
+            obj.Transformers.Add(options);
+            return obj;
+        }
+
+    }
     public static class DataUnitTransformerOptionsExtensions
     {
         public static T WithSourceDataUnit<T>(this T obj, DataUnit unit)

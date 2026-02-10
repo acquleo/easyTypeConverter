@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace easyTypeConverter.Transformation.Transformer.Options
-{
-    public interface IDataTransformerOptions
-    {
-        DataTransformer Build();
-    }
+{   
+    //public interface IDataTransformerOptions
+    //{
+    //    DataTransformer Build();
+    //}
 }

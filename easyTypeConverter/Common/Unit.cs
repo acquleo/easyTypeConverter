@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace easyTypeConverter.Transformation
+namespace easyTypeConverter.Common
 {
     // Unità è una classe, non un enum
     public class Unit

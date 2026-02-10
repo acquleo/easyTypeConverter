@@ -1,4 +1,5 @@
-﻿using easyTypeConverter.Conversion;
+﻿using easyTypeConverter.Common;
+using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Converter.Options;
 using easyTypeConverter.Conversion.Filters.Options;
 using easyTypeConverter.Formatting.Formatter;
@@ -6,6 +7,7 @@ using easyTypeConverter.Formatting.Formatter.Options;
 using easyTypeConverter.Transformation;
 using easyTypeConverter.Transformation.Transformer.Options;
 using System.Globalization;
+using System.Text.Json;
 
 namespace TestProject1
 {
@@ -442,41 +444,41 @@ namespace TestProject1
             handler.AddConverter(new StringDecimalConverterOptions()
                 .AddInputFilter(new StringTrimFilterOptions()));
 
-                var outType = typeof(decimal);
+            var outType = typeof(decimal);
 
 
-                object? result = null;
-                handler.Convert($@"10.12345678", outType, out result);
+            object? result = null;
+            handler.Convert($@"10.12345678", outType, out result);
 
-                Assert.IsNotNull(result);
-                Assert.AreEqual((decimal)10.12345678, result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual((decimal)10.12345678, result);
 
-                handler.Convert($@"{decimal.MinValue}", outType, out result);
+            handler.Convert($@"{decimal.MinValue}", outType, out result);
 
-                Assert.IsNotNull(result);
-                Assert.AreEqual((decimal)decimal.MinValue, result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual((decimal)decimal.MinValue, result);
 
 
-                handler.Convert($@"{decimal.MaxValue}", outType, out result);
+            handler.Convert($@"{decimal.MaxValue}", outType, out result);
 
-                Assert.IsNotNull(result);
-                Assert.AreEqual((decimal)decimal.MaxValue, result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual((decimal)decimal.MaxValue, result);
 
-                handler.Convert($@"{decimal.MinusOne}", outType, out result);
+            handler.Convert($@"{decimal.MinusOne}", outType, out result);
 
-                Assert.IsNotNull(result);
-                Assert.AreEqual((decimal)decimal.MinusOne, result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual((decimal)decimal.MinusOne, result);
 
-                handler.Convert($@"{decimal.One}", outType, out result);
+            handler.Convert($@"{decimal.One}", outType, out result);
 
-                Assert.IsNotNull(result);
-                Assert.AreEqual((decimal)decimal.One, result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual((decimal)decimal.One, result);
 
-                handler.Convert($@"{decimal.Zero}", outType, out result);
+            handler.Convert($@"{decimal.Zero}", outType, out result);
 
-                Assert.IsNotNull(result);
-                Assert.AreEqual((decimal)decimal.Zero, result);
-  
+            Assert.IsNotNull(result);
+            Assert.AreEqual((decimal)decimal.Zero, result);
+
         }
 
         [TestMethod]
@@ -594,12 +596,15 @@ namespace TestProject1
         [TestMethod]
         public void TestDeadbandTransform()
         {
-            DataTransformerHandler handler = new DataTransformerHandler();
-            handler.AddTransformer(new ScalingTransformerOptions()
+            DataTransformerHandlerOptions options = new DataTransformerHandlerOptions();
+
+            options.AddTransformer(new ScalingTransformerOptions()
                 .WithInputMin(0).WithInputMax(100)
                 .WithOutputMin(0).WithOutputMax(100));
-            handler.AddTransformer(new DeadbandTransformerOptions()
+            options.AddTransformer(new DeadbandTransformerOptions()
                 .WithDeadband(10.0));
+
+            DataTransformerHandler handler = options.Build();
 
             handler.Transform(DataTransformOutput.From((double)0), out var rtesult);
 
@@ -721,6 +726,13 @@ namespace TestProject1
             Assert.IsNotNull(result);
             Assert.AreEqual((string)"42.39", result);
 
+            formatterOptions.WithTemplate("&ob;&ob;text&cb;&cb; &ob;{value:F2}&cb;");
+
+            formatter.Format(FormatterContext.From((double)42.3876), out result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual((string)"{{text}} {42.39}", result);
+
             formatterOptions.WithTemplate("{value:F1} {unit}");
 
             formatter.Format(FormatterContext.From((double)42.3876, Units.Temperature.Celsius), out result);
@@ -737,7 +749,7 @@ namespace TestProject1
 
             formatterOptions.WithTemplate("{value:o} DIA_STATUS_{status}");
 
-            formatter.Format(FormatterContext.From((DateTime)new DateTime(1920,10,12,10,2,45,120,0, DateTimeKind.Utc), status: "GOOD"), out result);
+            formatter.Format(FormatterContext.From((DateTime)new DateTime(1920, 10, 12, 10, 2, 45, 120, 0, DateTimeKind.Utc), status: "GOOD"), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((string)"1920-10-12T10:02:45.1200000Z DIA_STATUS_GOOD", result);
@@ -805,6 +817,45 @@ namespace TestProject1
             Assert.IsNotNull(result);
             Assert.AreEqual((string)"12/10/1920 10:02:45.120 DIA_STATUS_GOOD", result);
 
+        }
+
+
+        [TestMethod]
+        public void TestJson()
+        {
+            DataTransformerHandlerOptions options = new DataTransformerHandlerOptions();
+
+            options.AddTransformer(new ScalingTransformerOptions()
+                .WithInputMin(0).WithInputMax(100)
+                .WithOutputMin(0).WithOutputMax(10000));
+            options.AddTransformer(new DeadbandTransformerOptions()
+                .WithDeadband(10.0));
+            options.AddTransformer(new AutoScaleDataUnitTransformerOptions()
+                .WithDecimal()
+                .WithSourceDataUnit(DataUnit.Byte)
+                .WithScaleThreshold(1));
+
+            string json = JsonSerializer.Serialize(options);
+
+            DataTransformerHandlerOptions? deserializedOptions = JsonSerializer.Deserialize<DataTransformerHandlerOptions>(json);
+
+            var handler = deserializedOptions.Build();
+
+            handler.Transform(DataTransformOutput.From((double)50), out var result);
+
+            Assert.IsNotNull(result);
+
+
+            var testsingle = new AutoScaleDataUnitTransformerOptions()
+                .WithDecimal()
+                .WithSourceDataUnit(DataUnit.Bit)
+                .WithScaleThreshold(100.0);
+
+            string json_single = JsonSerializer.Serialize<DataTransformerOptions>(testsingle);
+
+            DataTransformerOptions? deserializedOptions_single = JsonSerializer.Deserialize<DataTransformerOptions>(json_single);
+
+            Assert.IsNotNull(deserializedOptions_single);
         }
     }
 }

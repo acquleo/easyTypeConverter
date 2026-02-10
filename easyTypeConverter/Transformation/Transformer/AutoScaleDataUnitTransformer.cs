@@ -1,4 +1,5 @@
-﻿using easyTypeConverter.Transformation.Transformer.Options;
+﻿using easyTypeConverter.Common;
+using easyTypeConverter.Transformation.Transformer.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -126,13 +127,14 @@ namespace easyTypeConverter.Transformation.Transformer
 
         protected override bool OnTransform(DataTransformOutput inData, [NotNullWhen(true)] out DataTransformOutput? outData)
         {
+            var unit = inData.ValueUnit == null ? GetUnit(options.SourceUnit) : inData.ValueUnit;
             var doubleValue = (double)Convert.ChangeType(inData.Value, typeof(double));
 
             var scale = GetScale();
             DataUnit bestUnit = scale[0];
 
             var baseTransformer = new DataUnitTransformer(new DataUnitTransformerOptions().WithSourceDataUnit(options.SourceUnit).WithTargetDataUnit(bestUnit));
-            if(!baseTransformer.Transform(DataTransformOutput.From(doubleValue,inData.ValueUnit), out var transformedDoubleValue))
+            if(!baseTransformer.Transform(DataTransformOutput.From(doubleValue, unit), out var transformedDoubleValue))
             {
                 outData = null;
                 return false;
@@ -149,7 +151,7 @@ namespace easyTypeConverter.Transformation.Transformer
             for (int i = 1; i < scale.Length; i++)
             {
                 var testTransformer = new DataUnitTransformer(new DataUnitTransformerOptions().WithSourceDataUnit(scale[0]).WithTargetDataUnit(scale[i]));
-                if (!testTransformer.Transform(DataTransformOutput.From(doubleValue, inData.ValueUnit), out var test_transformedDoubleValue))
+                if (!testTransformer.Transform(DataTransformOutput.From(doubleValue, unit), out var test_transformedDoubleValue))
                 {
                     outData = null;
                     return false;
