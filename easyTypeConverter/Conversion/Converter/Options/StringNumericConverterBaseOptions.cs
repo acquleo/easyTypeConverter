@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace easyTypeConverter.Conversion.Converter.Options
 {
     public abstract class StringNumericConverterBaseOptions :
-        IStringNumericConverterBaseOptions
+        IStringIntegralConverterBaseOptions
     {
         public NumberStyles NumberStyle { get; set; } = NumberStyles.Any;
         public CultureInfo Culture { get; set; } = CultureInfo.InvariantCulture;

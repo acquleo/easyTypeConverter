@@ -484,7 +484,7 @@ namespace TestProject1
         {
 
             TypeConverterHandler handler = new TypeConverterHandler();
-            handler.AddConverter(new NumericConverterOptions());
+            handler.AddConverter(new IntegralConverterOptions());
 
 
             object? result = null;
