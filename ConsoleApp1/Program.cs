@@ -1,9 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using easyTypeConverter;
-using easyTypeConverter.Converter;
-using easyTypeConverter.Converter.Options;
-using easyTypeConverter.Filters;
-using easyTypeConverter.Filters.Options;
+using easyTypeConverter.Conversion;
+using easyTypeConverter.Conversion.Converter.Options;
+using easyTypeConverter.Conversion.Filters.Options;
 using System.Globalization;
 
 Console.WriteLine("Hello, World!");

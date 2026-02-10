@@ -1,9 +1,8 @@
-﻿using easyTypeConverter;
-using easyTypeConverter.Converter.Options;
-using easyTypeConverter.Converter;
-using System.Globalization;
-using easyTypeConverter.Filters;
-using easyTypeConverter.Filters.Options;
+﻿using System.Globalization;
+using easyTypeConverter.Conversion;
+using easyTypeConverter.Conversion.Filters.Options;
+using easyTypeConverter.Conversion.Converter.Options;
+using easyTypeConverter.Transformation.Transformer.Options;
 
 namespace TestProject1
 {
@@ -14,22 +13,22 @@ namespace TestProject1
 
         public Test1()
         {
-            
+
         }
-        
+
         [TestMethod]
         public void TestStringBooleanConverter()
         {
             TypeConverterHandler handler = new TypeConverterHandler();
-            handler.AddConverter(new StringBooleanConverterOptions()              
-                .AddInputFilter(new StringTrimFilterOptions())                
+            handler.AddConverter(new StringBooleanConverterOptions()
+                .AddInputFilter(new StringTrimFilterOptions())
                 .AddInputFilter(new StringNumericBooleanFilterOptions()
                     .WithNumberStyle(NumberStyles.Any)
                     .WithExitOnMatch())
                 .AddInputFilter(new StringNumericBooleanFilterOptions()
                     .WithExitOnMatch())
                 .AddInputFilter(new StringReplaceFilterOptions()
-                    .WithReplace("True","on","ACTIVE")
+                    .WithReplace("True", "on", "ACTIVE")
                     .WithReplace("False", "off", "DEACTIVE")
                     .WithExitOnMatch())
                 .AddInputFilter(new StringRegexMatchReplaceFilterOptions()
@@ -90,7 +89,7 @@ namespace TestProject1
         public void TestStringNumericHexConverter()
         {
             TypeConverterHandler handler = new TypeConverterHandler();
-            handler.AddConverter(new StringNumericConverterOptions()                
+            handler.AddConverter(new StringNumericConverterOptions()
                 .AddInputFilter(new StringTrimFilterOptions())
                 .AddInputFilter(new StringRemovePrefixFilterOptions()
                     .WithPrefix("0x"))
@@ -150,8 +149,8 @@ namespace TestProject1
         public void TestStringNumericConverter()
         {
             TypeConverterHandler handler = new TypeConverterHandler();
-            handler.AddConverter(new StringNumericConverterOptions()                
-                .AddInputFilter(new StringTrimFilterOptions())                
+            handler.AddConverter(new StringNumericConverterOptions()
+                .AddInputFilter(new StringTrimFilterOptions())
               .WithNumberStyle(NumberStyles.Any));
 
 
@@ -323,7 +322,7 @@ namespace TestProject1
             {
                 handler.Convert("-4", typeof(byte), out result);
             });
-            
+
             Assert.ThrowsException<TypeConverterFailedException>(() =>
             {
                 handler.Convert("pippo", typeof(byte), out result);
@@ -334,7 +333,7 @@ namespace TestProject1
                 handler.Convert("True", typeof(byte), out result);
             });
 
-            
+
         }
 
         [TestMethod]
@@ -444,7 +443,7 @@ namespace TestProject1
             for (int i = 0; i < 1000000; i++)
             {
                 var outType = typeof(decimal);
-                                
+
 
                 object? result = null;
                 handler.Convert($@"10.12345678", outType, out result);
@@ -483,7 +482,7 @@ namespace TestProject1
         [TestMethod]
         public void TestNumericConverter()
         {
-            
+
             TypeConverterHandler handler = new TypeConverterHandler();
             handler.AddConverter(new NumericConverterOptions());
 
@@ -506,6 +505,55 @@ namespace TestProject1
                 handler.Convert((int)-100, typeof(ushort), out result);
             });
 
+        }
+
+        [TestMethod]
+        public void TestDataUnit()
+        {
+            DataUnitTransformerOptions options = new DataUnitTransformerOptions();
+            var transformer = options.Build();
+
+            transformer.Transform(1000000, out var rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((double)1, rtesult.Value);
+        }
+
+        [TestMethod]
+        public void TestAutoScaleDataUnit()
+        {
+            AutoScaleDataUnitTransformerOptions options = new AutoScaleDataUnitTransformerOptions();
+            var transformer = options.Build();
+
+            transformer.Transform(512.0, out var rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((double)512.0, rtesult.Value);
+
+            transformer.Transform(1024.0, out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((double)1.0, rtesult.Value);
+
+            transformer.Transform(1536.0, out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((double)1.5, rtesult.Value);
+
+            transformer.Transform(1_048_576.0, out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((double)1.00, rtesult.Value);
+
+            transformer.Transform(1_610_612_736.0, out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((double)1.50, rtesult.Value);
+
+            transformer.Transform(1_099_511_627_776.0, out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((double)1.00, rtesult.Value);
         }
     }
 }
