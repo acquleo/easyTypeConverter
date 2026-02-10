@@ -97,4 +97,20 @@ namespace easyTypeConverter.Transformation.Transformer.Options
         }
 
     }
+
+    public static class BitMaskTransformerOptionsExtensions
+    {
+        public static T WithMask<T>(this T obj, ulong mask)
+               where T : BitMaskTransformerOptions
+        {
+            obj.Mask = mask;
+            return obj;
+        }
+        public static T WithNormalize<T>(this T obj, bool normalize = true)
+               where T : BitMaskTransformerOptions
+        {
+            obj.Normalize = normalize;
+            return obj;
+        }
+    }
 }

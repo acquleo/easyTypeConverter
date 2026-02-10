@@ -1,9 +1,11 @@
-﻿using System.Globalization;
-using easyTypeConverter.Conversion;
-using easyTypeConverter.Conversion.Filters.Options;
+﻿using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Converter.Options;
-using easyTypeConverter.Transformation.Transformer.Options;
+using easyTypeConverter.Conversion.Filters.Options;
+using easyTypeConverter.Formatting.Formatter;
+using easyTypeConverter.Formatting.Formatter.Options;
 using easyTypeConverter.Transformation;
+using easyTypeConverter.Transformation.Transformer.Options;
+using System.Globalization;
 
 namespace TestProject1
 {
@@ -440,9 +442,6 @@ namespace TestProject1
             handler.AddConverter(new StringDecimalConverterOptions()
                 .AddInputFilter(new StringTrimFilterOptions()));
 
-
-            for (int i = 0; i < 1000000; i++)
-            {
                 var outType = typeof(decimal);
 
 
@@ -477,7 +476,7 @@ namespace TestProject1
 
                 Assert.IsNotNull(result);
                 Assert.AreEqual((decimal)decimal.Zero, result);
-            }
+  
         }
 
         [TestMethod]
@@ -646,6 +645,165 @@ namespace TestProject1
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((int)11, rtesult.Value);
             Assert.AreEqual(typeof(int), rtesult.Value.GetType());
+
+        }
+
+        [TestMethod]
+        public void TestBitMaksTransform()
+        {
+            DataTransformerHandler handler = new DataTransformerHandler();
+            handler.AddTransformer(new BitMaskTransformerOptions()
+                .WithMask(0x02));
+
+            handler.Transform(DataTransformOutput.From((int)0), out var rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((bool)false, rtesult.Value);
+            Assert.AreEqual(typeof(bool), rtesult.Value.GetType());
+
+            handler.Transform(DataTransformOutput.From((int)7), out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((bool)true, rtesult.Value);
+            Assert.AreEqual(typeof(bool), rtesult.Value.GetType());
+
+            handler.Transform(DataTransformOutput.From((int)2), out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((bool)true, rtesult.Value);
+
+            Assert.AreEqual(typeof(bool), rtesult.Value.GetType());
+
+        }
+
+        [TestMethod]
+        public void TestBitMaksMultibitTransform()
+        {
+            DataTransformerHandler handler = new DataTransformerHandler();
+            handler.AddTransformer(new BitMaskTransformerOptions()
+                .WithMask(0x06).WithNormalize());
+
+            handler.Transform(DataTransformOutput.From((int)0), out var rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((ulong)0, rtesult.Value);
+            Assert.AreEqual(typeof(ulong), rtesult.Value.GetType());
+
+            handler.Transform(DataTransformOutput.From((int)2), out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((ulong)1, rtesult.Value);
+            Assert.AreEqual(typeof(ulong), rtesult.Value.GetType());
+
+            handler.Transform(DataTransformOutput.From((int)7), out rtesult);
+
+            Assert.IsNotNull(rtesult);
+            Assert.AreEqual((ulong)3, rtesult.Value);
+            Assert.AreEqual(typeof(ulong), rtesult.Value.GetType());
+        }
+
+        [TestMethod]
+        public void TestTemplateFormatter()
+        {
+            TemplateFormatterOptions formatterOptions = new TemplateFormatterOptions()
+                .WithTemplate("{value}");
+            var formatter = formatterOptions.Build();
+
+            formatter.Format(FormatterContext.From((double)42.3), out var result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual((string)"42.3", result);
+
+            formatterOptions.WithTemplate("{value:F2}");
+
+            formatter.Format(FormatterContext.From((double)42.3876), out result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual((string)"42.39", result);
+
+            formatterOptions.WithTemplate("{value:F1} {unit}");
+
+            formatter.Format(FormatterContext.From((double)42.3876, Units.Temperature.Celsius), out result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual((string)"42.4 °C", result);
+
+            formatterOptions.WithTemplate("{value:F2} [{status}]");
+
+            formatter.Format(FormatterContext.From((double)42.3876, Units.Temperature.Celsius, "FAULT"), out result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual((string)"42.39 [FAULT]", result);
+
+            formatterOptions.WithTemplate("{value:o} DIA_STATUS_{status}");
+
+            formatter.Format(FormatterContext.From((DateTime)new DateTime(1920,10,12,10,2,45,120,0, DateTimeKind.Utc), status: "GOOD"), out result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual((string)"1920-10-12T10:02:45.1200000Z DIA_STATUS_GOOD", result);
+
+            formatterOptions.WithTemplate("{value:dd/MM/yyyy HH:mm:ss.fff} DIA_STATUS_{status}");
+
+            formatter.Format(FormatterContext.From((DateTime)new DateTime(1920, 10, 12, 10, 2, 45, 120, 0), status: "GOOD"), out result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual((string)"12/10/1920 10:02:45.120 DIA_STATUS_GOOD", result);
+
+            formatterOptions.WithTemplate("{value:dd/MM/yyyy HH:mm:ss.fff} DIA_STATUS_{status}").WithDateTimeConvert(DateTimeKind.Local);
+
+            formatter.Format(FormatterContext.From((DateTime)new DateTime(1920, 10, 12, 10, 2, 45, 120, 0, DateTimeKind.Utc), status: "GOOD"), out result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual((string)"12/10/1920 12:02:45.120 DIA_STATUS_GOOD", result);
+
+            formatterOptions.WithTemplate("{value:dd/MM/yyyy HH:mm:ss.fff} DIA_STATUS_{status}").WithDateTimeConvert(DateTimeKind.Utc);
+
+            formatter.Format(FormatterContext.From((DateTime)new DateTime(1920, 10, 12, 10, 2, 45, 120, 0, DateTimeKind.Local), status: "GOOD"), out result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual((string)"12/10/1920 08:02:45.120 DIA_STATUS_GOOD", result);
+
+            formatterOptions.WithTemplate("{value:dd/MM/yyyy HH:mm:ss.fff} DIA_STATUS_{status}").WithDateTimeConvert(DateTimeKind.Local);
+
+            formatter.Format(FormatterContext.From((DateTime)new DateTime(1920, 10, 12, 10, 2, 45, 120, 0, DateTimeKind.Local), status: "GOOD"), out result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual((string)"12/10/1920 10:02:45.120 DIA_STATUS_GOOD", result);
+
+            formatterOptions.WithTemplate("{value:dd/MM/yyyy HH:mm:ss.fff} DIA_STATUS_{status}").WithDateTimeConvert(DateTimeKind.Utc);
+
+            formatter.Format(FormatterContext.From((DateTime)new DateTime(1920, 10, 12, 10, 2, 45, 120, 0, DateTimeKind.Utc), status: "GOOD"), out result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual((string)"12/10/1920 10:02:45.120 DIA_STATUS_GOOD", result);
+
+            formatterOptions.WithTemplate("{value:dd/MM/yyyy HH:mm:ss.fff} DIA_STATUS_{status}").WithDateTimeConvert(DateTimeKind.Utc);
+
+            formatter.Format(FormatterContext.From((DateTimeOffset)new DateTimeOffset(1920, 10, 12, 10, 2, 45, 120, 0, TimeSpan.FromHours(0)), status: "GOOD"), out result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual((string)"12/10/1920 10:02:45.120 DIA_STATUS_GOOD", result);
+
+            formatterOptions.WithTemplate("{value:dd/MM/yyyy HH:mm:ss.fff} DIA_STATUS_{status}").WithDateTimeConvert(DateTimeKind.Local);
+
+            formatter.Format(FormatterContext.From((DateTimeOffset)new DateTimeOffset(1920, 10, 12, 10, 2, 45, 120, 0, TimeSpan.FromHours(0)), status: "GOOD"), out result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual((string)"12/10/1920 12:02:45.120 DIA_STATUS_GOOD", result);
+
+            formatterOptions.WithTemplate("{value:dd/MM/yyyy HH:mm:ss.fff} DIA_STATUS_{status}").WithDateTimeConvert(DateTimeKind.Utc);
+
+            formatter.Format(FormatterContext.From((DateTimeOffset)new DateTimeOffset(1920, 10, 12, 10, 2, 45, 120, 0, TimeSpan.FromHours(2)), status: "GOOD"), out result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual((string)"12/10/1920 08:02:45.120 DIA_STATUS_GOOD", result);
+
+            formatterOptions.WithTemplate("{value:dd/MM/yyyy HH:mm:ss.fff} DIA_STATUS_{status}").WithDateTimeConvert(DateTimeKind.Local);
+
+            formatter.Format(FormatterContext.From((DateTimeOffset)new DateTimeOffset(1920, 10, 12, 10, 2, 45, 120, 0, TimeSpan.FromHours(2)), status: "GOOD"), out result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual((string)"12/10/1920 10:02:45.120 DIA_STATUS_GOOD", result);
 
         }
     }
