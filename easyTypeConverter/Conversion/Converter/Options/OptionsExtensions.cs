@@ -250,7 +250,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
             obj.Epoch = epoch;
             return obj;
         }
-        public static T WithKind<T>(this T obj, DateTimeKind kind)
+        public static T WithKind<T>(this T obj, SerializableDateTimeKind kind)
             where T : INumberDateTimeConverterOptions
         {
             obj.Kind = kind;

@@ -18,9 +18,19 @@ namespace easyTypeConverter.Conversion.Converter
         public NumberDateTimeConverter() : this(new NumberDateTimeConverterOptions())
         {
         }
-        
+
         public override List<DataType> SourceTypeList { get; } = new List<DataType>() { DataTypes.Double, DataTypes.Single, DataTypes.Byte, DataTypes.SByte, DataTypes.UInt16, DataTypes.Int16, DataTypes.UInt32, DataTypes.Int32, DataTypes.UInt64, DataTypes.Int64, DataTypes.Decimal };
         public override List<DataType> TargetTypeList { get; } = new List<DataType>() { DataTypes.DateTime };
+
+        private static DateTimeKind ToDateTimeKind(SerializableDateTimeKind kind)
+        {
+            return kind switch
+            {
+                SerializableDateTimeKind.Utc => DateTimeKind.Utc,
+                SerializableDateTimeKind.Local => DateTimeKind.Local,
+                _ => DateTimeKind.Unspecified
+            };
+        }
 
         public override bool OnConvert(object inData, DataType targetType, [NotNullWhen(true)] out object? outData)
         {
@@ -29,7 +39,7 @@ namespace easyTypeConverter.Conversion.Converter
 
             DateTime result = options.Unit switch
             {
-                NumberDateTimeUnit.Ticks => new DateTime((long)value, options.Kind),
+                NumberDateTimeUnit.Ticks => new DateTime((long)value, ToDateTimeKind(options.Kind)),
                 NumberDateTimeUnit.Seconds => options.Epoch.AddSeconds(value),
                 NumberDateTimeUnit.Milliseconds => options.Epoch.AddMilliseconds(value),
                 NumberDateTimeUnit.Microseconds => options.Epoch.AddMicroseconds(value),
