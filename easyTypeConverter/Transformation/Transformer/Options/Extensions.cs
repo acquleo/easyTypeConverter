@@ -1,4 +1,5 @@
-﻿using easyTypeConverter.Conversion.Converter.Options;
+﻿using easyTypeConverter.Common;
+using easyTypeConverter.Conversion.Converter.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,20 @@ namespace easyTypeConverter.Transformation.Transformer.Options
                where T : TypeConverterTransformerOptions
         {
             obj.Converter = options;
+            return obj;
+        }
+
+        public static T WithTargetType<T>(this T obj, string targetType)
+              where T : TypeConverterTransformerOptions
+        {
+            obj.TargetType = targetType;
+            return obj;
+        }
+
+        public static T WithTargetType<T>(this T obj, DataType targetType)
+              where T : TypeConverterTransformerOptions
+        {
+            obj.TargetType = targetType.Name;
             return obj;
         }
     }

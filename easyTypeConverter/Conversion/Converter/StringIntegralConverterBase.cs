@@ -1,4 +1,5 @@
-﻿using easyTypeConverter.Conversion;
+﻿using easyTypeConverter.Common;
+using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Converter.Options;
 using System;
 using System.Collections.Generic;
@@ -18,9 +19,9 @@ namespace easyTypeConverter.Conversion.Converter
             this.options = options;
         }
 
-        public abstract bool OnNumericConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData, NumberStyles numberStyle);
+        public abstract bool OnNumericConvert(object inData, DataType targetType, [NotNullWhen(true)] out object? outData, NumberStyles numberStyle);
 
-        public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
+        public override bool OnConvert(object inData, DataType targetType, [NotNullWhen(true)] out object? outData)
         {
             if (this.options.HexDetection)
             {

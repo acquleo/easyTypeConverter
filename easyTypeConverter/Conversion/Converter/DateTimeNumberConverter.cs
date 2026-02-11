@@ -1,8 +1,9 @@
+using easyTypeConverter.Common;
+using easyTypeConverter.Conversion;
+using easyTypeConverter.Conversion.Converter.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using easyTypeConverter.Conversion;
-using easyTypeConverter.Conversion.Converter.Options;
 
 namespace easyTypeConverter.Conversion.Converter
 {
@@ -18,10 +19,10 @@ namespace easyTypeConverter.Conversion.Converter
         {
         }
 
-        public override List<Type> SourceTypeList { get; } = new List<Type>() { typeof(DateTime) };
-        public override List<Type> TargetTypeList { get; } = new List<Type>() { typeof(double), typeof(float), typeof(byte), typeof(sbyte), typeof(ushort), typeof(short), typeof(uint), typeof(int), typeof(ulong), typeof(long), typeof(decimal) }; 
+        public override List<DataType> SourceTypeList { get; } = new List<DataType>() { DataTypes.DateTime };
+        public override List<DataType> TargetTypeList { get; } = new List<DataType>() { DataTypes.Double, DataTypes.Single, DataTypes.Byte, DataTypes.SByte, DataTypes.UInt16, DataTypes.Int16, DataTypes.UInt32, DataTypes.Int32, DataTypes.UInt64, DataTypes.Int64, DataTypes.Decimal };
 
-        public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
+        public override bool OnConvert(object inData, DataType targetType, [NotNullWhen(true)] out object? outData)
         {
             outData = null;
             if (inData is not DateTime dt)
@@ -38,7 +39,7 @@ namespace easyTypeConverter.Conversion.Converter
                 DateTimeNumberUnit.OADate => dt.ToOADate(),
                 _ => (dt - options.Epoch).TotalSeconds
             };
-            outData = System.Convert.ChangeType(value, targetType);
+            outData = System.Convert.ChangeType(value, targetType.Type);
             return true;
         }
     }

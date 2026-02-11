@@ -1,4 +1,5 @@
-﻿using easyTypeConverter.Conversion;
+﻿using easyTypeConverter.Common;
+using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Converter.Options;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,10 @@ namespace easyTypeConverter.Conversion.Converter
 
         public StringBooleanConverter():this(new StringBooleanConverterOptions()) { }
 
-        public override List<Type> SourceTypeList { get => new List<Type>() { typeof(string) }; }
-        public override List<Type> TargetTypeList { get => new List<Type>() { typeof(bool) }; }
+        public override List<DataType> SourceTypeList { get => new List<DataType>() { DataTypes.String }; }
+        public override List<DataType> TargetTypeList { get => new List<DataType>() { DataTypes.Boolean }; }
 
-        public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
+        public override bool OnConvert(object inData, DataType targetType, [NotNullWhen(true)] out object? outData)
         {
             outData = default;
 

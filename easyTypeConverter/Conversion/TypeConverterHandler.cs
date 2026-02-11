@@ -1,4 +1,5 @@
-﻿using easyTypeConverter.Conversion.Converter.Options;
+﻿using easyTypeConverter.Common;
+using easyTypeConverter.Conversion.Converter.Options;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ namespace easyTypeConverter.Conversion
             {
                 foreach(var targetType in typeConverter.TargetTypeList)
                 {
-                    var key = new Tuple<Type, Type>(sourceType, targetType);
+                    var key = new Tuple<Type, Type>(sourceType.Type, targetType.Type);
                     if (!converters.ContainsKey(key))
                     {
                         converters.TryAdd(key, new List<TypeConverter>());
@@ -62,8 +63,14 @@ namespace easyTypeConverter.Conversion
 
             return FindConverter(inType, outType, out var _);
         }
-
         public bool Convert(object? inData, Type outType, out object? outData)
+        {
+            var outDataType = DataTypes.FromType(outType);
+
+            return Convert(inData, outDataType, out outData);
+        }
+
+        public bool Convert(object? inData, DataType outType, out object? outData)
         {
             if (inData == null)
             {
@@ -73,9 +80,9 @@ namespace easyTypeConverter.Conversion
 
             Type inType = inData.GetType();
 
-            if (!FindConverter(inType, outType, out var typeConverters))
+            if (!FindConverter(inType, outType.Type, out var typeConverters))
             {
-                throw new TypeConverterNotFoundException(inData, inType, outType);
+                throw new TypeConverterNotFoundException(inData, inType, outType.Type);
             }
 
             foreach (var converter in typeConverters)
@@ -90,11 +97,11 @@ namespace easyTypeConverter.Conversion
                 }
                 catch (Exception ex)
                 {
-                    throw new TypeConverterException(inData, inType, outType, ex);
+                    throw new TypeConverterException(inData, inType, outType.Type, ex);
                 }
             }
 
-            throw new TypeConverterFailedException(inData, inType, outType);
+            throw new TypeConverterFailedException(inData, inType, outType.Type);
         }
     }
 }

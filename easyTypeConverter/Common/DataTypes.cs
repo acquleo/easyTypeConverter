@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace easyTypeConverter.Common
 {
@@ -15,7 +16,7 @@ namespace easyTypeConverter.Common
         public static readonly DataType Char = new() { Name = "Char", Type = typeof(Char) };
         public static readonly DataType Decimal = new() { Name = "Decimal", Type = typeof(Decimal) };
         public static readonly DataType Double = new() { Name = "Double", Type = typeof(Double) };
-        public static readonly DataType Float = new() { Name = "Float", Type = typeof(Single) };
+        public static readonly DataType Single = new() { Name = "Single", Type = typeof(Single) };
         public static readonly DataType Int16 = new() { Name = "Int16", Type = typeof(Int16) };
         public static readonly DataType UInt16 = new() { Name = "UInt16", Type = typeof(UInt16) };
         public static readonly DataType Int32 = new() { Name = "Int32", Type = typeof(Int32) };
@@ -23,7 +24,7 @@ namespace easyTypeConverter.Common
         public static readonly DataType Int64 = new() { Name = "Int64", Type = typeof(Int64) };
         public static readonly DataType UInt64 = new() { Name = "UInt64", Type = typeof(UInt64) };
         public static readonly DataType String = new() { Name = "String", Type = typeof(String) };
-        public static readonly DataType Timespan = new() { Name = "Timespan", Type = typeof(TimeSpan) };
+        public static readonly DataType TimeSpan = new() { Name = "TimeSpan", Type = typeof(TimeSpan) };
         public static readonly DataType DateTime = new() { Name = "DateTime", Type = typeof(DateTime) };
 
 
@@ -45,6 +46,34 @@ namespace easyTypeConverter.Common
 
         }
 
+        public static DataType FromName(string name)
+        {
+            var f_unit = All
+                .Where(u => u.Name == name)
+                .FirstOrDefault();
+
+            if (f_unit != null)
+            {
+                return f_unit;
+            }
+
+            throw new InvalidOperationException($"DataType with name '{name}' not found.");
+
+        }
+        public static DataType FromType(Type type)
+        {
+            var f_unit = All
+                .Where(u => u.Type == type)
+                .FirstOrDefault();
+
+            if (f_unit != null)
+            {
+                return f_unit;
+            }
+
+            throw new InvalidOperationException($"DataType with typename '{type}' not found.");
+
+        }
         public static bool FromType(Type type, [NotNullWhen(true)] out DataType? unit)
         {
             var f_unit = All

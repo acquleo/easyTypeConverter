@@ -24,8 +24,8 @@ namespace easyTypeConverter.Conversion.Converter
             
         }
 
-        public override List<Type> SourceTypeList { get => new List<Type>() { typeof(string) }; }
-        public override List<Type> TargetTypeList { get => new List<Type>() { typeof(byte), typeof(sbyte), typeof(ushort), typeof(short), typeof(uint), typeof(int), typeof(ulong), typeof(long) }; }
+        public override List<DataType> SourceTypeList { get => new List<DataType>() { DataTypes.String }; }
+        public override List<DataType> TargetTypeList { get => new List<DataType>() { DataTypes.Byte, DataTypes.SByte, DataTypes.UInt16, DataTypes.Int16, DataTypes.UInt32, DataTypes.Int32, DataTypes.UInt64, DataTypes.Int64 }; }
 
         static bool IsSigned(Type type)
         {
@@ -47,12 +47,12 @@ namespace easyTypeConverter.Conversion.Converter
                     throw new ArgumentException("Type is not a numeric type");
             }
         }
-        public override bool OnNumericConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData, NumberStyles numberStyle)
+        public override bool OnNumericConvert(object inData, DataType targetType, [NotNullWhen(true)] out object? outData, NumberStyles numberStyle)
         {
             var culture = CultureInfoHelper.GetCultureInfo(this.options.Culture);
             outData = default;
 
-            bool signed = IsSigned(targetType);
+            bool signed = IsSigned(targetType.Type);
 
             object? intermediateValue = null;
 
@@ -75,7 +75,7 @@ namespace easyTypeConverter.Conversion.Converter
             }
 
 
-            outData = System.Convert.ChangeType(intermediateValue, targetType); ;
+            outData = System.Convert.ChangeType(intermediateValue, targetType.Type); ;
             return true;
         }
 

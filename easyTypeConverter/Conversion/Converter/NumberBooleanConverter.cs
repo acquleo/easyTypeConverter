@@ -1,3 +1,4 @@
+using easyTypeConverter.Common;
 using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Converter.Options;
 using System;
@@ -11,10 +12,10 @@ namespace easyTypeConverter.Conversion.Converter
         public NumberBooleanConverter(NumberBooleanConverterOptions options) : base(options) { }
         public NumberBooleanConverter() : this(new NumberBooleanConverterOptions()) { }
 
-        public override List<Type> SourceTypeList { get; } = new List<Type>() { typeof(byte), typeof(sbyte), typeof(short), typeof(ushort), typeof(int), typeof(uint), typeof(long), typeof(ulong), typeof(float), typeof(double), typeof(decimal) };
-        public override List<Type> TargetTypeList { get; } = new List<Type>() { typeof(bool) };
+        public override List<DataType> SourceTypeList { get; } = new List<DataType>() { DataTypes.Byte, DataTypes.SByte, DataTypes.Int16, DataTypes.UInt16, DataTypes.Int32, DataTypes.UInt32, DataTypes.Int64, DataTypes.UInt64, DataTypes.Single, DataTypes.Double, DataTypes.Decimal };
+        public override List<DataType> TargetTypeList { get; } = new List<DataType>() { DataTypes.Boolean };
 
-        public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
+        public override bool OnConvert(object inData, DataType targetType, [NotNullWhen(true)] out object? outData)
         {
             outData = null;
             double value = System.Convert.ToDouble(inData);

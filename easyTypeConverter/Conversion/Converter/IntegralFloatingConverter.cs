@@ -1,3 +1,4 @@
+using easyTypeConverter.Common;
 using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Converter.Options;
 using System;
@@ -18,15 +19,12 @@ namespace easyTypeConverter.Conversion.Converter
         {
         }
 
-        public override List<Type> SourceTypeList { get; } = new List<Type>()
-        {
-            typeof(byte), typeof(sbyte), typeof(ushort), typeof(short), typeof(uint), typeof(int), typeof(ulong), typeof(long)
-        };
-        public override List<Type> TargetTypeList { get; } = new List<Type>() { typeof(float), typeof(double) };
+        public override List<DataType> SourceTypeList { get; } = new List<DataType>() { DataTypes.Byte, DataTypes.SByte, DataTypes.UInt16, DataTypes.Int16, DataTypes.UInt32, DataTypes.Int32, DataTypes.UInt64, DataTypes.Int64 };
+        public override List<DataType> TargetTypeList { get; } = new List<DataType>() { DataTypes.Single, DataTypes.Double };
 
-        public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
+        public override bool OnConvert(object inData, DataType targetType, [NotNullWhen(true)] out object? outData)
         {
-            outData = System.Convert.ChangeType(inData, targetType);
+            outData = System.Convert.ChangeType(inData, targetType.Type);
             return true;
         }
     }

@@ -11,7 +11,8 @@ namespace easyTypeConverter.Transformation.Transformer.Options
 {
     public class TypeConverterTransformerOptions : DataTransformerOptions
     {
-
+        [JsonPropertyName("targetType")]
+        public string TargetType { get; set; } = string.Empty;
         [JsonPropertyName("converter")]
         public ITypeConverterOptions? Converter { get; set; }
         

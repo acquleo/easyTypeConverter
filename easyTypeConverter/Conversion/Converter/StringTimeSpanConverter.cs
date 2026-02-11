@@ -20,10 +20,10 @@ namespace easyTypeConverter.Conversion.Converter
         {
         }
 
-        public override List<Type> SourceTypeList { get => new List<Type>() { typeof(string) }; }
-        public override List<Type> TargetTypeList { get => new List<Type>() { typeof(TimeSpan) }; }
+        public override List<DataType> SourceTypeList { get => new List<DataType>() { DataTypes.String }; }
+        public override List<DataType> TargetTypeList { get => new List<DataType>() { DataTypes.TimeSpan }; }
 
-        public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
+        public override bool OnConvert(object inData, DataType targetType, [NotNullWhen(true)] out object? outData)
         {
             var culture = CultureInfoHelper.GetCultureInfo(this.options.Culture);
 

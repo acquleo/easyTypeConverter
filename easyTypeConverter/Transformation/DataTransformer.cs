@@ -23,8 +23,13 @@ namespace easyTypeConverter.Transformation
                     sourceTypes.Add(type);
             }
         }
-        protected bool IsSourceType(Type type)
-        { return sourceTypes.Contains(type); }
+        protected bool IsSourceType(Type type) 
+        { 
+            if(sourceTypes.Count==0)
+                return true; // If no source types defined, accept all types
+
+            return sourceTypes.Contains(type); 
+        }
 
         public abstract List<Type> SourceTypeList { get; }
         protected abstract bool OnTransform(DataTransformOutput inData, [NotNullWhen(true)] out DataTransformOutput? outData);

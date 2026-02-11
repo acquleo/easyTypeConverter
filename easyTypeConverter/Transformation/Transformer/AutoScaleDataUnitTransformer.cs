@@ -55,7 +55,7 @@ namespace easyTypeConverter.Transformation.Transformer
         public AutoScaleDataUnitTransformer(AutoScaleDataUnitTransformerOptions options) : base(options)
         {
             this.options = options;
-            _useBinary = true;
+            _useBinary = options.UseBinary;
             this._family = DetectFamily(options.SourceUnit);
         }
         public AutoScaleDataUnitTransformer():this(new AutoScaleDataUnitTransformerOptions())

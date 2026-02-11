@@ -1,4 +1,5 @@
-﻿using easyTypeConverter.Conversion.Converter.Options;
+﻿using easyTypeConverter.Common;
+using easyTypeConverter.Conversion.Converter.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -27,14 +28,14 @@ namespace easyTypeConverter.Conversion
 
             foreach(var type in TargetTypeList)
             {
-                if(!targetTypes.Contains(type))
-                    targetTypes.Add(type);
+                if(!targetTypes.Contains(type.Type))
+                    targetTypes.Add(type.Type);
             }
 
             foreach (var type in SourceTypeList)
             {
-                if (!sourceTypes.Contains(type))
-                    sourceTypes.Add(type);
+                if (!sourceTypes.Contains(type.Type))
+                    sourceTypes.Add(type.Type);
             }
         }
 
@@ -53,9 +54,9 @@ namespace easyTypeConverter.Conversion
         protected bool IsTargetType(Type type)
         { return targetTypes.Contains(type); }
 
-        public abstract List<Type> SourceTypeList { get; }
-        public abstract List<Type> TargetTypeList { get; }
-        public abstract bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData);
+        public abstract List<DataType> SourceTypeList { get; }
+        public abstract List<DataType> TargetTypeList { get; }
+        public abstract bool OnConvert(object inData, DataType targetType, [NotNullWhen(true)] out object? outData);
         public bool Convert(object? inData, out object? outData)
         {
             var targetType = TargetTypeList.FirstOrDefault();
@@ -64,7 +65,7 @@ namespace easyTypeConverter.Conversion
 
             return Convert(inData, targetType, out outData);
         }
-        public bool Convert(object? inData, Type targetType, out object? outData)
+        public bool Convert(object? inData, DataType targetType, out object? outData)
         {
             if (inData == null)
             {
@@ -78,7 +79,7 @@ namespace easyTypeConverter.Conversion
                 return false;
             }
 
-            if (!IsTargetType(targetType))
+            if (!IsTargetType(targetType.Type))
             {
                 outData = null;
                 return false;

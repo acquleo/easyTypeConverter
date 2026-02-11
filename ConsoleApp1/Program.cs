@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using easyTypeConverter.Common;
 using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Converter.Options;
 using easyTypeConverter.Conversion.Filters.Options;
@@ -13,8 +14,6 @@ handler.AddConverter(new StringBooleanConverterOptions()
     .AddInputFilter(new StringNumericBooleanFilterOptions()));
 
 handler.AddConverter(new BooleanStringConverterOptions());
-
-handler.AddConverter(new Int32StringConverterOptions());
 
 var opt2 = new StringBooleanConverterOptions()
     .AddInputFilter(new StringTrimFilterOptions())
@@ -48,28 +47,29 @@ opt.InputFilters.Add(new StringRemovePrefixFilterOptions()
 handler.AddConverter(opt);
 
 object? result = null;
-handler.Convert("0", typeof(Boolean), out result);
+handler.Convert("0", DataTypes.FromType(typeof(Boolean)), out result);
 Console.WriteLine(result);
 
-handler.Convert("1", typeof(Boolean), out result);
+handler.Convert("1", DataTypes.FromType(typeof(Boolean)), out result);
 Console.WriteLine(result);
 
-handler.Convert("True", typeof(Boolean), out result);
+handler.Convert("True", DataTypes.FromType(typeof(Boolean)), out result);
 Console.WriteLine(result);
 
-handler.Convert(true, typeof(string), out result);
+handler.Convert(true, DataTypes.FromType(typeof(string)), out result);
 Console.WriteLine(result);
 
-handler.Convert(12, typeof(string), out result);
+handler.Convert(12, DataTypes.FromType(typeof(string)), out result);
 Console.WriteLine(result);
 
-handler.Convert("POSITIVE", typeof(bool), out result);
+
+handler.Convert("POSITIVE", DataTypes.FromType(typeof(Boolean)), out result);
 Console.WriteLine(result);
 
-handler.Convert("12", typeof(byte), out result);
+handler.Convert("12", DataTypes.FromType(typeof(Byte)), out result);
 Console.WriteLine(result);
 
-handler.Convert("0xF", typeof(byte), out result);
+handler.Convert("0xF", DataTypes.FromType(typeof(Byte)), out result);
 Console.WriteLine(result);
 
 TypeConverterHandler handlertest = new TypeConverterHandler();
@@ -80,7 +80,7 @@ handlertest.AddConverter(new StringDecimalConverterOptions()
 long hit = 0;
 for (int i = 0; i < 1000000; i++)
 {
-    var outType = typeof(decimal);
+    var outType = DataTypes.FromType(typeof(Decimal));
 
     if (handlertest.Convert($@"10.12345678", outType, out result)) hit++;
 

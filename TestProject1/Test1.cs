@@ -46,48 +46,48 @@ namespace TestProject1
 
 
             object? result = null;
-            handler.Convert("0", typeof(Boolean), out result);
+            handler.Convert("0", DataTypes.FromType(typeof(Boolean)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(false, result);
 
-            handler.Convert("1", typeof(Boolean), out result);
+            handler.Convert("1", DataTypes.FromType(typeof(Boolean)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(true, result);
 
-            handler.Convert(" 1", typeof(Boolean), out result);
+            handler.Convert(" 1", DataTypes.FromType(typeof(Boolean)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(true, result);
 
-            handler.Convert("12", typeof(Boolean), out result);
-
-            Assert.IsNotNull(result);
-            Assert.AreEqual(true, result);
-
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
-            {
-                handler.Convert("FF", typeof(Boolean), out result);
-            });
-
-
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
-            {
-                handler.Convert("0x00", typeof(Boolean), out result);
-            });
-
-            handler.Convert("-4", typeof(Boolean), out result);
+            handler.Convert("12", DataTypes.FromType(typeof(Boolean)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(true, result);
 
             Assert.ThrowsException<TypeConverterFailedException>(() =>
             {
-                handler.Convert("pippo", typeof(bool), out result);
+                handler.Convert("FF", DataTypes.FromType(typeof(Boolean)), out result);
             });
 
-            handler.Convert("True", typeof(bool), out result);
+
+            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            {
+                handler.Convert("0x00", DataTypes.FromType(typeof(Boolean)), out result);
+            });
+
+            handler.Convert("-4", DataTypes.FromType(typeof(Boolean)), out result);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(true, result);
+
+            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            {
+                handler.Convert("pippo", DataTypes.FromType(typeof(Boolean)), out result);
+            });
+
+            handler.Convert("True", DataTypes.FromType(typeof(Boolean)), out result);
             Assert.IsNotNull(result);
             Assert.AreEqual(true, result);
         }
@@ -105,50 +105,50 @@ namespace TestProject1
 
 
             object? result = null;
-            handler.Convert("0", typeof(byte), out result);
+            handler.Convert("0", DataTypes.FromType(typeof(Byte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)0, result);
 
-            handler.Convert("1", typeof(byte), out result);
+            handler.Convert("1", DataTypes.FromType(typeof(Byte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)1, result);
 
-            handler.Convert("12", typeof(byte), out result);
+            handler.Convert("12", DataTypes.FromType(typeof(Byte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)18, result);
 
-            handler.Convert("15000", typeof(uint), out result);
+            handler.Convert("15000", DataTypes.FromType(typeof(UInt32)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((uint)86016, result);
 
-            handler.Convert("0xFF", typeof(byte), out result);
+            handler.Convert("0xFF", DataTypes.FromType(typeof(Byte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)255, result);
 
-            handler.Convert("0x00", typeof(byte), out result);
+            handler.Convert("0x00", DataTypes.FromType(typeof(Byte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)0, result);
 
             Assert.ThrowsException<TypeConverterFailedException>(() =>
             {
-                handler.Convert("-4", typeof(byte), out result);
+                handler.Convert("-4", DataTypes.FromType(typeof(Byte)), out result);
             });
 
 
             Assert.ThrowsException<TypeConverterFailedException>(() =>
             {
-                handler.Convert("pippo", typeof(byte), out result);
+                handler.Convert("pippo", DataTypes.FromType(typeof(Byte)), out result);
             });
 
             Assert.ThrowsException<TypeConverterFailedException>(() =>
             {
-                handler.Convert("True", typeof(byte), out result);
+                handler.Convert("True", DataTypes.FromType(typeof(Byte)), out result);
             });
 
         }
@@ -163,47 +163,47 @@ namespace TestProject1
 
 
             object? result = null;
-            handler.Convert($@"{byte.MinValue}", typeof(byte), out result);
+            handler.Convert($@"{byte.MinValue}", DataTypes.FromType(typeof(Byte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)byte.MinValue, result);
 
-            handler.Convert($@"{byte.MaxValue}", typeof(byte), out result);
+            handler.Convert($@"{byte.MaxValue}", DataTypes.FromType(typeof(Byte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)byte.MaxValue, result);
 
-            handler.Convert($@"{sbyte.MinValue}", typeof(sbyte), out result);
+            handler.Convert($@"{sbyte.MinValue}", DataTypes.FromType(typeof(SByte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((sbyte)sbyte.MinValue, result);
 
-            handler.Convert($@"{sbyte.MaxValue}", typeof(sbyte), out result);
+            handler.Convert($@"{sbyte.MaxValue}", DataTypes.FromType(typeof(SByte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((sbyte)sbyte.MaxValue, result);
 
-            handler.Convert($@"{short.MinValue}", typeof(short), out result);
+            handler.Convert($@"{short.MinValue}", DataTypes.FromType(typeof(Int16)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((short)short.MinValue, result);
 
-            handler.Convert($@"{short.MaxValue}", typeof(short), out result);
+            handler.Convert($@"{short.MaxValue}", DataTypes.FromType(typeof(Int16)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((short)short.MaxValue, result);
 
-            handler.Convert($@"{ushort.MinValue}", typeof(ushort), out result);
+            handler.Convert($@"{ushort.MinValue}", DataTypes.FromType(typeof(UInt16)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((ushort)ushort.MinValue, result);
 
-            handler.Convert($@"{ushort.MaxValue}", typeof(ushort), out result);
+            handler.Convert($@"{ushort.MaxValue}", DataTypes.FromType(typeof(UInt16)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((ushort)ushort.MaxValue, result);
 
-            handler.Convert($@"{int.MinValue}", typeof(int), out result);
+            handler.Convert($@"{int.MinValue}", DataTypes.FromType(typeof(Int32)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((int)int.MinValue, result);
@@ -213,27 +213,27 @@ namespace TestProject1
             Assert.IsNotNull(result);
             Assert.AreEqual((int)int.MaxValue, result);
 
-            handler.Convert($@"{uint.MinValue}", typeof(uint), out result);
+            handler.Convert($@"{uint.MinValue}", DataTypes.FromType(typeof(UInt32)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((uint)uint.MinValue, result);
 
-            handler.Convert($@"{uint.MaxValue}", typeof(uint), out result);
+            handler.Convert($@"{uint.MaxValue}", DataTypes.FromType(typeof(UInt32)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((uint)uint.MaxValue, result);
 
-            handler.Convert($@"{long.MinValue}", typeof(long), out result);
+            handler.Convert($@"{long.MinValue}", DataTypes.FromType(typeof(Int64)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((long)long.MinValue, result);
 
-            handler.Convert($@"{long.MaxValue}", typeof(long), out result);
+            handler.Convert($@"{long.MaxValue}", DataTypes.FromType(typeof(Int64)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((long)long.MaxValue, result);
 
-            handler.Convert($@"{ulong.MinValue}", typeof(ulong), out result);
+            handler.Convert($@"{ulong.MinValue}", DataTypes.FromType(typeof(UInt64)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((ulong)ulong.MinValue, result);
@@ -255,38 +255,38 @@ namespace TestProject1
 
 
             object? result = null;
-            handler.Convert("0", typeof(byte), out result);
+            handler.Convert("0", DataTypes.FromType(typeof(Byte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)0, result);
 
-            handler.Convert("1", typeof(byte), out result);
+            handler.Convert("1", DataTypes.FromType(typeof(Byte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)1, result);
 
-            handler.Convert("12", typeof(byte), out result);
+            handler.Convert("12", DataTypes.FromType(typeof(Byte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)12, result);
 
-            handler.Convert("0x12", typeof(byte), out result);
+            handler.Convert("0x12", DataTypes.FromType(typeof(Byte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)18, result);
 
-            handler.Convert("&h12", typeof(byte), out result);
+            handler.Convert("&h12", DataTypes.FromType(typeof(Byte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)18, result);
 
-            handler.Convert("0X12", typeof(byte), out result);
+            handler.Convert("0X12", DataTypes.FromType(typeof(Byte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)18, result);
 
 
-            handler.Convert("HEXAAA!FA", typeof(byte), out result);
+            handler.Convert("HEXAAA!FA", DataTypes.FromType(typeof(Byte)), out result);
 
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)250, result);
@@ -828,9 +828,9 @@ namespace TestProject1
         {
             DataTransformerHandlerOptions options = new DataTransformerHandlerOptions();
 
-            //options.AddTransformer(new TypeConverterTransformerOptions()
-            //    .AddConvert(new FloatingConverterOptions())
-            //    .WithTargetType("float"));
+            options.AddTransformer(new TypeConverterTransformerOptions()
+                .WithConvert(new FloatingConverterOptions())
+                .WithTargetType(DataTypes.Single));
             options.AddTransformer(new ScalingTransformerOptions()
                 .WithInputMin(0).WithInputMax(100)
                 .WithOutputMin(0).WithOutputMax(10000));
