@@ -4,44 +4,44 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace easyTypeConverter.Conversion.Converter
 {
     public class StringDateTimeConverter : TypeConverter
-    { 
-        StringFloatingConverterOptions options;
-        public StringDateTimeConverter(StringFloatingConverterOptions options) : base(options)
+    {
+        StringDateTimeConverterOptions options;
+        public StringDateTimeConverter(StringDateTimeConverterOptions options) : base(options)
         {
             this.options = options;
-
         }
 
-        public StringDateTimeConverter(): this(new StringFloatingConverterOptions())
+        public StringDateTimeConverter() : this(new StringDateTimeConverterOptions())
         {
-            
         }
 
-        public override List<Type> SourceTypeList { get => new List<Type>() { typeof(string) }; }
-        public override List<Type> TargetTypeList { get => new List<Type>() { typeof(float), typeof(double) }; }
-
+        public override List<Type> SourceTypeList { get; } = new List<Type>() { typeof(string) };
+        public override List<Type> TargetTypeList { get; } = new List<Type>() { typeof(DateTime) };
 
         public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
         {
-            outData = default;
-
-            if (!double.TryParse((string)inData, options.NumberStyle,
-                this.options.Culture, out var doubleParsed))
+            outData = null;
+            var str = inData as string;
+            if (str == null)
                 return false;
-
-
-            outData = System.Convert.ChangeType(doubleParsed, targetType); ;
-            return true;
+            if (options.Formats != null && options.Formats.Length > 0)
+            {
+                if (!DateTime.TryParseExact(str, options.Formats, options.Culture, options.DateTimeStyles, out var dt))
+                    return false;
+                outData = dt;
+                return true;
+            }
+            else
+            {
+                if (!DateTime.TryParse(str, options.Culture, options.DateTimeStyles, out var dt))
+                    return false;
+                outData = dt;
+                return true;
+            }
         }
-
-
-
     }
 }

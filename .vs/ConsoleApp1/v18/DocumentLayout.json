@@ -1,136 +1,360 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\github\\easyTypeConverter\\",
+  "WorkspaceRootPath": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0A7E8AF8-91B7-418F-83C4-A32B69AAE82C}|TestProject1\\TestProject1.csproj|d:\\github\\easytypeconverter\\testproject1\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\datetimenumberconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\datetimenumberconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\numberbooleanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\numberbooleanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\numberbooleanconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\numberbooleanconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\booleannumberconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\booleannumberconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\booleannumberconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\booleannumberconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\stringtimespanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\stringtimespanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\timespannumberconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\timespannumberconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\datetimenumberconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\datetimenumberconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\numberdatetimeconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\numberdatetimeconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\inumberdatetimeconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\inumberdatetimeconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\stringdatetimeconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\stringdatetimeconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\idatetimenumberconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\idatetimenumberconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\optionsextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\optionsextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\stringdatetimeconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\stringdatetimeconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\numberdatetimeconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\numberdatetimeconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\numbertimespanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\numbertimespanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\numbertimespanconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\numbertimespanconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\istringtimespanconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\istringtimespanconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\istringtextinputoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\istringtextinputoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\istringoutputoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\istringoutputoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\itimespannumberconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\itimespannumberconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\itimespanstringconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\itimespanstringconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\itypeconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\itypeconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\floatingstringconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\floatingstringconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A7E8AF8-91B7-418F-83C4-A32B69AAE82C}|TestProject1\\TestProject1.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\testproject1\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A7E8AF8-91B7-418F-83C4-A32B69AAE82C}|TestProject1\\TestProject1.csproj|solutionrelative:testproject1\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\datatransformerhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\datatransformerhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\stringdecimalconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\stringdecimalconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\datatransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\stringfloatingconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\stringfloatingconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\stringbooleanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\stringbooleanconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\int32stringconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\int32stringconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\transformation\\datatransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\datatransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\autoscaledataunittransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\autoscaledataunittransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\transformation\\datatransformoutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\datatransformoutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\autoscaledataunittransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\autoscaledataunittransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\datatransformerhandleroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\datatransformerhandleroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\datatransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\datatransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\bitmasktransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\bitmasktransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\idatatransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\idatatransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\typeconversiontransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\typeconversiontransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\scalingtransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\scalingtransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\percentagenormalizertransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\percentagenormalizertransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\deadbandtransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\deadbandtransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\dataunittransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\dataunittransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\bitmasktransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\bitmasktransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\dataunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\dataunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\dataunitfamily.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\dataunitfamily.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\deadbandtransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\deadbandtransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\typeconversiontransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\typeconversiontransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\conversion\\typeconverterhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\typeconverterhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\dataunittransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\dataunittransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\dataunittransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\scalingtransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\scalingtransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\autoscaledataunittransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\autoscaledataunittransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\percentagenormalizertransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\int32stringconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\int32stringconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\stringnumericconverterbaseoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\stringnumericconverterbaseoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\stringfloatingconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\stringfloatingconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\booleanstringconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\booleanstringconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\percentagenormalizertransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\percentagenormalizertransformer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\formatting\\formatter\\templateformatter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\formatting\\formatter\\templateformatter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\typeconverterexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\typeconverterexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|d:\\github\\easytypeconverter\\easytypeconverter\\formatting\\formatter\\valueformatter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\formatting\\formatter\\valueformatter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\typeconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\typeconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\typeconverterfailedexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\typeconverterfailedexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\typeconvertercontextbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\typeconvertercontextbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\typeconverterhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\typeconverterhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\typeconverternotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\typeconverternotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\dataunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\dataunit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\autoscaledataunittransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\autoscaledataunittransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\percentagenormalizertransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\percentagenormalizertransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\dataunittransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\dataunittransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\dataunitfamily.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\dataunitfamily.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\transformation\\transformer\\options\\idatatransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\transformation\\transformer\\options\\idatatransformeroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B68813F-23C2-8DF2-1B1F-9033A2893F62}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\filters\\options\\stringtrimfilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\filters\\options\\stringtrimfilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\filters\\options\\stringreplacefilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\filters\\options\\stringreplacefilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\filters\\options\\stringregexmatchreplacefilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\filters\\options\\stringregexmatchreplacefilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\filters\\options\\stringnumericbooleanfilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\filters\\options\\stringnumericbooleanfilteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\stringnumericconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\stringnumericconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\stringbooleanconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\stringbooleanconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\converter\\options\\stringdecimalconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\converter\\options\\stringdecimalconverteroptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|c:\\users\\venteli\\source\\repos\\easytypeconverter\\easytypeconverter\\conversion\\convertdelegate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B9AC356-C8CF-49C8-859A-17195BD26519}|easyTypeConverter\\easyTypeConverter.csproj|solutionrelative:easytypeconverter\\conversion\\convertdelegate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 213,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 20,
+          "SelectedChildIndex": 15,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NumberBooleanConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\NumberBooleanConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\NumberBooleanConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\NumberBooleanConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\NumberBooleanConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T11:24:47.698Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NumberBooleanConverter.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\NumberBooleanConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\NumberBooleanConverter.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\NumberBooleanConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\NumberBooleanConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T11:24:42.803Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BooleanNumberConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\BooleanNumberConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\BooleanNumberConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\BooleanNumberConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\BooleanNumberConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T11:24:35.13Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BooleanNumberConverter.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\BooleanNumberConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\BooleanNumberConverter.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\BooleanNumberConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\BooleanNumberConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T11:24:30.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StringTimeSpanConverter.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\StringTimeSpanConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\StringTimeSpanConverter.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\StringTimeSpanConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\StringTimeSpanConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T11:14:43.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TimeSpanNumberConverter.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\TimeSpanNumberConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\TimeSpanNumberConverter.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\TimeSpanNumberConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\TimeSpanNumberConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T11:14:20.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "INumberDateTimeConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\INumberDateTimeConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\INumberDateTimeConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\INumberDateTimeConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\INumberDateTimeConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T10:56:12.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IDateTimeNumberConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\IDateTimeNumberConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\IDateTimeNumberConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\IDateTimeNumberConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\IDateTimeNumberConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T10:52:55.355Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -154,345 +378,664 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AutoScaleDataUnitTransformer.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\AutoScaleDataUnitTransformer.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\AutoScaleDataUnitTransformer.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\AutoScaleDataUnitTransformer.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\AutoScaleDataUnitTransformer.cs",
-              "ViewState": "AgIAAIYAAAAAAAAAAIAwwLUAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T23:07:22.263Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DataTransformerHandler.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\DataTransformerHandler.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\DataTransformerHandler.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\DataTransformerHandler.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\DataTransformerHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAgwDkAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:59:37.357Z",
-              "EditorCaption": ""
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "DataTransformerOptions.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataTransformerOptions.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataTransformerOptions.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataTransformerOptions.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataTransformerOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAAwAAAAAAAAAA==",
+              "Title": "DateTimeNumberConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\DateTimeNumberConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\DateTimeNumberConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\DateTimeNumberConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\DateTimeNumberConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:56:36.28Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "BitMaskTransformerOptions.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\BitMaskTransformerOptions.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\BitMaskTransformerOptions.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\BitMaskTransformerOptions.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\BitMaskTransformerOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:49:15.555Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "DataUnit.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnit.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnit.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnit.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:48:53.093Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "DataUnitFamily.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitFamily.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitFamily.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitFamily.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitFamily.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:48:48.66Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "DataUnitTransformerOptions.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitTransformerOptions.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitTransformerOptions.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitTransformerOptions.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitTransformerOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:48:37.839Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DeadbandTransformerOptions.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DeadbandTransformerOptions.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\DeadbandTransformerOptions.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DeadbandTransformerOptions.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\DeadbandTransformerOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:48:26.74Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DataTransformer.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\DataTransformer.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\DataTransformer.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\DataTransformer.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\DataTransformer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwC0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:46:43.349Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Extensions.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\Extensions.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\Extensions.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\Extensions.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\Extensions.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAIAwwCgAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:42:01.633Z",
+              "WhenOpened": "2026-02-11T10:50:17.429Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Test1.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\TestProject1\\Test1.cs",
-              "RelativeDocumentMoniker": "TestProject1\\Test1.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\TestProject1\\Test1.cs",
-              "RelativeToolTip": "TestProject1\\Test1.cs",
-              "ViewState": "AgIAACIDAAAAAAAAAAAjwE0DAAAMAAAAAAAAAA==",
+              "Title": "DateTimeNumberConverter.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\DateTimeNumberConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\DateTimeNumberConverter.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\DateTimeNumberConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\DateTimeNumberConverter.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAIAwwBUAAAD2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:40:56.554Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DataTransformerHandlerOptions.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataTransformerHandlerOptions.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataTransformerHandlerOptions.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataTransformerHandlerOptions.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataTransformerHandlerOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:40:28.693Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ScalingTransformerOptions.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\ScalingTransformerOptions.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\ScalingTransformerOptions.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\ScalingTransformerOptions.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\ScalingTransformerOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBUAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:39:16.38Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "PercentageNormalizerTransformerOptions.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\PercentageNormalizerTransformerOptions.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\PercentageNormalizerTransformerOptions.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\PercentageNormalizerTransformerOptions.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\PercentageNormalizerTransformerOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:38:55.665Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IDataTransformerOptions.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\IDataTransformerOptions.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\IDataTransformerOptions.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\IDataTransformerOptions.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\IDataTransformerOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:38:53.329Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AutoScaleDataUnitTransformerOptions.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\AutoScaleDataUnitTransformerOptions.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\AutoScaleDataUnitTransformerOptions.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\AutoScaleDataUnitTransformerOptions.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\AutoScaleDataUnitTransformerOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:38:51.143Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "TypeConverterHandler.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Conversion\\TypeConverterHandler.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\TypeConverterHandler.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Conversion\\TypeConverterHandler.cs",
-              "RelativeToolTip": "easyTypeConverter\\Conversion\\TypeConverterHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:37:04.592Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "DataUnitTransformer.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\DataUnitTransformer.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\DataUnitTransformer.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\DataUnitTransformer.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\DataUnitTransformer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:32:08.856Z",
+              "WhenOpened": "2026-02-11T10:50:04.7Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "TypeConversionTransformerOptions.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\TypeConversionTransformerOptions.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\TypeConversionTransformerOptions.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\TypeConversionTransformerOptions.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\TypeConversionTransformerOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Title": "StringDateTimeConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\StringDateTimeConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\StringDateTimeConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\StringDateTimeConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\StringDateTimeConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:30:48.45Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "TypeConversionTransformer.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\TypeConversionTransformer.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\TypeConversionTransformer.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\TypeConversionTransformer.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\TypeConversionTransformer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBMAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:29:57.499Z",
+              "WhenOpened": "2026-02-11T10:32:58.32Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "BitMaskTransformer.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\BitMaskTransformer.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\BitMaskTransformer.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\BitMaskTransformer.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\BitMaskTransformer.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAswD4AAABKAAAAAAAAAA==",
+              "Title": "NumberDateTimeConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\NumberDateTimeConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\NumberDateTimeConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\NumberDateTimeConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\NumberDateTimeConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:24:18.716Z",
+              "WhenOpened": "2026-02-11T10:00:58.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "NumberDateTimeConverter.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\NumberDateTimeConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\NumberDateTimeConverter.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\NumberDateTimeConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\NumberDateTimeConverter.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCUAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T10:00:44.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "NumberTimeSpanConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\NumberTimeSpanConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\NumberTimeSpanConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\NumberTimeSpanConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\NumberTimeSpanConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T09:31:37.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IStringTimeSpanConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\IStringTimeSpanConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\IStringTimeSpanConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\IStringTimeSpanConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\IStringTimeSpanConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T08:32:56.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ITimeSpanNumberConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\ITimeSpanNumberConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\ITimeSpanNumberConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\ITimeSpanNumberConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\ITimeSpanNumberConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T08:32:54.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ITimeSpanStringConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\ITimeSpanStringConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\ITimeSpanStringConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\ITimeSpanStringConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\ITimeSpanStringConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T08:32:52.857Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 23,
-              "Title": "PercentageNormalizerTransformer.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\PercentageNormalizerTransformer.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\PercentageNormalizerTransformer.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\PercentageNormalizerTransformer.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\PercentageNormalizerTransformer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA==",
+              "Title": "FloatingStringConverter.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\FloatingStringConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\FloatingStringConverter.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\FloatingStringConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\FloatingStringConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:23:09.081Z",
+              "WhenOpened": "2026-02-11T08:27:12.198Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "ScalingTransformer.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\ScalingTransformer.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\ScalingTransformer.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\ScalingTransformer.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\ScalingTransformer.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAC8AAAAzAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "NumberTimeSpanConverter.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\NumberTimeSpanConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\NumberTimeSpanConverter.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\NumberTimeSpanConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\NumberTimeSpanConverter.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:22:08.059Z",
+              "WhenOpened": "2026-02-11T08:22:13.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "BooleanStringConverter.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\BooleanStringConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\BooleanStringConverter.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\BooleanStringConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\BooleanStringConverter.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T10:48:33.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "StringDecimalConverter.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\StringDecimalConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\StringDecimalConverter.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\StringDecimalConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\StringDecimalConverter.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T10:26:51.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Int32StringConverter.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Int32StringConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Int32StringConverter.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Int32StringConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Int32StringConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T10:26:17.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "StringBooleanConverter.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\StringBooleanConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\StringBooleanConverter.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\StringBooleanConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\StringBooleanConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T10:25:48.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "TypeConverterNotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\TypeConverterNotFoundException.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\TypeConverterNotFoundException.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\TypeConverterNotFoundException.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\TypeConverterNotFoundException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T10:21:54.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "TypeConverterException.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\TypeConverterException.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\TypeConverterException.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\TypeConverterException.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\TypeConverterException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T10:21:50.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "TypeConverterFailedException.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\TypeConverterFailedException.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\TypeConverterFailedException.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\TypeConverterFailedException.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\TypeConverterFailedException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T10:21:49.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "TypeConverterContextBase.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\TypeConverterContextBase.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\TypeConverterContextBase.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\TypeConverterContextBase.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\TypeConverterContextBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T10:21:47.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "StringFloatingConverter.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\StringFloatingConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\StringFloatingConverter.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\StringFloatingConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\StringFloatingConverter.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T08:58:09.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "StringDateTimeConverter.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\StringDateTimeConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\StringDateTimeConverter.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\StringDateTimeConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\StringDateTimeConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T08:31:50.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "PercentageNormalizerTransformerOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\PercentageNormalizerTransformerOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\PercentageNormalizerTransformerOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\PercentageNormalizerTransformerOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\PercentageNormalizerTransformerOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T00:22:20.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "PercentageNormalizerTransformer.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\PercentageNormalizerTransformer.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\PercentageNormalizerTransformer.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\PercentageNormalizerTransformer.cs",
+              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\PercentageNormalizerTransformer.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T00:21:43.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "DataTransformOutput.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\DataTransformOutput.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\DataTransformOutput.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\DataTransformOutput.cs",
+              "RelativeToolTip": "easyTypeConverter\\Transformation\\DataTransformOutput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T00:04:56.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "DataUnitFamily.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitFamily.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitFamily.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitFamily.cs",
+              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitFamily.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:39:26.486Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "DataUnit.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnit.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnit.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnit.cs",
+              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:39:01.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "AutoScaleDataUnitTransformerOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\AutoScaleDataUnitTransformerOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\AutoScaleDataUnitTransformerOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\AutoScaleDataUnitTransformerOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\AutoScaleDataUnitTransformerOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:38:21.684Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "AutoScaleDataUnitTransformer.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\AutoScaleDataUnitTransformer.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\AutoScaleDataUnitTransformer.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\AutoScaleDataUnitTransformer.cs",
+              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\AutoScaleDataUnitTransformer.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAwwIYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:37:25.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Extensions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\Extensions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\Extensions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\Extensions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\Extensions.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAA5wFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:25:30.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\ConsoleApp1\\Program.cs",
+              "RelativeDocumentMoniker": "ConsoleApp1\\Program.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\ConsoleApp1\\Program.cs",
+              "RelativeToolTip": "ConsoleApp1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:21:13.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "TypeConverterHandler.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\TypeConverterHandler.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\TypeConverterHandler.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\TypeConverterHandler.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\TypeConverterHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:19:36.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "StringTrimFilterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Filters\\Options\\StringTrimFilterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Filters\\Options\\StringTrimFilterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Filters\\Options\\StringTrimFilterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Filters\\Options\\StringTrimFilterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:19:33.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "StringReplaceFilterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Filters\\Options\\StringReplaceFilterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Filters\\Options\\StringReplaceFilterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Filters\\Options\\StringReplaceFilterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Filters\\Options\\StringReplaceFilterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:19:29.545Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "StringRegexMatchReplaceFilterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Filters\\Options\\StringRegexMatchReplaceFilterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Filters\\Options\\StringRegexMatchReplaceFilterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Filters\\Options\\StringRegexMatchReplaceFilterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Filters\\Options\\StringRegexMatchReplaceFilterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:19:25.668Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "StringNumericBooleanFilterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Filters\\Options\\StringNumericBooleanFilterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Filters\\Options\\StringNumericBooleanFilterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Filters\\Options\\StringNumericBooleanFilterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Filters\\Options\\StringNumericBooleanFilterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:19:21.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "StringNumericConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\StringNumericConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\StringNumericConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\StringNumericConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\StringNumericConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:19:17.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "StringNumericConverterBaseOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\StringNumericConverterBaseOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\StringNumericConverterBaseOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\StringNumericConverterBaseOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\StringNumericConverterBaseOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:19:13.181Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "StringFloatingConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\StringFloatingConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\StringFloatingConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\StringFloatingConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\StringFloatingConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:19:07.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "StringBooleanConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\StringBooleanConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\StringBooleanConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\StringBooleanConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\StringBooleanConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:19:04.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OptionsExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\OptionsExtensions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\OptionsExtensions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\OptionsExtensions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\OptionsExtensions.cs",
+              "ViewState": "AgIAAO4AAAAAAAAAAAA7wAEBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:18:58.944Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
-              "Title": "DeadbandTransformer.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\DeadbandTransformer.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\DeadbandTransformer.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\DeadbandTransformer.cs",
-              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\DeadbandTransformer.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAjwCIAAAA1AAAAAAAAAA==",
+              "Title": "IStringTextInputOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\IStringTextInputOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\IStringTextInputOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\IStringTextInputOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\IStringTextInputOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:20:33.518Z",
+              "WhenOpened": "2026-02-09T23:18:54.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "ValueFormatter.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Formatting\\Formatter\\ValueFormatter.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Formatting\\Formatter\\ValueFormatter.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Formatting\\Formatter\\ValueFormatter.cs",
-              "RelativeToolTip": "easyTypeConverter\\Formatting\\Formatter\\ValueFormatter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA4AAAAAAAAAA==",
+              "DocumentIndex": 58,
+              "Title": "StringDecimalConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\StringDecimalConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\StringDecimalConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\StringDecimalConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\StringDecimalConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:12:32.653Z",
+              "WhenOpened": "2026-02-09T23:18:43.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IStringOutputOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\IStringOutputOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\IStringOutputOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\IStringOutputOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\IStringOutputOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:18:26.555Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Int32StringConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\Int32StringConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\Int32StringConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\Int32StringConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\Int32StringConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:18:21.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ITypeConverterOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\ITypeConverterOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\Converter\\Options\\ITypeConverterOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\Converter\\Options\\ITypeConverterOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\Converter\\Options\\ITypeConverterOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:17:59.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "DataUnitTransformer.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\DataUnitTransformer.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\DataUnitTransformer.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\DataUnitTransformer.cs",
+              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\DataUnitTransformer.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:15:43.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "IDataTransformerOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\IDataTransformerOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\IDataTransformerOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\IDataTransformerOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\IDataTransformerOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:14:46.635Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
-              "Title": "TemplateFormatter.cs",
-              "DocumentMoniker": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Formatting\\Formatter\\TemplateFormatter.cs",
-              "RelativeDocumentMoniker": "easyTypeConverter\\Formatting\\Formatter\\TemplateFormatter.cs",
-              "ToolTip": "D:\\github\\easyTypeConverter\\easyTypeConverter\\Formatting\\Formatter\\TemplateFormatter.cs",
-              "RelativeToolTip": "easyTypeConverter\\Formatting\\Formatter\\TemplateFormatter.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAADwAAAAIAAAAAAAAAA==",
+              "Title": "Test1.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\TestProject1\\Test1.cs",
+              "RelativeDocumentMoniker": "TestProject1\\Test1.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\TestProject1\\Test1.cs",
+              "RelativeToolTip": "TestProject1\\Test1.cs",
+              "ViewState": "AgIAAPMBAAAAAAAAAAAIwOgBAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T22:12:31.81Z",
+              "WhenOpened": "2026-02-09T22:57:13.522Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "DataUnitTransformerOptions.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitTransformerOptions.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitTransformerOptions.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitTransformerOptions.cs",
+              "RelativeToolTip": "easyTypeConverter\\Transformation\\Transformer\\Options\\DataUnitTransformerOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAApwAgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:08:20.81Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "TypeConverter.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\TypeConverter.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\TypeConverter.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\TypeConverter.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\TypeConverter.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAA0wDcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:04:39.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "DataTransformer.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\DataTransformer.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Transformation\\DataTransformer.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Transformation\\DataTransformer.cs",
+              "RelativeToolTip": "easyTypeConverter\\Transformation\\DataTransformer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:04:23.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "ConvertDelegate.cs",
+              "DocumentMoniker": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\ConvertDelegate.cs",
+              "RelativeDocumentMoniker": "easyTypeConverter\\Conversion\\ConvertDelegate.cs",
+              "ToolTip": "C:\\Users\\venteli\\source\\repos\\easyTypeConverter\\easyTypeConverter\\Conversion\\ConvertDelegate.cs",
+              "RelativeToolTip": "easyTypeConverter\\Conversion\\ConvertDelegate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T23:02:30.98Z"
             }
           ]
         }
