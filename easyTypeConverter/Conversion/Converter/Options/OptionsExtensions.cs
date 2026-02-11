@@ -236,5 +236,61 @@ namespace easyTypeConverter.Conversion.Converter.Options
             return obj;
         }
     }
-
+    public static class INumberDateTimeConverterOptionsExtensions
+    {
+        public static T WithUnit<T>(this T obj, NumberDateTimeUnit unit)
+            where T : INumberDateTimeConverterOptions
+        {
+            obj.Unit = unit;
+            return obj;
+        }
+        public static T WithEpoch<T>(this T obj, DateTime epoch)
+            where T : INumberDateTimeConverterOptions
+        {
+            obj.Epoch = epoch;
+            return obj;
+        }
+        public static T WithKind<T>(this T obj, DateTimeKind kind)
+            where T : INumberDateTimeConverterOptions
+        {
+            obj.Kind = kind;
+            return obj;
+        }
+    }
+    public static class StringDateTimeConverterOptionsExtensions
+    {
+        public static T WithFormats<T>(this T obj, params string[] formats)
+            where T : IStringDateTimeConverterOptions
+        {
+            obj.Formats = formats;
+            return obj;
+        }
+        public static T WithCulture<T>(this T obj, string culture)
+            where T : IStringDateTimeConverterOptions
+        {
+            obj.Culture = culture;
+            return obj;
+        }
+        public static T WithDateTimeStyles<T>(this T obj, DateTimeStyles styles)
+            where T : IStringDateTimeConverterOptions
+        {
+            obj.DateTimeStyles = styles;
+            return obj;
+        }
+    }
+    public static class IDateTimeNumberConverterOptionsExtensions
+    {
+        public static T WithUnit<T>(this T obj, DateTimeNumberUnit unit)
+            where T : IDateTimeNumberConverterOptions
+        {
+            obj.Unit = unit;
+            return obj;
+        }
+        public static T WithEpoch<T>(this T obj, DateTime epoch)
+            where T : IDateTimeNumberConverterOptions
+        {
+            obj.Epoch = epoch;
+            return obj;
+        }
+    }
 }
