@@ -1,4 +1,5 @@
-﻿using easyTypeConverter.Conversion;
+﻿using easyTypeConverter.Common;
+using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Converter.Options;
 using System;
 using System.Collections.Generic;
@@ -30,10 +31,11 @@ namespace easyTypeConverter.Conversion.Converter
 
         public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
         {
+            var culture = CultureInfoHelper.GetCultureInfo(this.options.Culture);
             outData = default;
 
             if (!decimal.TryParse((string)inData, options.NumberStyle,
-                this.options.Culture, out var decimalParsed))
+                culture, out var decimalParsed))
                 return false;
 
 

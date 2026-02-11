@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text.Json.Serialization;
 using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Converter.Options;
 using easyTypeConverter.Conversion.Filters.Options;
@@ -9,8 +10,11 @@ namespace easyTypeConverter.Conversion.Converter.Options
 {
     public class FloatingStringConverterOptions : IStringOutputOptions
     {
+        [JsonPropertyName("format")]
         public string? Format { get; set; } = null;
-        public CultureInfo Culture { get; set; } = CultureInfo.InvariantCulture;
+
+        [JsonPropertyName("culture")]
+        public string Culture { get; set; } = string.Empty;
 
         public List<IFilterOptions> InputFilters { get; set; } = new();
 

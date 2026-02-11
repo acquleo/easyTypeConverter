@@ -1,8 +1,10 @@
-﻿using easyTypeConverter.Conversion;
+﻿using easyTypeConverter.Common;
+using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Converter.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,12 +24,14 @@ namespace easyTypeConverter.Conversion.Converter
 
         public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
         {
-            outData = ((bool)inData).ToString(this.options.Culture);
+            var culture = CultureInfoHelper.GetCultureInfo(this.options.Culture);
+
+            outData = ((bool)inData).ToString(CultureInfoHelper.GetCultureInfo(this.options.Culture));
 
             if(this.options.Case == TextCase.Lower)
-                outData = ((string)inData).ToLower(this.options.Culture);
+                outData = ((string)inData).ToLower(culture);
             if (this.options.Case == TextCase.Upper)
-                outData = ((string)inData).ToLower(this.options.Culture);
+                outData = ((string)inData).ToLower(culture);
 
             return true;
         }

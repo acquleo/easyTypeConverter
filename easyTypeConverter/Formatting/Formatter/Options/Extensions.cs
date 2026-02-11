@@ -19,7 +19,7 @@ namespace easyTypeConverter.Formatting.Formatter.Options
         public static T WithDateTimeConvert<T>(this T obj, DateTimeKind convertTo)
               where T : TemplateFormatterOptions
         {
-            obj.TargetDateTimeKind = convertTo;
+            obj.TargetKind = convertTo;
             return obj;
         }
     }

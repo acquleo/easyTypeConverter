@@ -1,4 +1,5 @@
-﻿using easyTypeConverter.Conversion.Converter.Options;
+﻿using easyTypeConverter.Common;
+using easyTypeConverter.Conversion.Converter.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -48,6 +49,7 @@ namespace easyTypeConverter.Conversion.Converter
         }
         public override bool OnNumericConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData, NumberStyles numberStyle)
         {
+            var culture = CultureInfoHelper.GetCultureInfo(this.options.Culture);
             outData = default;
 
             bool signed = IsSigned(targetType);
@@ -57,7 +59,7 @@ namespace easyTypeConverter.Conversion.Converter
             if (signed)
             {
                 if (!long.TryParse((string)inData, numberStyle,
-                this.options.Culture, out var unsignedParse))
+                culture, out var unsignedParse))
                     return false;
 
                 intermediateValue = unsignedParse;
@@ -65,7 +67,7 @@ namespace easyTypeConverter.Conversion.Converter
             else
             {
                 if (!ulong.TryParse((string)inData, numberStyle,
-                this.options.Culture, out var signedParse))
+                culture, out var signedParse))
                     return false;
 
                 intermediateValue = signedParse;

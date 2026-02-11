@@ -49,7 +49,7 @@ namespace easyTypeConverter.Transformation
                 }
                 catch (Exception ex)
                 {
-                    throw new InvalidOperationException("todo");
+                    throw new InvalidOperationException("todo"); //TODO: better exception handling and message
                 }
             }       
             

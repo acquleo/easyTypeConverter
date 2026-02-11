@@ -7,6 +7,6 @@ namespace easyTypeConverter.Conversion.Converter.Options
     public interface ITimeSpanStringConverterOptions : ITypeConverterOptions
     {
         string? Format { get; set; }
-        CultureInfo Culture { get; set; }
+        string Culture { get; set; }
     }
 }

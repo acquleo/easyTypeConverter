@@ -6,7 +6,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
 {
     public interface IStringTimeSpanConverterOptions : ITypeConverterOptions
     {
-        CultureInfo Culture { get; set; }
+        string Culture { get; set; }
         string[]? Formats { get; set; }
     }
 }

@@ -15,6 +15,7 @@ namespace easyTypeConverter.Transformation.Transformer.Options
     [JsonDerivedType(typeof(DeadbandTransformerOptions), "deadband")]
     [JsonDerivedType(typeof(PercentageNormalizerTransformerOptions), "percentage_norm")]
     [JsonDerivedType(typeof(ScalingTransformerOptions), "scaling")]
+    [JsonDerivedType(typeof(TypeConverterTransformerOptions), "type_converter")]
     public abstract class DataTransformerOptions
     {
         public abstract DataTransformer Build();

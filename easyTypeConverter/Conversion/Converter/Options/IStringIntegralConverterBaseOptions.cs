@@ -10,7 +10,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
     public interface IStringIntegralConverterBaseOptions : ITypeConverterOptions
     {
             NumberStyles NumberStyle { get; set; }
-            CultureInfo Culture { get; set; }
+            string Culture { get; set; }
             bool HexDetection { get; set; }
             List<string> HexPrefixList { get; set; }
 

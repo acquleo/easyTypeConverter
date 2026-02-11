@@ -1,3 +1,4 @@
+using easyTypeConverter.Common;
 using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Converter.Options;
 using System;
@@ -24,19 +25,21 @@ namespace easyTypeConverter.Conversion.Converter
 
         public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
         {
+            var culture = CultureInfoHelper.GetCultureInfo(this.options.Culture);
+
             outData = default;
             var str = (string)inData;
 
             if (options.Formats != null && options.Formats.Length > 0)
             {
-                if (!TimeSpan.TryParseExact(str, options.Formats, options.Culture, out var ts))
+                if (!TimeSpan.TryParseExact(str, options.Formats, culture, out var ts))
                     return false;
                 outData = ts;
                 return true;
             }
             else
             {
-                if (!TimeSpan.TryParse(str, options.Culture, out var ts))
+                if (!TimeSpan.TryParse(str, culture, out var ts))
                     return false;
                 outData = ts;
                 return true;

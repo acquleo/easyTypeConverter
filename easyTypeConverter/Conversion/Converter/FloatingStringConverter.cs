@@ -1,3 +1,4 @@
+using easyTypeConverter.Common;
 using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Converter.Options;
 using System;
@@ -23,11 +24,13 @@ namespace easyTypeConverter.Conversion.Converter
 
         public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
         {
+            var culture = CultureInfoHelper.GetCultureInfo(this.options.Culture);
+
             outData = null;
 
             double doubleInData = System.Convert.ToDouble(inData);
 
-            outData = doubleInData.ToString(options.Format, options.Culture);
+            outData = doubleInData.ToString(options.Format, culture);
 
             return true;
         }

@@ -16,7 +16,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
 
     public interface IStringOutputOptions : ITypeConverterOptions
     {
-        public CultureInfo Culture { get; internal set; }
-        public TextCase Case { get; internal set; }
+        public string Culture { get; set; }
+        public TextCase Case { get; set; }
     }
 }

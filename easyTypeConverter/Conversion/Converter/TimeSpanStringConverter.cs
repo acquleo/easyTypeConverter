@@ -1,3 +1,4 @@
+using easyTypeConverter.Common;
 using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Converter.Options;
 using System;
@@ -23,11 +24,13 @@ namespace easyTypeConverter.Conversion.Converter
 
         public override bool OnConvert(object inData, Type targetType, [NotNullWhen(true)] out object? outData)
         {
+            var culture = CultureInfoHelper.GetCultureInfo(this.options.Culture);
+
             outData = null;
             if (inData is not TimeSpan ts)
                 return false;
             if (!string.IsNullOrEmpty(options.Format))
-                outData = ts.ToString(options.Format, options.Culture);
+                outData = ts.ToString(options.Format, culture);
             else
                 outData = ts.ToString();
             return true;

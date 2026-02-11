@@ -100,12 +100,12 @@ namespace easyTypeConverter.Formatting.Formatter
 
             if (value is DateTime dt)
             {
-                value = dateTimeConverter.Convert(dt, options.TargetDateTimeKind);
+                value = dateTimeConverter.Convert(dt, options.TargetKind);
             }
 
             if (value is DateTimeOffset dto)
             {
-                value = dateTimeConverter.Convert(dto, options.TargetDateTimeKind);
+                value = dateTimeConverter.Convert(dto, options.TargetKind);
             }
 
             // IFormattable covers DateTime, TimeSpan, numeric types, enums...

@@ -85,7 +85,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
         /// <param name="obj">L'oggetto opzioni a cui assegnare la cultura.</param>
         /// <param name="culture">La cultura da assegnare.</param>
         /// <returns>L'oggetto opzioni modificato, permettendo la concatenazione fluente.</returns>
-        public static T WithCulture<T>(this T obj, CultureInfo culture)
+        public static T WithCulture<T>(this T obj, string culture)
                where T : IStringIntegralConverterBaseOptions
         {
             obj.Culture = culture;
@@ -142,7 +142,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
         /// <param name="obj">L'oggetto opzioni a cui assegnare la cultura.</param>
         /// <param name="culture">La cultura da assegnare.</param>
         /// <returns>L'oggetto opzioni modificato, permettendo la concatenazione fluente.</returns>
-        public static T WithCulture<T>(this T obj, CultureInfo culture)
+        public static T WithCulture<T>(this T obj, string culture)
                 where T : IFloatingStringConverterOptions
         {
             obj.Culture = culture;
@@ -159,7 +159,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
         /// <param name="obj">L'oggetto opzioni a cui assegnare la cultura.</param>
         /// <param name="culture">La cultura da assegnare.</param>
         /// <returns>L'oggetto opzioni modificato, permettendo la concatenazione fluente.</returns>
-        public static T WithCulture<T>(this T obj, CultureInfo culture)
+        public static T WithCulture<T>(this T obj, string culture)
             where T : IStringTimeSpanConverterOptions
         {
             obj.Culture = culture;
@@ -203,7 +203,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
         /// <param name="obj">L'oggetto opzioni a cui assegnare la cultura.</param>
         /// <param name="culture">La cultura da assegnare.</param>
         /// <returns>L'oggetto opzioni modificato, permettendo la concatenazione fluente.</returns>
-        public static T WithCulture<T>(this T obj, CultureInfo culture)
+        public static T WithCulture<T>(this T obj, string culture)
             where T : ITimeSpanStringConverterOptions
         {
             obj.Culture = culture;

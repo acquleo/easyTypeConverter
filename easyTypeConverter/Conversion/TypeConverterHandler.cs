@@ -13,7 +13,15 @@ namespace easyTypeConverter.Conversion
     public class TypeConverterHandler
     {
         private ConcurrentDictionary<Tuple<Type, Type>, List<TypeConverter>> converters = new();
-        
+
+        public TypeConverterHandler(TypeConverterHandlerOptions options)
+        {
+            foreach(var converterOptions in options.Converters)
+            {
+                AddConverter(converterOptions);
+            }
+        }
+
         public TypeConverterHandler()
         {
 

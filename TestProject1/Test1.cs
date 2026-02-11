@@ -1,10 +1,13 @@
 ﻿using easyTypeConverter.Common;
 using easyTypeConverter.Conversion;
+using easyTypeConverter.Conversion.Converter;
 using easyTypeConverter.Conversion.Converter.Options;
 using easyTypeConverter.Conversion.Filters.Options;
 using easyTypeConverter.Formatting.Formatter;
 using easyTypeConverter.Formatting.Formatter.Options;
+using easyTypeConverter.Serialization;
 using easyTypeConverter.Transformation;
+using easyTypeConverter.Transformation.Transformer;
 using easyTypeConverter.Transformation.Transformer.Options;
 using System.Globalization;
 using System.Text.Json;
@@ -711,13 +714,13 @@ namespace TestProject1
         public void TestTemplateFormatter()
         {
             TemplateFormatterOptions formatterOptions = new TemplateFormatterOptions()
-                .WithTemplate("{value}");
+                .WithTemplate("PIPPO &ob;{value}&cb;");
             var formatter = formatterOptions.Build();
 
             formatter.Format(FormatterContext.From((double)42.3), out var result);
 
             Assert.IsNotNull(result);
-            Assert.AreEqual((string)"42.3", result);
+            Assert.AreEqual((string)"PIPPO {42.3}", result);
 
             formatterOptions.WithTemplate("{value:F2}");
 
@@ -825,6 +828,9 @@ namespace TestProject1
         {
             DataTransformerHandlerOptions options = new DataTransformerHandlerOptions();
 
+            //options.AddTransformer(new TypeConverterTransformerOptions()
+            //    .AddConvert(new FloatingConverterOptions())
+            //    .WithTargetType("float"));
             options.AddTransformer(new ScalingTransformerOptions()
                 .WithInputMin(0).WithInputMax(100)
                 .WithOutputMin(0).WithOutputMax(10000));
@@ -835,9 +841,12 @@ namespace TestProject1
                 .WithSourceDataUnit(DataUnit.Byte)
                 .WithScaleThreshold(1));
 
-            string json = JsonSerializer.Serialize(options);
+            string json = DataTransformSerializer.Serialize(options);
 
-            DataTransformerHandlerOptions? deserializedOptions = JsonSerializer.Deserialize<DataTransformerHandlerOptions>(json);
+            DataTransformerHandlerOptions? deserializedOptions = DataTransformSerializer.Deserialize(json);
+
+            if (deserializedOptions == null)
+                throw new InvalidOperationException();
 
             var handler = deserializedOptions.Build();
 
@@ -845,17 +854,45 @@ namespace TestProject1
 
             Assert.IsNotNull(result);
 
-
             var testsingle = new AutoScaleDataUnitTransformerOptions()
                 .WithDecimal()
                 .WithSourceDataUnit(DataUnit.Bit)
                 .WithScaleThreshold(100.0);
 
-            string json_single = JsonSerializer.Serialize<DataTransformerOptions>(testsingle);
+            string json_single = DataTransformSerializer.SerializeTransformer(testsingle);
 
-            DataTransformerOptions? deserializedOptions_single = JsonSerializer.Deserialize<DataTransformerOptions>(json_single);
+            DataTransformerOptions? deserializedOptions_single = DataTransformSerializer.DeserializeTransform(json_single);
 
             Assert.IsNotNull(deserializedOptions_single);
+
+            var manual_json = $@"{{
+              ""transformers"": [
+                {{
+                  ""$type"": ""scaling"",
+                  ""inputMin"": 0,
+                  ""inputMax"": 100,
+                  ""outputMin"": 0,
+                  ""outputMax"": 10000
+                }},
+                {{
+                  ""$type"": ""deadband"",
+                  ""deadband"": 10
+                }},
+                {{
+                  ""$type"": ""autoscale_dataunit"",
+                  ""sourceUnit"": ""Byte"",
+                  ""useBinary"": false,
+                  ""scaleThreshold"": 1
+                }}
+              ]
+            }}";
+
+            DataTransformerHandlerOptions? manual_obj = DataTransformSerializer.Deserialize(manual_json);
+            var resulto = manual_obj.Build().Transform(DataTransformOutput.From((double)50), out var manual_result);
+
+
+            BooleanStringConverterOptions optionsB = new BooleanStringConverterOptions();
+            var booh = JsonSerializer.Serialize<BooleanStringConverterOptions>(optionsB);
         }
     }
 }
