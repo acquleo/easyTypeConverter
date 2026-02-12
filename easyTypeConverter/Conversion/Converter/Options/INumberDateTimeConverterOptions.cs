@@ -4,7 +4,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
     {
         NumberDateTimeUnit Unit { get; set; }
         DateTime Epoch { get; set; }
-        SerializableDateTimeKind Kind { get; set; }
+        DateTimeType Kind { get; set; }
     }
     public enum NumberDateTimeUnit
     {

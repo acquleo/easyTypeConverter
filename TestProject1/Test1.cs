@@ -902,7 +902,7 @@ namespace TestProject1
             handler.AddConverter(new NumberDateTimeConverterOptions()
                 .WithUnit(NumberDateTimeUnit.Seconds)
                 .WithEpoch(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc))
-                .WithKind(SerializableDateTimeKind.Utc));
+                .WithKind(DateTimeType.Utc));
             object? result = null;
             handler.Convert(0, DataTypes.DateTime, out result);
             Assert.IsNotNull(result);

@@ -318,7 +318,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
         /// <param name="obj">L'oggetto opzioni a cui assegnare il tipo di data/ora.</param>
         /// <param name="kind">Il tipo di data/ora da assegnare.</param>
         /// <returns>L'oggetto opzioni modificato, permettendo la concatenazione fluente.</returns>
-        public static T WithKind<T>(this T obj, SerializableDateTimeKind kind)
+        public static T WithKind<T>(this T obj, DateTimeType kind)
             where T : INumberDateTimeConverterOptions
         {
             obj.Kind = kind;

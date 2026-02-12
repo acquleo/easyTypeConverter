@@ -22,12 +22,12 @@ namespace easyTypeConverter.Conversion.Converter
         public override List<DataType> SourceTypeList { get; } = new List<DataType>() { DataTypes.Double, DataTypes.Single, DataTypes.Byte, DataTypes.SByte, DataTypes.UInt16, DataTypes.Int16, DataTypes.UInt32, DataTypes.Int32, DataTypes.UInt64, DataTypes.Int64, DataTypes.Decimal };
         public override List<DataType> TargetTypeList { get; } = new List<DataType>() { DataTypes.DateTime };
 
-        private static DateTimeKind ToDateTimeKind(SerializableDateTimeKind kind)
+        private static DateTimeKind ToDateTimeKind(DateTimeType kind)
         {
             return kind switch
             {
-                SerializableDateTimeKind.Utc => DateTimeKind.Utc,
-                SerializableDateTimeKind.Local => DateTimeKind.Local,
+                DateTimeType.Utc => DateTimeKind.Utc,
+                DateTimeType.Local => DateTimeKind.Local,
                 _ => DateTimeKind.Unspecified
             };
         }

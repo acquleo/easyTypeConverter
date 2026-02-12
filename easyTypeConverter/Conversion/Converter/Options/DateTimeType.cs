@@ -1,6 +1,6 @@
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public enum SerializableDateTimeKind
+    public enum DateTimeType
     {
         Unspecified = 0,
         Utc = 1,

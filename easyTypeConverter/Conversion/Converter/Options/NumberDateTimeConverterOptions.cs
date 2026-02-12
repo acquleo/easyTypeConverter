@@ -8,7 +8,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
     {
         public NumberDateTimeUnit Unit { get; set; } = NumberDateTimeUnit.Seconds;
         public DateTime Epoch { get; set; } = DateTime.UnixEpoch;
-        public SerializableDateTimeKind Kind { get; set; } = SerializableDateTimeKind.Unspecified;
+        public DateTimeType Kind { get; set; } = DateTimeType.Unspecified;
         public List<IFilterOptions> InputFilters { get; set; } = new();
         public List<IFilterOptions> OutputFilters { get; set; } = new();
         public TypeConverter Build()
