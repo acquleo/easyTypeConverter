@@ -1,0 +1,15 @@
+﻿using easyTypeConverter.Serialization;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
+
+namespace easyTypeConverter.Common
+{
+    [JsonConverter(typeof(PolymorphicConverter<ExtensibleOptions>))]
+    public class ExtensibleOptions
+    {
+    }
+}

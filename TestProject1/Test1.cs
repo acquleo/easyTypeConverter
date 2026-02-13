@@ -4,6 +4,8 @@ using easyTypeConverter.Conversion.Converter;
 using easyTypeConverter.Conversion.Converter.Options;
 using easyTypeConverter.Conversion.Exceptions;
 using easyTypeConverter.Conversion.Filters.Options;
+using easyTypeConverter.Evaluating;
+using easyTypeConverter.Evaluating.Evaluator.Options;
 using easyTypeConverter.Formatting.Formatter;
 using easyTypeConverter.Formatting.Formatter.Options;
 using easyTypeConverter.Serialization;
@@ -23,6 +25,34 @@ namespace TestProject1
         public Test1()
         {
 
+        }
+
+        [TestMethod]
+        public void TestDataEvaluator()
+        {
+            SetStatusActionOptions action1 = new SetStatusActionOptions();
+            action1.StatusToBeSet = "ACTIVE";
+
+            SetStatusActionOptions action2 = new SetStatusActionOptions();
+            action2.StatusToBeSet = "INACTIVE";
+
+            EqualityDataEvaluatorOptions options = new EqualityDataEvaluatorOptions()
+                .WithValueToCompare("pippo")
+                .WithAction(action1);
+
+            var evaluator = options.Build(new ActionHandler());
+            evaluator.Evaluate(new DataEvaluatorInputContext { Value = "pippo" });
+
+
+            DataEvaluatorSerializer serializer = new DataEvaluatorSerializer();
+
+            serializer.RegisterEvaluatorAction<SetStatusActionOptions>("set_status");
+
+            string json = serializer.SerializeEvaluator(options);
+
+            var test = serializer.DeserializeEvaluator(json);
+
+            test.Build(new ActionHandler()).Evaluate(new DataEvaluatorInputContext { Value = "pippo" });
         }
 
         [TestMethod]
