@@ -9,13 +9,13 @@ namespace easyTypeConverter.Conversion.Converter
 {
     public class IntegralFloatingConverter : TypeConverter
     {
-        IntegralConverterOptions options;
-        public IntegralFloatingConverter(IntegralConverterOptions options) : base(options)
+        IntegralFloatingConverterOptions options;
+        public IntegralFloatingConverter(IntegralFloatingConverterOptions options) : base(options)
         {
             this.options = options;
         }
 
-        public IntegralFloatingConverter() : this(new IntegralConverterOptions())
+        public IntegralFloatingConverter() : this(new IntegralFloatingConverterOptions())
         {
         }
 

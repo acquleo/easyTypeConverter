@@ -894,5 +894,134 @@ namespace TestProject1
             BooleanStringConverterOptions optionsB = new BooleanStringConverterOptions();
             var booh = JsonSerializer.Serialize<BooleanStringConverterOptions>(optionsB);
         }
+
+        [TestMethod]
+        public void TestNumberDateTimeConverter()
+        {
+            TypeConverterHandler handler = new TypeConverterHandler();
+            handler.AddConverter(new NumberDateTimeConverterOptions()
+                .WithUnit(NumberDateTimeUnit.Seconds)
+                .WithEpoch(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc))
+                .WithKind(DateTimeType.Utc));
+            object? result = null;
+            handler.Convert(0, DataTypes.DateTime, out result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc), result);
+            handler.Convert(3600, DataTypes.DateTime, out result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(new DateTime(1970, 1, 1, 1, 0, 0, DateTimeKind.Utc), result);
+        }
+
+        [TestMethod]
+        public void TestDateTimeNumberConverter()
+        {
+            TypeConverterHandler handler = new TypeConverterHandler();
+            handler.AddConverter(new DateTimeNumberConverterOptions()
+                .WithUnit(DateTimeNumberUnit.Seconds)
+                .WithEpoch(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)));
+            object? result = null;
+            var dt = new DateTime(1970, 1, 1, 1, 0, 0, DateTimeKind.Utc);
+            handler.Convert(dt, DataTypes.Double, out result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(3600.0, result);
+        }
+
+        [TestMethod]
+        public void TestStringDateTimeConverter()
+        {
+            TypeConverterHandler handler = new TypeConverterHandler();
+            handler.AddConverter(new StringDateTimeConverterOptions()
+                .WithFormats("yyyy-MM-dd HH:mm:ss")
+                .WithCulture("en-US"));
+            object? result = null;
+            handler.Convert("2024-06-01 12:34:56", DataTypes.DateTime, out result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(new DateTime(2024, 6, 1, 12, 34, 56), result);
+        }
+
+        [TestMethod]
+        public void TestTimeSpanNumberConverter()
+        {
+            TypeConverterHandler handler = new TypeConverterHandler();
+            handler.AddConverter(new TimeSpanNumberConverterOptions()
+                .WithUnit(TimeSpanNumberUnit.Seconds));
+            object? result = null;
+            handler.Convert(TimeSpan.FromMinutes(2), DataTypes.Double, out result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(120.0, result);
+        }
+
+        [TestMethod]
+        public void TestNumberTimeSpanConverter()
+        {
+            TypeConverterHandler handler = new TypeConverterHandler();
+            handler.AddConverter(new NumberTimeSpanConverterOptions()
+                .WithUnit(TimeSpanNumberUnit.Minutes));
+            object? result = null;
+            handler.Convert(2, DataTypes.TimeSpan, out result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(TimeSpan.FromMinutes(2), result);
+        }
+
+        [TestMethod]
+        public void TestStringTimeSpanConverter()
+        {
+            TypeConverterHandler handler = new TypeConverterHandler();
+            handler.AddConverter(new StringTimeSpanConverterOptions()
+                .WithFormats("c")
+                .WithCulture("en-US"));
+            object? result = null;
+            handler.Convert("01:02:03", DataTypes.TimeSpan, out result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(new TimeSpan(1, 2, 3), result);
+        }
+
+        [TestMethod]
+        public void TestTimeSpanStringConverter()
+        {
+            TypeConverterHandler handler = new TypeConverterHandler();
+            handler.AddConverter(new TimeSpanStringConverterOptions()
+                .WithFormat("c")
+                .WithCulture("en-US"));
+            object? result = null;
+            handler.Convert(new TimeSpan(1, 2, 3), DataTypes.String, out result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual("01:02:03", result);
+        }
+
+        [TestMethod]
+        public void TestFloatingDecimalConverter()
+        {
+            TypeConverterHandler handler = new TypeConverterHandler();
+            handler.AddConverter(new FloatingDecimalConverterOptions());
+            object? result = null;
+            handler.Convert(1.5, DataTypes.Decimal, out result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual((decimal)1.5, result);
+        }
+
+        [TestMethod]
+        public void TestDecimalIntegralConverter()
+        {
+            TypeConverterHandler handler = new TypeConverterHandler();
+            handler.AddConverter(new DecimalIntegralConverterOptions());
+            object? result = null;
+            handler.Convert((decimal)42.0, DataTypes.Int32, out result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(42, result);
+        }
+
+        [TestMethod]
+        public void TestDecimalStringConverter()
+        {
+            TypeConverterHandler handler = new TypeConverterHandler();
+            handler.AddConverter(new DecimalStringConverterOptions()
+                .WithFormat("F2")
+                .WithCulture("en-US"));
+            object? result = null;
+            handler.Convert((decimal)42.1234, DataTypes.String, out result);
+            Assert.IsNotNull(result);
+            Assert.AreEqual("42.12", result);
+        }
     }
 }

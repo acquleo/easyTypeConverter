@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public class FloatingIntegralConverterOptions : ITypeConverterOptions
+    public class FloatingDecimalConverterOptions : ITypeConverterOptions
     {
         public List<IFilterOptions> InputFilters { get; set; } = new();
         public List<IFilterOptions> OutputFilters { get; set; } = new();
-
         public TypeConverter Build()
         {
-            return new Converter.FloatingIntegralConverter(this);
+            return new Converter.FloatingDecimalConverter(this);
         }
     }
 }

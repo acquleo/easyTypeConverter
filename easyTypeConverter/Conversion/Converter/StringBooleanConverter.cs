@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace easyTypeConverter.Conversion.Converter
 {
     /// <summary>
-    /// Converte una string True False in boolean
+    /// Converte una stringa in un valore booleano.
     /// </summary>
     public class StringBooleanConverter : TypeConverter
     {
@@ -30,11 +30,24 @@ namespace easyTypeConverter.Conversion.Converter
         {
             outData = default;
 
-            if (!bool.TryParse((string)inData, out var toutData))
+            if (inData is not string inputString)
                 return false;
 
-            outData = toutData;
-            return true;
+            var processedString = inputString.Trim();
+
+            if (options.TrueValues.Exists(value => string.Equals(value, processedString, StringComparison.OrdinalIgnoreCase)))
+            {
+                outData = true;
+                return true;
+            }
+
+            if (options.FalseValues.Exists(value => string.Equals(value, processedString, StringComparison.OrdinalIgnoreCase)))
+            {
+                outData = false;
+                return true;
+            }
+
+            return false;
         }
 
     }
