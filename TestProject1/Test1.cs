@@ -829,8 +829,8 @@ namespace TestProject1
             DataTransformerHandlerOptions options = new DataTransformerHandlerOptions();
 
             options.AddTransformer(new TypeConverterTransformerOptions()
-                .WithConvert(new FloatingConverterOptions())
-                .WithTargetType(DataTypes.Single));
+                .WithConverter(new FloatingIntegralConverterOptions())
+                .WithTargetType(DataTypes.Int32));
             options.AddTransformer(new ScalingTransformerOptions()
                 .WithInputMin(0).WithInputMax(100)
                 .WithOutputMin(0).WithOutputMax(10000));

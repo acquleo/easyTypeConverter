@@ -13,6 +13,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
     [JsonPolymorphic(TypeDiscriminatorPropertyName = "$type")]
     [JsonDerivedType(typeof(BooleanStringConverterOptions), "bool_str")]
     [JsonDerivedType(typeof(FloatingConverterOptions), "float")]
+    [JsonDerivedType(typeof(FloatingIntegralConverterOptions), "float_int")]
     [JsonDerivedType(typeof(IntegralConverterOptions), "num")]
     [JsonDerivedType(typeof(NumberTimeSpanConverterOptions), "num_timespan")]
     [JsonDerivedType(typeof(StringBooleanConverterOptions), "str_bool")]

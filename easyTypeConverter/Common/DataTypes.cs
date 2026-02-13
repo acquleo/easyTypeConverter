@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -91,12 +92,13 @@ namespace easyTypeConverter.Common
 
         }
 
-        // Tutti i valori per lookup/validazione
-        public static IEnumerable<DataType> All => 
+        // Tutti i valori per lookup/validazione        
+        public static IEnumerable<DataType> All =>
             typeof(DataTypes)
-            .GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
+            .GetFields(BindingFlags.Public | BindingFlags.Static)
             .Where(f => f.FieldType == typeof(DataType))
-            .Select(f => f.GetValue(null) as DataType)
-            .Where(f => f != null);
+            .Select(f => (DataType)f.GetValue(null)!);
     }
+
+    
 }

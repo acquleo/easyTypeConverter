@@ -9,13 +9,13 @@ namespace easyTypeConverter.Conversion.Converter
 {
     public class FloatingIntegralConverter : TypeConverter
     {
-        FloatingConverterOptions options;
-        public FloatingIntegralConverter(FloatingConverterOptions options) : base(options)
+        FloatingIntegralConverterOptions options;
+        public FloatingIntegralConverter(FloatingIntegralConverterOptions options) : base(options)
         {
             this.options = options;
         }
 
-        public FloatingIntegralConverter() : this(new FloatingConverterOptions())
+        public FloatingIntegralConverter() : this(new FloatingIntegralConverterOptions())
         {
         }
 

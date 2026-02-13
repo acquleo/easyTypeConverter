@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +13,12 @@ namespace easyTypeConverter.Common
         // ── DATA ──────────────────────────────────────────
         public static class Data
         {
+            public static IEnumerable<DataType> All =>
+                typeof(Data)
+                .GetFields(BindingFlags.Public | BindingFlags.Static)
+                .Where(f => f.FieldType == typeof(DataType))
+                .Select(f => (DataType)f.GetValue(null)!);
+
             public static readonly Unit Bit = new() { Symbol = "bit", Name = "Bit", Category = UnitCategory.Data };
             public static readonly Unit Byte = new() { Symbol = "B", Name = "Byte", Category = UnitCategory.Data };
 
@@ -39,6 +46,12 @@ namespace easyTypeConverter.Common
         // ── WEIGHT ────────────────────────────────────────
         public static class Weight
         {
+            public static IEnumerable<DataType> All =>
+                typeof(Weight)
+                .GetFields(BindingFlags.Public | BindingFlags.Static)
+                .Where(f => f.FieldType == typeof(DataType))
+                .Select(f => (DataType)f.GetValue(null)!);
+
             public static readonly Unit Carat = new() { Symbol = "ct", Name = "Carat", Category = UnitCategory.Weight };
             public static readonly Unit Milligram = new() { Symbol = "mg", Name = "Milligram", Category = UnitCategory.Weight };
             public static readonly Unit Centigram = new() { Symbol = "cg", Name = "Centigram", Category = UnitCategory.Weight };
@@ -54,6 +67,12 @@ namespace easyTypeConverter.Common
         // ── LENGTH ────────────────────────────────────────
         public static class Length
         {
+            public static IEnumerable<DataType> All =>
+                typeof(Length)
+                .GetFields(BindingFlags.Public | BindingFlags.Static)
+                .Where(f => f.FieldType == typeof(DataType))
+                .Select(f => (DataType)f.GetValue(null)!);
+
             public static readonly Unit Nanometer = new() { Symbol = "nm", Name = "Nanometer", Category = UnitCategory.Length };
             public static readonly Unit Microns = new() { Symbol = "μm", Name = "Microns", Category = UnitCategory.Length };
             public static readonly Unit Millimeter = new() { Symbol = "mm", Name = "Millimeter", Category = UnitCategory.Length };
@@ -69,6 +88,12 @@ namespace easyTypeConverter.Common
         // ── TEMPERATURE ───────────────────────────────────
         public static class Temperature
         {
+            public static IEnumerable<DataType> All =>
+                typeof(Temperature)
+                .GetFields(BindingFlags.Public | BindingFlags.Static)
+                .Where(f => f.FieldType == typeof(DataType))
+                .Select(f => (DataType)f.GetValue(null)!);
+
             public static readonly Unit Celsius = new() { Symbol = "°C", Name = "Celsius", Category = UnitCategory.Temperature };
             public static readonly Unit Fahrenheit = new() { Symbol = "°F", Name = "Fahrenheit", Category = UnitCategory.Temperature };
             public static readonly Unit Kelvin = new() { Symbol = "K", Name = "Kelvin", Category = UnitCategory.Temperature };
@@ -77,6 +102,12 @@ namespace easyTypeConverter.Common
         // ── SPEED ─────────────────────────────────────────
         public static class Speed
         {
+            public static IEnumerable<DataType> All =>
+                typeof(Speed)
+                .GetFields(BindingFlags.Public | BindingFlags.Static)
+                .Where(f => f.FieldType == typeof(DataType))
+                .Select(f => (DataType)f.GetValue(null)!);
+
             public static readonly Unit CentimeterPerSecond = new() { Symbol = "cm/s", Name = "Centimeters per second", Category = UnitCategory.Speed };
             public static readonly Unit MetersPerSecond = new() { Symbol = "m/s", Name = "Meters per second", Category = UnitCategory.Speed };
             public static readonly Unit KilometersPerHour = new() { Symbol = "km/h", Name = "Kilometers per hour", Category = UnitCategory.Speed };
@@ -89,6 +120,12 @@ namespace easyTypeConverter.Common
         // ── VOLUME ────────────────────────────────────────
         public static class Volume
         {
+            public static IEnumerable<DataType> All =>
+                typeof(Volume)
+                .GetFields(BindingFlags.Public | BindingFlags.Static)
+                .Where(f => f.FieldType == typeof(DataType))
+                .Select(f => (DataType)f.GetValue(null)!);
+
             public static readonly Unit Milliliter = new() { Symbol = "ml", Name = "Milliliter", Category = UnitCategory.Volume };
             public static readonly Unit CubicCentimeter = new() { Symbol = "cm³", Name = "Cubic centimeter", Category = UnitCategory.Volume };
             public static readonly Unit Liter = new() { Symbol = "L", Name = "Liter", Category = UnitCategory.Volume };
@@ -103,6 +140,12 @@ namespace easyTypeConverter.Common
         // ── TIME ──────────────────────────────────────────
         public static class Time
         {
+            public static IEnumerable<DataType> All =>
+                typeof(Time)
+                .GetFields(BindingFlags.Public | BindingFlags.Static)
+                .Where(f => f.FieldType == typeof(DataType))
+                .Select(f => (DataType)f.GetValue(null)!);
+
             public static readonly Unit Nanosecond = new() { Symbol = "ns", Name = "Nanosecond", Category = UnitCategory.Time };
             public static readonly Unit Microsecond = new() { Symbol = "μs", Name = "Microsecond", Category = UnitCategory.Time };
             public static readonly Unit Millisecond = new() { Symbol = "ms", Name = "Millisecond", Category = UnitCategory.Time };
@@ -117,6 +160,12 @@ namespace easyTypeConverter.Common
 
         public static class Area
         {
+            public static IEnumerable<DataType> All =>
+                typeof(Area)
+                .GetFields(BindingFlags.Public | BindingFlags.Static)
+                .Where(f => f.FieldType == typeof(DataType))
+                .Select(f => (DataType)f.GetValue(null)!);
+
             public static readonly Unit SquareMillimeter = new() { Symbol = "mm²", Name = "Square millimeter", Category = UnitCategory.Area };
             public static readonly Unit SquareCentimeter = new() { Symbol = "cm²", Name = "Square centimeter", Category = UnitCategory.Area };
             public static readonly Unit SquareMeter = new() { Symbol = "m²", Name = "Square meter", Category = UnitCategory.Area };
@@ -132,6 +181,12 @@ namespace easyTypeConverter.Common
             // ── CURRENCY ──────────────────────────────────────
             public static class Currency
         {
+            public static IEnumerable<DataType> All =>
+                typeof(Currency)
+                .GetFields(BindingFlags.Public | BindingFlags.Static)
+                .Where(f => f.FieldType == typeof(DataType))
+                .Select(f => (DataType)f.GetValue(null)!);
+
             public static readonly Unit EUR = new() { Symbol = "€", Name = "Euro", Category = UnitCategory.Currency };
             public static readonly Unit USD = new() { Symbol = "$", Name = "US Dollar", Category = UnitCategory.Currency };
             public static readonly Unit GBP = new() { Symbol = "£", Name = "British Pound", Category = UnitCategory.Currency };
@@ -140,6 +195,12 @@ namespace easyTypeConverter.Common
         }
         public static class Energy
         {
+            public static IEnumerable<DataType> All =>
+                typeof(Energy)
+                .GetFields(BindingFlags.Public | BindingFlags.Static)
+                .Where(f => f.FieldType == typeof(DataType))
+                .Select(f => (DataType)f.GetValue(null)!);
+
             public static readonly Unit ElectronVolt = new() { Symbol = "eV", Name = "Electron Volt", Category = UnitCategory.Energy };
             public static readonly Unit Joule = new() { Symbol = "J", Name = "Joule", Category = UnitCategory.Energy };
             public static readonly Unit Kilojoule = new() { Symbol = "kJ", Name = "Kilojoule", Category = UnitCategory.Energy };
@@ -150,6 +211,12 @@ namespace easyTypeConverter.Common
 
         public static class Power
         {
+            public static IEnumerable<DataType> All =>
+                typeof(Power)
+                .GetFields(BindingFlags.Public | BindingFlags.Static)
+                .Where(f => f.FieldType == typeof(DataType))
+                .Select(f => (DataType)f.GetValue(null)!);
+
             public static readonly Unit Watt = new() { Symbol = "W", Name = "Watt", Category = UnitCategory.Power };
             public static readonly Unit Kilowatt = new() { Symbol = "kW", Name = "Kilowatt", Category = UnitCategory.Power };
             public static readonly Unit Megawatt = new() { Symbol = "MW", Name = "Megawatt", Category = UnitCategory.Power };
@@ -182,14 +249,13 @@ namespace easyTypeConverter.Common
         }
 
         // Tutti i valori per lookup/validazione
-        public static IEnumerable<Unit> All => 
+        public static IEnumerable<Unit> All =>
             typeof(Units)
             .GetNestedTypes()
             .SelectMany(t => t.GetFields(
                 System.Reflection.BindingFlags.Public |
                 System.Reflection.BindingFlags.Static))
             .Where(f => f.FieldType == typeof(Unit))
-            .Select(f => f.GetValue(null) as Unit)
-            .Where(f => f != null).Select(f=>f);
+            .Select(f => (Unit)f.GetValue(null)!);            
     }
 }

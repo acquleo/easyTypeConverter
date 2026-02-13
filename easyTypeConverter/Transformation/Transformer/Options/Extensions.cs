@@ -11,7 +11,7 @@ namespace easyTypeConverter.Transformation.Transformer.Options
 {
     public static class TypeConverterTransformerOptionsExtensions
     {
-        public static T WithConvert<T>(this T obj, ITypeConverterOptions options)
+        public static T WithConverter<T>(this T obj, ITypeConverterOptions options)
                where T : TypeConverterTransformerOptions
         {
             obj.Converter = options;

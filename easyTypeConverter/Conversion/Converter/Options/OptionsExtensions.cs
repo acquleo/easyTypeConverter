@@ -293,4 +293,9 @@ namespace easyTypeConverter.Conversion.Converter.Options
             return obj;
         }
     }
+
+    public static class FloatingIntegralConverterOptionsExtensions
+    {
+
+    }
 }
