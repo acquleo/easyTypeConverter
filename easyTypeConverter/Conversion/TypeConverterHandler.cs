@@ -1,5 +1,6 @@
 ﻿using easyTypeConverter.Common;
 using easyTypeConverter.Conversion.Converter.Options;
+using easyTypeConverter.Conversion.Exceptions;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -82,7 +83,7 @@ namespace easyTypeConverter.Conversion
 
             if (!FindConverter(inType, outType.Type, out var typeConverters))
             {
-                throw new TypeConverterNotFoundException(inData, inType, outType.Type);
+                throw new ConverterNotFoundException(inData, inType, outType.Type);
             }
 
             foreach (var converter in typeConverters)
@@ -97,11 +98,11 @@ namespace easyTypeConverter.Conversion
                 }
                 catch (Exception ex)
                 {
-                    throw new TypeConverterException(inData, inType, outType.Type, ex);
+                    throw new TypeConvertException(inData, inType, outType.Type, ex);
                 }
             }
 
-            throw new TypeConverterFailedException(inData, inType, outType.Type);
+            throw new TypeConvertFailedException(inData, inType, outType.Type);
         }
     }
 }

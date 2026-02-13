@@ -1,4 +1,5 @@
-﻿using easyTypeConverter.Transformation.Transformer.Options;
+﻿using easyTypeConverter.Transformation.Exceptions;
+using easyTypeConverter.Transformation.Transformer.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -41,13 +42,21 @@ namespace easyTypeConverter.Transformation
                 return true;
             }
 
-            if (!IsSourceType(inData.Value.GetType()))
+            var sourceType = inData.Value.GetType();
+
+            if (!IsSourceType(sourceType))
             {
-                outData = null;
-                return false;
+                throw new SourceTypeTransformException(this, sourceType);
             }
 
-            return OnTransform(inData, out outData);
+            try
+            {
+                return OnTransform(inData, out outData);
+            }
+            catch (Exception ex)
+            {
+                throw new DataTransformException(this, inData, sourceType, ex);
+            }            
         }
     }
 }

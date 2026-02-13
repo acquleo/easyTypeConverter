@@ -61,7 +61,7 @@ namespace easyTypeConverter.Conversion
         {
             var targetType = TargetTypeList.FirstOrDefault();
             if (targetType == null)
-                throw new InvalidOperationException();
+                throw new TargetTypeException(this);
 
             return Convert(inData, targetType, out outData);
         }

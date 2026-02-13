@@ -2,6 +2,7 @@
 using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Converter;
 using easyTypeConverter.Conversion.Converter.Options;
+using easyTypeConverter.Conversion.Exceptions;
 using easyTypeConverter.Conversion.Filters.Options;
 using easyTypeConverter.Formatting.Formatter;
 using easyTypeConverter.Formatting.Formatter.Options;
@@ -66,13 +67,13 @@ namespace TestProject1
             Assert.IsNotNull(result);
             Assert.AreEqual(true, result);
 
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            Assert.ThrowsException<TypeConvertFailedException>(() =>
             {
                 handler.Convert("FF", DataTypes.FromType(typeof(Boolean)), out result);
             });
 
 
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            Assert.ThrowsException<TypeConvertFailedException>(() =>
             {
                 handler.Convert("0x00", DataTypes.FromType(typeof(Boolean)), out result);
             });
@@ -82,7 +83,7 @@ namespace TestProject1
             Assert.IsNotNull(result);
             Assert.AreEqual(true, result);
 
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            Assert.ThrowsException<TypeConvertFailedException>(() =>
             {
                 handler.Convert("pippo", DataTypes.FromType(typeof(Boolean)), out result);
             });
@@ -135,18 +136,18 @@ namespace TestProject1
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)0, result);
 
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            Assert.ThrowsException<TypeConvertFailedException>(() =>
             {
                 handler.Convert("-4", DataTypes.FromType(typeof(Byte)), out result);
             });
 
 
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            Assert.ThrowsException<TypeConvertFailedException>(() =>
             {
                 handler.Convert("pippo", DataTypes.FromType(typeof(Byte)), out result);
             });
 
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            Assert.ThrowsException<TypeConvertFailedException>(() =>
             {
                 handler.Convert("True", DataTypes.FromType(typeof(Byte)), out result);
             });
@@ -315,28 +316,28 @@ namespace TestProject1
             Assert.IsNotNull(result);
             Assert.AreEqual((byte)12, result);
 
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            Assert.ThrowsException<TypeConvertFailedException>(() =>
             {
                 handler.Convert("0xFF", typeof(byte), out result);
             });
 
 
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            Assert.ThrowsException<TypeConvertFailedException>(() =>
             {
                 handler.Convert("0x00", typeof(byte), out result);
             });
 
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            Assert.ThrowsException<TypeConvertFailedException>(() =>
             {
                 handler.Convert("-4", typeof(byte), out result);
             });
 
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            Assert.ThrowsException<TypeConvertFailedException>(() =>
             {
                 handler.Convert("pippo", typeof(byte), out result);
             });
 
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            Assert.ThrowsException<TypeConvertFailedException>(() =>
             {
                 handler.Convert("True", typeof(byte), out result);
             });
@@ -370,13 +371,13 @@ namespace TestProject1
             Assert.IsNotNull(result);
             Assert.AreEqual((sbyte)12, result);
 
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            Assert.ThrowsException<TypeConvertFailedException>(() =>
             {
                 handler.Convert("0xFF", outType, out result);
             });
 
 
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            Assert.ThrowsException<TypeConvertFailedException>(() =>
             {
                 handler.Convert("0x00", outType, out result);
             });
@@ -386,12 +387,12 @@ namespace TestProject1
             Assert.IsNotNull(result);
             Assert.AreEqual((sbyte)-4, result);
 
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            Assert.ThrowsException<TypeConvertFailedException>(() =>
             {
                 handler.Convert("pippo", outType, out result);
             });
 
-            Assert.ThrowsException<TypeConverterFailedException>(() =>
+            Assert.ThrowsException<TypeConvertFailedException>(() =>
             {
                 handler.Convert("True", outType, out result);
             });
@@ -505,7 +506,7 @@ namespace TestProject1
             Assert.AreEqual((short)300, result);
             Assert.AreEqual(result.GetType(), typeof(short));
 
-            Assert.ThrowsException<TypeConverterException>(() =>
+            Assert.ThrowsException<TypeConvertException>(() =>
             {
                 handler.Convert((int)-100, typeof(ushort), out result);
             });

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace easyTypeConverter.Conversion
+namespace easyTypeConverter.Conversion.Exceptions
 {
-    public class TypeConverterNotFoundException : Exception
+    public class ConverterNotFoundException : TypeConvertExceptionBase
     {
-        public TypeConverterNotFoundException(object inData, Type inType, Type outType, Exception? innerException = null)
+        public ConverterNotFoundException(object inData, Type inType, Type outType, Exception? innerException = null)
             : base($@"cannot found converter of type {inType.Name} to type {outType.Name}", innerException)
         {
 
