@@ -28,7 +28,7 @@ namespace easyTypeConverter.Conversion.Converter
 
         public override bool OnConvert(object inData, DataType targetType, [NotNullWhen(true)] out object? outData)
         {
-            outData = default;
+            outData = options.DefaultOutput;
 
             if (inData is not string inputString)
                 return false;

@@ -32,13 +32,27 @@ namespace easyTypeConverter.Conversion.Converter.Options
     
     public static class IStringBooleanConverterOptionsExtensions
     {
-        
+        /// <summary>
+        /// Imposta il valore di default da restituire quando la stringa in input non corrisponde a nessun valore noto.
+        /// </summary>
+        /// <typeparam name="T">Il tipo dell'oggetto opzioni, che deve implementare <see cref="IStringBooleanConverterOptions"/>.</typeparam>
+        /// <param name="obj">L'oggetto opzioni da modificare.</param>
+        /// <param name="defaultOutput">Il valore booleano di default da impostare.</param>
+        /// <returns>L'oggetto opzioni modificato, permettendo la concatenazione fluente.</returns>
         public static T WithDefaultOutput<T>(this T obj, bool defaultOutput)
                 where T : IStringBooleanConverterOptions
         {
             obj.DefaultOutput = defaultOutput;
             return obj;
         }
+
+        /// <summary>
+        /// Imposta l'elenco di stringhe che verranno interpretate come <c>true</c>. I valori predefiniti sono "true", "1", "yes", "on", "active", "enabled", "enable"
+        /// </summary>
+        /// <typeparam name="T">Il tipo dell'oggetto opzioni, che deve implementare <see cref="IStringBooleanConverterOptions"/>.</typeparam>
+        /// <param name="obj">L'oggetto opzioni da modificare.</param>
+        /// <param name="values">La lista di stringhe da considerare come true. Se <c>null</c>, viene utilizzata una lista vuota.</param>
+        /// <returns>L'oggetto opzioni modificato, permettendo la concatenazione fluente.</returns>
         public static T WithTrueValues<T>(this T obj, List<string> values)
                 where T : IStringBooleanConverterOptions
         {
@@ -46,6 +60,13 @@ namespace easyTypeConverter.Conversion.Converter.Options
             return obj;
         }
 
+        /// <summary>
+        /// Imposta l'elenco di stringhe che verranno interpretate come <c>false</c>. I valori predefiniti sono "false", "0", "no", "off", "inactive", "disabled", "disable"
+        /// </summary>
+        /// <typeparam name="T">Il tipo dell'oggetto opzioni, che deve implementare <see cref="IStringBooleanConverterOptions"/>.</typeparam>
+        /// <param name="obj">L'oggetto opzioni da modificare.</param>
+        /// <param name="values">La lista di stringhe da considerare come false. Se <c>null</c>, viene utilizzata una lista vuota.</param>
+        /// <returns>L'oggetto opzioni modificato, permettendo la concatenazione fluente.</returns>
         public static T WithFalseValues<T>(this T obj, List<string> values)
                 where T : IStringBooleanConverterOptions
         {
@@ -53,6 +74,13 @@ namespace easyTypeConverter.Conversion.Converter.Options
             return obj;
         }
 
+        /// <summary>
+        /// Aggiunge un valore alla lista dei valori considerati come <c>true</c>, evitando duplicati (case-insensitive). I valori predefiniti sono "true", "1", "yes", "on", "active", "enabled", "enable"
+        /// </summary>
+        /// <typeparam name="T">Il tipo dell'oggetto opzioni, che deve implementare <see cref="IStringBooleanConverterOptions"/>.</typeparam>
+        /// <param name="obj">L'oggetto opzioni da modificare.</param>
+        /// <param name="value">La stringa da aggiungere alla lista dei valori true.</param>
+        /// <returns>L'oggetto opzioni modificato, permettendo la concatenazione fluente.</returns>
         public static T AddTrueValue<T>(this T obj, string value)
                 where T : IStringBooleanConverterOptions
         {
@@ -61,6 +89,13 @@ namespace easyTypeConverter.Conversion.Converter.Options
             return obj;
         }
 
+        /// <summary>
+        /// Aggiunge un valore alla lista dei valori considerati come <c>false</c>, evitando duplicati (case-insensitive). I valori predefiniti sono "false", "0", "no", "off", "inactive", "disabled", "disable"
+        /// </summary>
+        /// <typeparam name="T">Il tipo dell'oggetto opzioni, che deve implementare <see cref="IStringBooleanConverterOptions"/>.</typeparam>
+        /// <param name="obj">L'oggetto opzioni da modificare.</param>
+        /// <param name="value">La stringa da aggiungere alla lista dei valori false.</param>
+        /// <returns>L'oggetto opzioni modificato, permettendo la concatenazione fluente.</returns>
         public static T AddFalseValue<T>(this T obj, string value)
                 where T : IStringBooleanConverterOptions
         {
