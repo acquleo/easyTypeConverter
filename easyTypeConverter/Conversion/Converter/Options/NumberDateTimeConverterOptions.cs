@@ -4,7 +4,7 @@ using easyTypeConverter.Conversion.Filters.Options;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public class NumberDateTimeConverterOptions : INumberDateTimeConverterOptions
+    public class NumberDateTimeConverterOptions : ITypeConverterOptions, INumberDateTimeConverterOptions
     {
         public NumberDateTimeUnit Unit { get; set; } = NumberDateTimeUnit.Seconds;
         public DateTime Epoch { get; set; } = DateTime.UnixEpoch;

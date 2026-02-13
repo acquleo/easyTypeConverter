@@ -6,7 +6,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
 {
     
 
-    public class DateTimeNumberConverterOptions : IDateTimeNumberConverterOptions
+    public class DateTimeNumberConverterOptions : ITypeConverterOptions, IDateTimeNumberConverterOptions
     {
         public DateTimeNumberUnit Unit { get; set; } = DateTimeNumberUnit.Seconds;
         public DateTime Epoch { get; set; } = DateTime.UnixEpoch;

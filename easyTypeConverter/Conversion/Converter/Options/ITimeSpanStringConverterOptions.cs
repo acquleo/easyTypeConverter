@@ -4,7 +4,7 @@ using easyTypeConverter.Conversion.Filters.Options;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public interface ITimeSpanStringConverterOptions : ITypeConverterOptions
+    public interface ITimeSpanStringConverterOptions 
     {
         string? Format { get; set; }
         string Culture { get; set; }

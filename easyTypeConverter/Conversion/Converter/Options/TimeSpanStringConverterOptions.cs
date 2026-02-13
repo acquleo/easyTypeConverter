@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public class TimeSpanStringConverterOptions : ITimeSpanStringConverterOptions
+    public class TimeSpanStringConverterOptions : ITypeConverterOptions, ITimeSpanStringConverterOptions
     {
         [JsonPropertyName("format")]
         public string? Format { get; set; } = null;

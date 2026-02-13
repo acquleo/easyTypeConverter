@@ -1,6 +1,6 @@
 ﻿using easyTypeConverter.Conversion.Converter.Options;
 using easyTypeConverter.Conversion.Filters.Options;
-using easyTypeConverter.Transformation.Transformer.Options;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +10,10 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Serialization
 {
-    public class DataTransformSerializer
+    public class DataConverterSerializer
     {
-        PolymorphicConverter<DataTransformerOptions> transformerConverter = new();
         PolymorphicConverter<ITypeConverterOptions> extensibleConverter = new();
         PolymorphicConverter<IFilterOptions> filterConverter = new();
-        public void RegisterDataTransformer<TDerived>(string typeDiscriminator) where TDerived : DataTransformerOptions, new()
-        {
-            transformerConverter.RegisterSubtype<TDerived>(typeDiscriminator);
-        }
 
         public void RegisterTypeConverter<TDerived>(string typeDiscriminator) where TDerived : ITypeConverterOptions, new()
         {
@@ -29,41 +24,36 @@ namespace easyTypeConverter.Serialization
         {
             filterConverter.RegisterSubtype<TDerived>(typeDiscriminator);
         }
-
-        public string Serialize(DataTransformerHandlerOptions options)
+        public string Serialize(TypeConverterHandlerOptions options)
         {
             JsonSerializerOptions serializerOptions = new JsonSerializerOptions();
-            serializerOptions.Converters.Add(transformerConverter);
             serializerOptions.Converters.Add(extensibleConverter);
             serializerOptions.Converters.Add(filterConverter);
-            return System.Text.Json.JsonSerializer.Serialize<DataTransformerHandlerOptions>(options, serializerOptions);
+            return System.Text.Json.JsonSerializer.Serialize<TypeConverterHandlerOptions>(options, serializerOptions);
         }
 
-        public DataTransformerHandlerOptions Deserialize(string json)
+        public TypeConverterHandlerOptions Deserialize(string json)
         {
             JsonSerializerOptions serializerOptions = new JsonSerializerOptions();
-            serializerOptions.Converters.Add(transformerConverter);
             serializerOptions.Converters.Add(extensibleConverter);
             serializerOptions.Converters.Add(filterConverter);
-            return System.Text.Json.JsonSerializer.Deserialize<DataTransformerHandlerOptions>(json, serializerOptions) ?? throw new InvalidOperationException("Deserialization failed");
+            return System.Text.Json.JsonSerializer.Deserialize<TypeConverterHandlerOptions>(json, serializerOptions) ?? throw new InvalidOperationException("Deserialization failed");
         }
 
-        public string SerializeTransformer(DataTransformerOptions options)
+        public string SerializeConverter(ITypeConverterOptions options)
         {
             JsonSerializerOptions serializerOptions = new JsonSerializerOptions();
-            serializerOptions.Converters.Add(transformerConverter);
             serializerOptions.Converters.Add(extensibleConverter);
             serializerOptions.Converters.Add(filterConverter);
-            return System.Text.Json.JsonSerializer.Serialize<DataTransformerOptions>(options, serializerOptions);
+            return System.Text.Json.JsonSerializer.Serialize<ITypeConverterOptions>(options, serializerOptions);
         }
 
-        public DataTransformerOptions DeserializeTransform(string json)
+        public ITypeConverterOptions DeserializeTransform(string json)
         {
             JsonSerializerOptions serializerOptions = new JsonSerializerOptions();
-            serializerOptions.Converters.Add(transformerConverter);
             serializerOptions.Converters.Add(extensibleConverter);
             serializerOptions.Converters.Add(filterConverter);
-            return System.Text.Json.JsonSerializer.Deserialize<DataTransformerOptions>(json, serializerOptions) ?? throw new InvalidOperationException("Deserialization failed");
+            return System.Text.Json.JsonSerializer.Deserialize<ITypeConverterOptions>(json, serializerOptions) ?? throw new InvalidOperationException("Deserialization failed");
         }
     }
 }

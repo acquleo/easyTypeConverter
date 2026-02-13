@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public interface IStringTextInputOptions : ITypeConverterOptions
+    public interface IStringTextInputOptions 
     {
         public StringComparison Comparison { get; internal set; } 
     }

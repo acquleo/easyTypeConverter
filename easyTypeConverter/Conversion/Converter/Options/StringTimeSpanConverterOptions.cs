@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public class StringTimeSpanConverterOptions : IStringTimeSpanConverterOptions
+    public class StringTimeSpanConverterOptions : ITypeConverterOptions, IStringTimeSpanConverterOptions
     {
         [JsonPropertyName("culture")]
         public string Culture { get; set; } = string.Empty;

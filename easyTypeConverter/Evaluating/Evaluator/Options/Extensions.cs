@@ -31,4 +31,15 @@ namespace easyTypeConverter.Conversion.Filters.Options
         }
 
     }
+
+    public static class ExpressionEvaluatorOptionsExtensions
+    {
+        public static T WithExpression<T>(this T obj, string expression )
+                where T : ExpressionEvaluatorOptions
+        {
+            obj.Expression = expression;
+            return obj;
+        }
+
+    }
 }

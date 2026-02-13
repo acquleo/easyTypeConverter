@@ -6,7 +6,7 @@ using easyTypeConverter.Conversion.Converter.Options;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public class DecimalStringConverterOptions : IStringOutputOptions
+    public class DecimalStringConverterOptions : ITypeConverterOptions, IStringOutputOptions
     {
         [JsonPropertyName("format")]
         public string? Format { get; set; } = null;

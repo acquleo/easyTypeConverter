@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Common
 {
-    [JsonConverter(typeof(PolymorphicConverter<ExtensibleOptions>))]
-    public class ExtensibleOptions
+    public interface IExtensibleOptions
     {
     }
 }

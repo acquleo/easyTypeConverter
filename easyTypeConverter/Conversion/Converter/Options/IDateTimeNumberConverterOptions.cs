@@ -2,7 +2,7 @@ using easyTypeConverter.Conversion.Filters.Options;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public interface IDateTimeNumberConverterOptions : ITypeConverterOptions
+    public interface IDateTimeNumberConverterOptions
     {
         DateTimeNumberUnit Unit { get; set; }
         DateTime Epoch { get; set; }

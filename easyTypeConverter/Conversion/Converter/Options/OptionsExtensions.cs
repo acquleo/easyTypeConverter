@@ -71,7 +71,7 @@ namespace easyTypeConverter.Conversion.Converter.Options
     }
 
 
-    public static class ITypeConverterOptionsExtensions
+    public static class TypeConverterOptionsExtensions
     {
         /// <summary>
         /// Aggiunge un filtro di input all'oggetto opzioni specificato.

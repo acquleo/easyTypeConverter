@@ -36,7 +36,15 @@ namespace easyTypeConverter.Evaluating
             {
                 foreach (var action in options.Actions)
                 {
-                    this.actionHandler.Handle(inputContext, action);
+                    if(this.actionHandler.Handle(inputContext, action) && options.ExitOnFirstMatch)
+                    {
+                        break;
+                    }
+                }
+
+                if(options.DefaultAction!= null)
+                {
+                    this.actionHandler.Handle(inputContext, options.DefaultAction);
                 }
             }
         }

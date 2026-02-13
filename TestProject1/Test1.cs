@@ -43,6 +43,25 @@ namespace TestProject1
             var evaluator = options.Build(new ActionHandler());
             evaluator.Evaluate(new DataEvaluatorInputContext { Value = "pippo" });
 
+            ExpressionEvaluatorOptions options2 = new ExpressionEvaluatorOptions()
+                .WithExpression("val() == \"pippo\"")
+                .WithAction(action1);
+
+            for (int i = 0; i < 10000; i++)
+            {
+                evaluator = options2.Build(new ActionHandler());
+            
+            
+                evaluator.Evaluate(new DataEvaluatorInputContext { Value = "pippo" });
+            }
+
+            ExpressionEvaluatorOptions options3 = new ExpressionEvaluatorOptions()
+                .WithExpression("sts() == null()")
+                .WithAction(action1);
+
+            evaluator = options3.Build(new ActionHandler());
+
+            evaluator.Evaluate(new DataEvaluatorInputContext { Value = "pippo" });
 
             DataEvaluatorSerializer serializer = new DataEvaluatorSerializer();
 
@@ -872,9 +891,11 @@ namespace TestProject1
                 .WithSourceDataUnit(DataUnit.Byte)
                 .WithScaleThreshold(1));
 
-            string json = DataTransformSerializer.Serialize(options);
+            DataTransformSerializer serializer = new DataTransformSerializer();
 
-            DataTransformerHandlerOptions? deserializedOptions = DataTransformSerializer.Deserialize(json);
+            string json = serializer.Serialize(options);
+
+            DataTransformerHandlerOptions? deserializedOptions = serializer.Deserialize(json);
 
             if (deserializedOptions == null)
                 throw new InvalidOperationException();
@@ -890,9 +911,10 @@ namespace TestProject1
                 .WithSourceDataUnit(DataUnit.Bit)
                 .WithScaleThreshold(100.0);
 
-            string json_single = DataTransformSerializer.SerializeTransformer(testsingle);
+            
+            string json_single = serializer.SerializeTransformer(testsingle);
 
-            DataTransformerOptions? deserializedOptions_single = DataTransformSerializer.DeserializeTransform(json_single);
+            DataTransformerOptions? deserializedOptions_single = serializer.DeserializeTransform(json_single);
 
             Assert.IsNotNull(deserializedOptions_single);
 
@@ -918,12 +940,14 @@ namespace TestProject1
               ]
             }}";
 
-            DataTransformerHandlerOptions? manual_obj = DataTransformSerializer.Deserialize(manual_json);
+            DataConverterSerializer dataConverterSerializer = new DataConverterSerializer();
+
+            DataTransformerHandlerOptions? manual_obj = serializer.Deserialize(manual_json);
             var resulto = manual_obj.Build().Transform(DataTransformOutput.From((double)50), out var manual_result);
 
 
             BooleanStringConverterOptions optionsB = new BooleanStringConverterOptions();
-            var booh = JsonSerializer.Serialize<BooleanStringConverterOptions>(optionsB);
+            var booh = dataConverterSerializer.SerializeConverter(optionsB);
         }
 
         [TestMethod]

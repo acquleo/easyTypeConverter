@@ -4,7 +4,7 @@ using easyTypeConverter.Conversion.Filters.Options;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public class NumberTimeSpanConverterOptions : INumberTimeSpanConverterOptions
+    public class NumberTimeSpanConverterOptions : ITypeConverterOptions, INumberTimeSpanConverterOptions
     {
         [JsonPropertyName("unit")]
         public TimeSpanNumberUnit Unit { get; set; } = TimeSpanNumberUnit.Seconds;

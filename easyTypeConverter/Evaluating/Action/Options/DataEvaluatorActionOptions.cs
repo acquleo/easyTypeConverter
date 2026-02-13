@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace easyTypeConverter.Evaluating.Action.Options
 {
     [Polymorphic(TypeDiscriminatorPropertyName = "$type")]
-    public abstract class DataEvaluatorActionOptions : ExtensibleOptions
+    public abstract class DataEvaluatorActionOptions : IExtensibleOptions
     {
 
     }

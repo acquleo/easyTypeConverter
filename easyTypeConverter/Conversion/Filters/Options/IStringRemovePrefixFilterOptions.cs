@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Conversion.Filters.Options
 {
-    public interface IStringRemovePrefixFilterOptions : IFilterOptions
+    public interface IStringRemovePrefixFilterOptions 
     {
         public string Prefix { get; internal set; }
         public StringComparison Comparison { get; internal set; }

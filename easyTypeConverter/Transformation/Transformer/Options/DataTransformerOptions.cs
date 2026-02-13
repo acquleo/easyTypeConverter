@@ -1,4 +1,6 @@
-﻿using easyTypeConverter.Transformation;
+﻿using easyTypeConverter.Common;
+using easyTypeConverter.Serialization;
+using easyTypeConverter.Transformation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,15 +10,15 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Transformation.Transformer.Options
 {
-    [JsonPolymorphic(TypeDiscriminatorPropertyName = "$type")]
-    [JsonDerivedType(typeof(AutoScaleDataUnitTransformerOptions), "autoscale_dataunit")]
-    [JsonDerivedType(typeof(BitMaskTransformerOptions), "bitmask")]
-    [JsonDerivedType(typeof(DataUnitTransformerOptions), "dataunit")]
-    [JsonDerivedType(typeof(DeadbandTransformerOptions), "deadband")]
-    [JsonDerivedType(typeof(PercentageNormalizerTransformerOptions), "percentage_norm")]
-    [JsonDerivedType(typeof(ScalingTransformerOptions), "scaling")]
-    [JsonDerivedType(typeof(TypeConverterTransformerOptions), "type_converter")]
-    public abstract class DataTransformerOptions
+    [Polymorphic(TypeDiscriminatorPropertyName = "$type")]
+    [PolymorphicDerivedType(typeof(AutoScaleDataUnitTransformerOptions), "autoscale_dataunit")]
+    [PolymorphicDerivedType(typeof(BitMaskTransformerOptions), "bitmask")]
+    [PolymorphicDerivedType(typeof(DataUnitTransformerOptions), "dataunit")]
+    [PolymorphicDerivedType(typeof(DeadbandTransformerOptions), "deadband")]
+    [PolymorphicDerivedType(typeof(PercentageNormalizerTransformerOptions), "percentage_norm")]
+    [PolymorphicDerivedType(typeof(ScalingTransformerOptions), "scaling")]
+    [PolymorphicDerivedType(typeof(TypeConverterTransformerOptions), "type_converter")]
+    public abstract class DataTransformerOptions : IExtensibleOptions
     {
         public abstract DataTransformer Build();
     }

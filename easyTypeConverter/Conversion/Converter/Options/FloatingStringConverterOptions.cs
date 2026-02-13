@@ -8,7 +8,7 @@ using easyTypeConverter.Conversion.Filters.Options;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public class FloatingStringConverterOptions : IStringOutputOptions
+    public class FloatingStringConverterOptions : ITypeConverterOptions, IStringOutputOptions
     {
         [JsonPropertyName("format")]
         public string? Format { get; set; } = null;

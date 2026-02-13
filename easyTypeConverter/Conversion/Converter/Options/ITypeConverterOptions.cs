@@ -1,5 +1,7 @@
-﻿using easyTypeConverter.Conversion;
+﻿using easyTypeConverter.Common;
+using easyTypeConverter.Conversion;
 using easyTypeConverter.Conversion.Filters.Options;
+using easyTypeConverter.Serialization;
 using easyTypeConverter.Transformation.Transformer.Options;
 using System;
 using System.Collections.Generic;
@@ -10,23 +12,23 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    [JsonPolymorphic(TypeDiscriminatorPropertyName = "$type")]
-    [JsonDerivedType(typeof(BooleanStringConverterOptions), "bool_str")]
-    [JsonDerivedType(typeof(FloatingConverterOptions), "float")]
-    [JsonDerivedType(typeof(FloatingIntegralConverterOptions), "float_int")]
-    [JsonDerivedType(typeof(IntegralConverterOptions), "num")]
-    [JsonDerivedType(typeof(NumberTimeSpanConverterOptions), "num_timespan")]
-    [JsonDerivedType(typeof(StringBooleanConverterOptions), "str_bool")]
-    [JsonDerivedType(typeof(StringDecimalConverterOptions), "str_dec")]
-    [JsonDerivedType(typeof(StringFloatingConverterOptions), "str_float")]
-    [JsonDerivedType(typeof(StringNumericConverterOptions), "str_num")]
-    [JsonDerivedType(typeof(StringTimeSpanConverterOptions), "str_timespan")]
-    [JsonDerivedType(typeof(TimeSpanNumberConverterOptions), "timespan_num")]
-    [JsonDerivedType(typeof(TimeSpanStringConverterOptions), "timespan_str")]
-    public interface ITypeConverterOptions
+    [Polymorphic(TypeDiscriminatorPropertyName = "$type")]
+    [PolymorphicDerivedType(typeof(BooleanStringConverterOptions), "bool_str")]
+    [PolymorphicDerivedType(typeof(FloatingConverterOptions), "float")]
+    [PolymorphicDerivedType(typeof(FloatingIntegralConverterOptions), "float_int")]
+    [PolymorphicDerivedType(typeof(IntegralConverterOptions), "int")]
+    [PolymorphicDerivedType(typeof(NumberTimeSpanConverterOptions), "num_ts")]
+    [PolymorphicDerivedType(typeof(StringBooleanConverterOptions), "str_bool")]
+    [PolymorphicDerivedType(typeof(StringDecimalConverterOptions), "str_dec")]
+    [PolymorphicDerivedType(typeof(StringFloatingConverterOptions), "str_float")]
+    [PolymorphicDerivedType(typeof(StringNumericConverterOptions), "str_num")]
+    [PolymorphicDerivedType(typeof(StringTimeSpanConverterOptions), "str_ts")]
+    [PolymorphicDerivedType(typeof(TimeSpanNumberConverterOptions), "ts_num")]
+    [PolymorphicDerivedType(typeof(TimeSpanStringConverterOptions), "ts_str")]
+    public interface ITypeConverterOptions : IExtensibleOptions
     {
-        List<IFilterOptions> InputFilters { get; }
-        List<IFilterOptions> OutputFilters { get; }
+        List<IFilterOptions> InputFilters { get; set;  }
+        List<IFilterOptions> OutputFilters { get; set; }
         TypeConverter Build();
     }
 }

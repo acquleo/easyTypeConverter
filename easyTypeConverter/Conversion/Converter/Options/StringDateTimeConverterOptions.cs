@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public class StringDateTimeConverterOptions : IStringDateTimeConverterOptions
+    public class StringDateTimeConverterOptions : ITypeConverterOptions, IStringDateTimeConverterOptions
     {
         [JsonPropertyName("culture")]
         public string Culture { get; set; } = string.Empty;

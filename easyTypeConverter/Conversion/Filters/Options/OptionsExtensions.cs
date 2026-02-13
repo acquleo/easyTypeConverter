@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Conversion.Filters.Options
 {
-    public static class IFilterOptionsExtensions
+    public static class FilterOptionsExtensions
     {
         public static T WithAction<T>(this T obj, FilterAction action)
                 where T : IFilterOptions

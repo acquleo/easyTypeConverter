@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Serialization
 {
-    public class PolymorphicConverter<TBase> : JsonConverter<TBase> where TBase : ExtensibleOptions
+    public class PolymorphicConverter<TBase> : JsonConverter<TBase> where TBase : IExtensibleOptions
     {
         private readonly Dictionary<string, Type> _userTypes = new();
         private readonly string _discriminator;

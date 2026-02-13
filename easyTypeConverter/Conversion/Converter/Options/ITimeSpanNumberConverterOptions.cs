@@ -4,7 +4,7 @@ using easyTypeConverter.Conversion.Filters.Options;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public interface ITimeSpanNumberConverterOptions : ITypeConverterOptions
+    public interface ITimeSpanNumberConverterOptions 
     {
         TimeSpanNumberUnit Unit { get; set; }
     }

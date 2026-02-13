@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Conversion.Filters.Options
 {
-    public interface IStringNumericBooleanFilterOptions:IFilterOptions
+    public interface IStringNumericBooleanFilterOptions: IFilterOptions
     {
         public CultureInfo Culture { get; set; }
         public NumberStyles NumberStyle { get; set; }

@@ -47,7 +47,7 @@ namespace easyTypeConverter.Transformation
 
                     currrentOutput = outConverterData;
                 }
-                catch (Exception ex)
+                catch
                 {
                     throw;
                 }

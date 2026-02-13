@@ -9,5 +9,6 @@ namespace easyTypeConverter.Evaluating
     public class DataEvaluatorInputContext
     {
         public object? Value { get; set; }
+        public string? Status { get; set; } = null;
     }
 }

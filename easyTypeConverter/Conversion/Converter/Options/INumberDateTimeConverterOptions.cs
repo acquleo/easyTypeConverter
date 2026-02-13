@@ -1,6 +1,6 @@
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public interface INumberDateTimeConverterOptions : ITypeConverterOptions
+    public interface INumberDateTimeConverterOptions
     {
         NumberDateTimeUnit Unit { get; set; }
         DateTime Epoch { get; set; }

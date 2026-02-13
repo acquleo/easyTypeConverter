@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Serialization
 {
-    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
     public sealed class PolymorphicAttribute : Attribute
     {
         public string TypeDiscriminatorPropertyName { get; set; }

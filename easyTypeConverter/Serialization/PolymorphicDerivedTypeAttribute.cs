@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Serialization
 {
-    [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
+    [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
     public sealed class PolymorphicDerivedTypeAttribute : Attribute
     {
         public Type DerivedType { get; }

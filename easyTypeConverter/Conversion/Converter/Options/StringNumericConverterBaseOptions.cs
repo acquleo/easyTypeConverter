@@ -10,8 +10,7 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public abstract class StringNumericConverterBaseOptions :
-        IStringIntegralConverterBaseOptions
+    public abstract class StringNumericConverterBaseOptions : ITypeConverterOptions, IStringIntegralConverterBaseOptions
     {
         [JsonPropertyName("style")]
         public NumberStyles NumberStyle { get; set; } = NumberStyles.Any;

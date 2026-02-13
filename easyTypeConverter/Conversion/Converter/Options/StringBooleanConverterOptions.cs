@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public class StringBooleanConverterOptions : IStringBooleanConverterOptions
+    public class StringBooleanConverterOptions : ITypeConverterOptions, IStringBooleanConverterOptions
     {
         public bool DefaultOutput { get; set; } = false;
         public List<IFilterOptions> InputFilters { get; set; } = new();
         public List<IFilterOptions> OutputFilters { get; set; } = new();
-
         /// <summary>
         /// Elenco di stringhe che verranno convertite in <c>true</c>. I valori predefiniti sono "true", "1", "yes", "on", "active", "enabled", "enable". Il confronto non fa distinzione tra maiuscole e minuscole.
         /// </summary>

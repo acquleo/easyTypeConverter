@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Conversion.Converter.Options
 {
-    public class BooleanStringConverterOptions : IStringOutputOptions
+    public class BooleanStringConverterOptions : ITypeConverterOptions, IStringOutputOptions
     {
         [JsonPropertyName("culture")]
         public string Culture { get; set; } = string.Empty;
