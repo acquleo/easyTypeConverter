@@ -28,7 +28,21 @@ namespace easyTypeConverter.Evaluating.Evaluators
 
         private void Expression_EvaluateParameter(string name, ParameterArgs args)
         {
-            args.Result = name;
+            if (this.Context == null)
+            {
+                return;
+            }
+
+            var function = name;
+
+            if (analyze)
+            {
+                this.Context.Analyze(ParamType.Param, function);
+                args.Result = null;
+                return;
+            }
+
+            args.Result = this.Context.Evaluate(ParamType.Param, function);
         }
 
         private void Expression_EvaluateFunction(string name, FunctionArgs args)
@@ -43,12 +57,12 @@ namespace easyTypeConverter.Evaluating.Evaluators
 
             if(analyze)
             {
-                this.Context.Analyze(function, parameters);
+                this.Context.Analyze(ParamType.Function, function, parameters);
                 args.Result = null;
                 return;
             }
 
-            args.Result = this.Context.Evaluate(function, parameters);
+            args.Result = this.Context.Evaluate(ParamType.Function, function, parameters);
         }
 
         public override void Analyze()

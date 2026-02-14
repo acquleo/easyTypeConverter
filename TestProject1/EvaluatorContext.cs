@@ -9,14 +9,23 @@ namespace TestProject1
 {
     internal class EvaluatorContext : IEvaluatorContext
     {
-        public void Analyze(string functionName, params object?[] args)
+        public void Analyze(ParamType paramType, string name, params object?[] args)
         {
-            throw new NotImplementedException();
+            return;
         }
 
-        public object? Evaluate(string functionName, params object?[] args)
+        public object? Evaluate(ParamType paramType, string name, params object?[] args)
         {
-            throw new NotImplementedException();
+            if (args[0]?.ToString() == "A")
+            {
+                return 10;
+            }
+            if (args[0]?.ToString() == "B")
+            {
+                return 2;
+            }
+            return null;
         }
     }
 }
+

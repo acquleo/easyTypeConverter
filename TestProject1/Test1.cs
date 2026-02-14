@@ -38,43 +38,72 @@ namespace TestProject1
 
 
             var mockHandler = new Mock<IEvaluatorContext>();
-            mockHandler.Setup(h => h.Evaluate(It.IsAny<string>(), It.IsAny<object[]>()))
-               .Returns((string value, object[] args) =>
-               {
-                   if (value == "val" && args.Length == 1 && args[0].ToString() == "A") return 10;
-                   if (value == "val" && args.Length == 1 && args[0].ToString() == "B") return 2;
-                   return null; // default
-               });
+            
             
             var evaluator = options.Build(mockHandler.Object);
 
+            mockHandler.Reset();
+
+            mockHandler.Setup(h => h.Evaluate(It.IsAny<ParamType>(), It.IsAny<string>(), It.IsAny<object[]>()))
+           .Returns((ParamType paramType, string name, object[] args) =>
+           {
+               if (paramType == ParamType.Function && name == "val" && args.Length == 1 && args[0].ToString() == "A") return 10;
+               if (paramType == ParamType.Function && name == "val" && args.Length == 1 && args[0].ToString() == "B") return 2;
+               return null; // default
+
+           });
+
+
             evaluator.Analyze();
 
-            
+
             var result = evaluator.Evaluate();
 
-            mockHandler.Verify(m => m.Analyze("val", It.Is<object[]>(arr => arr.Length == 1 && arr[0].Equals("A"))), Times.Once());
-            mockHandler.Verify(m => m.Analyze("val", It.Is<object[]>(arr => arr.Length == 1 && arr[0].Equals("B"))), Times.Once());
+            mockHandler.Verify(m => m.Analyze(ParamType.Function, "val", It.Is<object[]>(arr => arr.Length == 1 && arr[0].Equals("A"))), Times.Once());
+            mockHandler.Verify(m => m.Analyze(ParamType.Function, "val", It.Is<object[]>(arr => arr.Length == 1 && arr[0].Equals("B"))), Times.Once());
 
-            mockHandler.Verify(m => m.Evaluate("val", It.Is<object[]>(arr => arr.Length == 1 && arr[0].Equals("A"))), Times.Once());
-            mockHandler.Verify(m => m.Evaluate("val", It.Is<object[]>(arr => arr.Length == 1 && arr[0].Equals("B"))), Times.Once());
+            mockHandler.Verify(m => m.Evaluate(ParamType.Function, "val", It.Is<object[]>(arr => arr.Length == 1 && arr[0].Equals("A"))), Times.Once());
+            mockHandler.Verify(m => m.Evaluate(ParamType.Function, "val", It.Is<object[]>(arr => arr.Length == 1 && arr[0].Equals("B"))), Times.Once());
 
             Assert.IsNotNull(result);
             Assert.AreEqual(true, result);
         }
+        [TestMethod]
+        [Timeout(20000)]
+        public void TestExpressionPerf()
+        {
+            NcalcExpressionEvaluatorOptions options = new NcalcExpressionEvaluatorOptions()
+                .WithExpression("val(\"A\") > val(\"B\")");
 
+
+            var evaluator = options.Build(new EvaluatorContext());
+
+            for (int i = 0; i < 10000000; i++)
+            {
+                
+
+                evaluator.Analyze();
+
+
+                var result = evaluator.Evaluate();
+
+                Assert.IsNotNull(result);
+                Assert.AreEqual(true, result);
+            }
+        }
         [TestMethod]
         public void TestExpressionEqual()
         {
             NcalcExpressionEvaluatorOptions options = new NcalcExpressionEvaluatorOptions()
-                .WithExpression("val() == null()");
+                .WithExpression("val == null");
 
 
             var mockHandler = new Mock<IEvaluatorContext>();
-            mockHandler.Setup(h => h.Evaluate(It.IsAny<string>(), It.IsAny<object[]>()))
-               .Returns((string value, object[] args) =>
+            mockHandler.Setup(h => h.Evaluate(It.IsAny<ParamType>(), It.IsAny<string>(), It.IsAny<object[]>()))
+               .Returns((ParamType paramType, string name, object[] args) =>
                {
-                   if (value == "val" && args.Length == 0) return null;
+                   if (paramType == ParamType.Param && name == "val" && args.Length == 0) return null;
+                   if (paramType == ParamType.Param && name == "null" && args.Length == 0) return null;
                    return null; // default
                });
 
@@ -82,15 +111,14 @@ namespace TestProject1
 
             evaluator.Analyze();
 
-            mockHandler.Verify(m => m.Analyze("val", It.IsAny<object[]>()), Times.Once());
-            mockHandler.Verify(m => m.Analyze("null", It.IsAny<object[]>()), Times.Once());
-
+            mockHandler.Verify(m => m.Analyze(ParamType.Param, "val", It.IsAny<object[]>()), Times.Once());
+            mockHandler.Verify(m => m.Analyze(ParamType.Param, "null", It.IsAny<object[]>()), Times.Once());
             mockHandler.Reset();
 
             var result = evaluator.Evaluate();
 
-            mockHandler.Verify(m => m.Evaluate("val", It.IsAny<object[]>()), Times.Once());
-            mockHandler.Verify(m => m.Evaluate("null", It.IsAny<object[]>()), Times.Once());
+            mockHandler.Verify(m => m.Evaluate(ParamType.Param, "val", It.IsAny<object[]>()), Times.Once());
+            mockHandler.Verify(m => m.Evaluate(ParamType.Param, "null", It.IsAny<object[]>()), Times.Once());
 
             Assert.IsNotNull(result);
             Assert.AreEqual(true, result);
