@@ -16,7 +16,7 @@ namespace easyTypeConverter.Serialization
 
         }
 
-        public void RegisterEvaluator<TDerived>(string typeDiscriminator) where TDerived : EvaluatorOptions, new()
+        public void RegisterEvaluator<TDerived>(string typeDiscriminator) where TDerived : EvaluatorOptions\, new()
         {
             extensibleConverter.RegisterSubtype<TDerived>(typeDiscriminator);
         }
