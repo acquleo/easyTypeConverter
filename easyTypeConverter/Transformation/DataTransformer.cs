@@ -33,8 +33,8 @@ namespace easyTypeConverter.Transformation
         }
 
         public abstract List<Type> SourceTypeList { get; }
-        protected abstract bool OnTransform(DataTransformOutput inData, [NotNullWhen(true)] out DataTransformOutput? outData);
-        public bool Transform(DataTransformOutput? inData, out DataTransformOutput? outData)
+        protected abstract bool OnTransform(DataTransformContext inData, [NotNullWhen(true)] out DataTransformContext? outData);
+        public bool Transform(DataTransformContext? inData, out DataTransformContext? outData)
         {
             if (inData == null)
             {

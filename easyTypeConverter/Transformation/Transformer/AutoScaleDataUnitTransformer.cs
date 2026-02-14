@@ -195,7 +195,7 @@ namespace easyTypeConverter.Transformation.Transformer
         /// evaluates higher units until the value drops below
         /// <see cref="AutoScaleDataUnitTransformerOptions.ScaleThreshold"/>.
         /// </remarks>
-        protected override bool OnTransform(DataTransformOutput inData, [NotNullWhen(true)] out DataTransformOutput? outData)
+        protected override bool OnTransform(DataTransformContext inData, [NotNullWhen(true)] out DataTransformContext? outData)
         {
             var unit = inData.ValueUnit == null ? GetUnit(options.SourceUnit) : inData.ValueUnit;
             var doubleValue = (double)Convert.ChangeType(inData.Value, typeof(double));
@@ -204,7 +204,7 @@ namespace easyTypeConverter.Transformation.Transformer
             DataUnit bestUnit = scale[0];
 
             var baseTransformer = new DataUnitTransformer(new DataUnitTransformerOptions().WithSourceDataUnit(options.SourceUnit).WithTargetDataUnit(bestUnit));
-            if(!baseTransformer.Transform(DataTransformOutput.From(doubleValue, unit), out var transformedDoubleValue))
+            if(!baseTransformer.Transform(DataTransformContext.From(doubleValue, unit), out var transformedDoubleValue))
             {
                 outData = null;
                 return false;
@@ -221,7 +221,7 @@ namespace easyTypeConverter.Transformation.Transformer
             for (int i = 1; i < scale.Length; i++)
             {
                 var testTransformer = new DataUnitTransformer(new DataUnitTransformerOptions().WithSourceDataUnit(scale[0]).WithTargetDataUnit(scale[i]));
-                if (!testTransformer.Transform(DataTransformOutput.From(doubleValue, unit), out var test_transformedDoubleValue))
+                if (!testTransformer.Transform(DataTransformContext.From(doubleValue, unit), out var test_transformedDoubleValue))
                 {
                     outData = null;
                     return false;
@@ -247,7 +247,7 @@ namespace easyTypeConverter.Transformation.Transformer
                 }
             }
 
-            outData = DataTransformOutput.From(bestValue, GetUnit(bestUnit));
+            outData = DataTransformContext.From(bestValue, GetUnit(bestUnit));
             return true;
         }
     }

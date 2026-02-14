@@ -5,14 +5,18 @@ using easyTypeConverter.Conversion.Converter.Options;
 using easyTypeConverter.Conversion.Exceptions;
 using easyTypeConverter.Conversion.Filters.Options;
 using easyTypeConverter.Evaluating;
-using easyTypeConverter.Evaluating.Evaluator.Options;
+using easyTypeConverter.Evaluating.Evaluators.Options;
 using easyTypeConverter.Formatting.Formatter;
 using easyTypeConverter.Formatting.Formatter.Options;
 using easyTypeConverter.Serialization;
 using easyTypeConverter.Transformation;
 using easyTypeConverter.Transformation.Transformer;
 using easyTypeConverter.Transformation.Transformer.Options;
+using easyTypeConverter.Triggering;
+using easyTypeConverter.Triggering.Evaluator.Options;
+using Moq;
 using System.Globalization;
+using System.Reflection.Metadata;
 using System.Text.Json;
 
 namespace TestProject1
@@ -24,10 +28,75 @@ namespace TestProject1
 
         public Test1()
         {
+            
+        }
+        [TestMethod]
+        public void TestExpressionGreather()
+        {
+            NcalcExpressionEvaluatorOptions options = new NcalcExpressionEvaluatorOptions()
+                .WithExpression("val(\"A\") > val(\"B\")");
 
+
+            var mockHandler = new Mock<IEvaluatorContext>();
+            mockHandler.Setup(h => h.Evaluate(It.IsAny<string>(), It.IsAny<object[]>()))
+               .Returns((string value, object[] args) =>
+               {
+                   if (value == "val" && args.Length == 1 && args[0].ToString() == "A") return 10;
+                   if (value == "val" && args.Length == 1 && args[0].ToString() == "B") return 2;
+                   return null; // default
+               });
+            
+            var evaluator = options.Build(mockHandler.Object);
+
+            evaluator.Analyze();
+
+            
+            var result = evaluator.Evaluate();
+
+            mockHandler.Verify(m => m.Analyze("val", It.Is<object[]>(arr => arr.Length == 1 && arr[0].Equals("A"))), Times.Once());
+            mockHandler.Verify(m => m.Analyze("val", It.Is<object[]>(arr => arr.Length == 1 && arr[0].Equals("B"))), Times.Once());
+
+            mockHandler.Verify(m => m.Evaluate("val", It.Is<object[]>(arr => arr.Length == 1 && arr[0].Equals("A"))), Times.Once());
+            mockHandler.Verify(m => m.Evaluate("val", It.Is<object[]>(arr => arr.Length == 1 && arr[0].Equals("B"))), Times.Once());
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(true, result);
         }
 
         [TestMethod]
+        public void TestExpressionEqual()
+        {
+            NcalcExpressionEvaluatorOptions options = new NcalcExpressionEvaluatorOptions()
+                .WithExpression("val() == null()");
+
+
+            var mockHandler = new Mock<IEvaluatorContext>();
+            mockHandler.Setup(h => h.Evaluate(It.IsAny<string>(), It.IsAny<object[]>()))
+               .Returns((string value, object[] args) =>
+               {
+                   if (value == "val" && args.Length == 0) return null;
+                   return null; // default
+               });
+
+            var evaluator = options.Build(mockHandler.Object);
+
+            evaluator.Analyze();
+
+            mockHandler.Verify(m => m.Analyze("val", It.IsAny<object[]>()), Times.Once());
+            mockHandler.Verify(m => m.Analyze("null", It.IsAny<object[]>()), Times.Once());
+
+            mockHandler.Reset();
+
+            var result = evaluator.Evaluate();
+
+            mockHandler.Verify(m => m.Evaluate("val", It.IsAny<object[]>()), Times.Once());
+            mockHandler.Verify(m => m.Evaluate("null", It.IsAny<object[]>()), Times.Once());
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(true, result);
+        }
+
+            [TestMethod]
         public void TestDataEvaluator()
         {
             SetStatusActionOptions action1 = new SetStatusActionOptions();
@@ -36,14 +105,14 @@ namespace TestProject1
             SetStatusActionOptions action2 = new SetStatusActionOptions();
             action2.StatusToBeSet = "INACTIVE";
 
-            EqualityDataEvaluatorOptions options = new EqualityDataEvaluatorOptions()
+            EqualityTriggerOptions options = new EqualityTriggerOptions()
                 .WithValueToCompare("pippo")
                 .WithAction(action1);
 
             var evaluator = options.Build(new ActionHandler());
-            evaluator.Evaluate(new DataEvaluatorInputContext { Value = "pippo" });
+            evaluator.Evaluate(new TriggerInputContext { Value = "pippo" });
 
-            ExpressionEvaluatorOptions options2 = new ExpressionEvaluatorOptions()
+            NcalcExpressionTriggerOptions options2 = new NcalcExpressionTriggerOptions()
                 .WithExpression("val() == \"pippo\"")
                 .WithAction(action1);
 
@@ -52,16 +121,16 @@ namespace TestProject1
                 evaluator = options2.Build(new ActionHandler());
             
             
-                evaluator.Evaluate(new DataEvaluatorInputContext { Value = "pippo" });
+                evaluator.Evaluate(new TriggerInputContext { Value = "pippo" });
             }
 
-            ExpressionEvaluatorOptions options3 = new ExpressionEvaluatorOptions()
+            NcalcExpressionTriggerOptions options3 = new NcalcExpressionTriggerOptions()
                 .WithExpression("sts() == null()")
                 .WithAction(action1);
 
             evaluator = options3.Build(new ActionHandler());
 
-            evaluator.Evaluate(new DataEvaluatorInputContext { Value = "pippo" });
+            evaluator.Evaluate(new TriggerInputContext { Value = "pippo" });
 
             DataEvaluatorSerializer serializer = new DataEvaluatorSerializer();
 
@@ -71,7 +140,7 @@ namespace TestProject1
 
             var test = serializer.DeserializeEvaluator(json);
 
-            test.Build(new ActionHandler()).Evaluate(new DataEvaluatorInputContext { Value = "pippo" });
+            test.Build(new ActionHandler()).Evaluate(new TriggerInputContext { Value = "pippo" });
         }
 
         [TestMethod]
@@ -568,7 +637,7 @@ namespace TestProject1
             DataUnitTransformerOptions options = new DataUnitTransformerOptions();
             var transformer = options.Build();
 
-            transformer.Transform(DataTransformOutput.From(1000000), out var rtesult);
+            transformer.Transform(DataTransformContext.From(1000000), out var rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)1, rtesult.Value);
@@ -580,32 +649,32 @@ namespace TestProject1
             AutoScaleDataUnitTransformerOptions options = new AutoScaleDataUnitTransformerOptions();
             var transformer = options.Build();
 
-            transformer.Transform(DataTransformOutput.From(512.0), out var rtesult);
+            transformer.Transform(DataTransformContext.From(512.0), out var rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)512.0, rtesult.Value);
 
-            transformer.Transform(DataTransformOutput.From(1024.0), out rtesult);
+            transformer.Transform(DataTransformContext.From(1024.0), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)1.0, rtesult.Value);
 
-            transformer.Transform(DataTransformOutput.From(1536.0), out rtesult);
+            transformer.Transform(DataTransformContext.From(1536.0), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)1.5, rtesult.Value);
 
-            transformer.Transform(DataTransformOutput.From((int)1_048_576), out rtesult);
+            transformer.Transform(DataTransformContext.From((int)1_048_576), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)1.00, rtesult.Value);
 
-            transformer.Transform(DataTransformOutput.From(1_610_612_736.0), out rtesult);
+            transformer.Transform(DataTransformContext.From(1_610_612_736.0), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)1.50, rtesult.Value);
 
-            transformer.Transform(DataTransformOutput.From(1_099_511_627_776.0), out rtesult);
+            transformer.Transform(DataTransformContext.From(1_099_511_627_776.0), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)1.00, rtesult.Value);
@@ -620,25 +689,25 @@ namespace TestProject1
 
             var transformer = options.Build();
 
-            transformer.Transform(DataTransformOutput.From(512.0), out var rtesult);
+            transformer.Transform(DataTransformContext.From(512.0), out var rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)-48.030769230769231, rtesult.Value);
             Assert.AreEqual(typeof(double), rtesult.Value.GetType());
 
-            transformer.Transform(DataTransformOutput.From(0), out rtesult);
+            transformer.Transform(DataTransformContext.From(0), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)-50, rtesult.Value);
             Assert.AreEqual(typeof(double), rtesult.Value.GetType());
 
-            transformer.Transform(DataTransformOutput.From(65000), out rtesult);
+            transformer.Transform(DataTransformContext.From(65000), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)200, rtesult.Value);
             Assert.AreEqual(typeof(double), rtesult.Value.GetType());
 
-            transformer.Transform(DataTransformOutput.From((int)13000), out rtesult);
+            transformer.Transform(DataTransformContext.From((int)13000), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)0, rtesult.Value);
@@ -659,19 +728,19 @@ namespace TestProject1
 
             DataTransformerHandler handler = options.Build();
 
-            handler.Transform(DataTransformOutput.From((double)0), out var rtesult);
+            handler.Transform(DataTransformContext.From((double)0), out var rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)0, rtesult.Value);
             Assert.AreEqual(typeof(double), rtesult.Value.GetType());
 
-            handler.Transform(DataTransformOutput.From((double)6), out rtesult);
+            handler.Transform(DataTransformContext.From((double)6), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)0, rtesult.Value);
             Assert.AreEqual(typeof(double), rtesult.Value.GetType());
 
-            handler.Transform(DataTransformOutput.From((int)11), out rtesult);
+            handler.Transform(DataTransformContext.From((int)11), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((double)11, rtesult.Value);
@@ -686,19 +755,19 @@ namespace TestProject1
             handler.AddTransformer(new DeadbandTransformerOptions()
                 .WithDeadband(10.0));
 
-            handler.Transform(DataTransformOutput.From((int)0), out var rtesult);
+            handler.Transform(DataTransformContext.From((int)0), out var rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((int)0, rtesult.Value);
             Assert.AreEqual(typeof(int), rtesult.Value.GetType());
 
-            handler.Transform(DataTransformOutput.From((int)6), out rtesult);
+            handler.Transform(DataTransformContext.From((int)6), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((int)0, rtesult.Value);
             Assert.AreEqual(typeof(int), rtesult.Value.GetType());
 
-            handler.Transform(DataTransformOutput.From((int)11), out rtesult);
+            handler.Transform(DataTransformContext.From((int)11), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((int)11, rtesult.Value);
@@ -713,19 +782,19 @@ namespace TestProject1
             handler.AddTransformer(new BitMaskTransformerOptions()
                 .WithMask(0x02));
 
-            handler.Transform(DataTransformOutput.From((int)0), out var rtesult);
+            handler.Transform(DataTransformContext.From((int)0), out var rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((bool)false, rtesult.Value);
             Assert.AreEqual(typeof(bool), rtesult.Value.GetType());
 
-            handler.Transform(DataTransformOutput.From((int)7), out rtesult);
+            handler.Transform(DataTransformContext.From((int)7), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((bool)true, rtesult.Value);
             Assert.AreEqual(typeof(bool), rtesult.Value.GetType());
 
-            handler.Transform(DataTransformOutput.From((int)2), out rtesult);
+            handler.Transform(DataTransformContext.From((int)2), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((bool)true, rtesult.Value);
@@ -741,19 +810,19 @@ namespace TestProject1
             handler.AddTransformer(new BitMaskTransformerOptions()
                 .WithMask(0x06).WithNormalize());
 
-            handler.Transform(DataTransformOutput.From((int)0), out var rtesult);
+            handler.Transform(DataTransformContext.From((int)0), out var rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((ulong)0, rtesult.Value);
             Assert.AreEqual(typeof(ulong), rtesult.Value.GetType());
 
-            handler.Transform(DataTransformOutput.From((int)2), out rtesult);
+            handler.Transform(DataTransformContext.From((int)2), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((ulong)1, rtesult.Value);
             Assert.AreEqual(typeof(ulong), rtesult.Value.GetType());
 
-            handler.Transform(DataTransformOutput.From((int)7), out rtesult);
+            handler.Transform(DataTransformContext.From((int)7), out rtesult);
 
             Assert.IsNotNull(rtesult);
             Assert.AreEqual((ulong)3, rtesult.Value);
@@ -902,7 +971,7 @@ namespace TestProject1
 
             var handler = deserializedOptions.Build();
 
-            handler.Transform(DataTransformOutput.From((double)50), out var result);
+            handler.Transform(DataTransformContext.From((double)50), out var result);
 
             Assert.IsNotNull(result);
 
@@ -943,7 +1012,7 @@ namespace TestProject1
             DataConverterSerializer dataConverterSerializer = new DataConverterSerializer();
 
             DataTransformerHandlerOptions? manual_obj = serializer.Deserialize(manual_json);
-            var resulto = manual_obj.Build().Transform(DataTransformOutput.From((double)50), out var manual_result);
+            var resulto = manual_obj.Build().Transform(DataTransformContext.From((double)50), out var manual_result);
 
 
             BooleanStringConverterOptions optionsB = new BooleanStringConverterOptions();

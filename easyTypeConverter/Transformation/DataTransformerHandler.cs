@@ -28,7 +28,7 @@ namespace easyTypeConverter.Transformation
             transformers.Add(dataTransformer);            
         }
 
-        public bool Transform(DataTransformOutput? inData, out DataTransformOutput? outData)
+        public bool Transform(DataTransformContext? inData, out DataTransformContext? outData)
         {
             if (inData == null)
             {
@@ -36,7 +36,7 @@ namespace easyTypeConverter.Transformation
                 return true;
             }
 
-            DataTransformOutput? currrentOutput = inData;
+            DataTransformContext? currrentOutput = inData;
 
             foreach (var converter in transformers)
             {

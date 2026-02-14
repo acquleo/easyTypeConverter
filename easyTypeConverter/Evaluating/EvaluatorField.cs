@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Evaluating
 {
-    public abstract class DataEvaluatorAction
+    public class EvaluatorField
     {
-        public abstract void Handle(DataEvaluatorInputContext? inputContext);
+        public string Id { get; set; }
     }
 }

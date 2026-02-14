@@ -77,7 +77,7 @@ namespace easyTypeConverter.Transformation.Transformer
         /// The first value received always passes through. Subsequent values are only propagated
         /// if the absolute difference from the last value exceeds the configured deadband threshold.
         /// </remarks>
-        protected override bool OnTransform(DataTransformOutput inData, [NotNullWhen(true)] out DataTransformOutput? outData)
+        protected override bool OnTransform(DataTransformContext inData, [NotNullWhen(true)] out DataTransformContext? outData)
         {
             // First value always passes through
             if (_lastValue is null)
@@ -96,7 +96,7 @@ namespace easyTypeConverter.Transformation.Transformer
                 return true;
             }
 
-            outData = DataTransformOutput.From(_lastValue, inData.ValueUnit);
+            outData = DataTransformContext.From(_lastValue, inData.ValueUnit);
             return true;
         }
 

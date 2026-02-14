@@ -86,14 +86,14 @@ namespace easyTypeConverter.Transformation.Transformer
         /// The method first normalizes the input value to the range [0, 1] based on the input range,
         /// then scales it to the output range. The resulting value is always returned as a double.
         /// </remarks>
-        protected override bool OnTransform(DataTransformOutput inData, [NotNullWhen(true)] out DataTransformOutput? outData)
+        protected override bool OnTransform(DataTransformContext inData, [NotNullWhen(true)] out DataTransformContext? outData)
         {
 
             var doubleValue = (double)Convert.ChangeType(inData.Value, typeof(double));
 
             var normalized = (doubleValue - options.InputMin) / (options.InputMax - options.InputMin);
             var outValue = normalized * (options.OutputMax - options.OutputMin) + options.OutputMin;
-            outData = DataTransformOutput.From(outValue, inData.ValueUnit);
+            outData = DataTransformContext.From(outValue, inData.ValueUnit);
             return true;
         }
     }

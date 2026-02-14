@@ -7,10 +7,10 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace easyTypeConverter.Evaluating.Action.Options
+namespace easyTypeConverter.Triggering.Action.Options
 {
     [Polymorphic(TypeDiscriminatorPropertyName = "$type")]
-    public abstract class DataEvaluatorActionOptions : IExtensibleOptions
+    public abstract class TriggerActionOptions : IExtensibleOptions
     {
 
     }

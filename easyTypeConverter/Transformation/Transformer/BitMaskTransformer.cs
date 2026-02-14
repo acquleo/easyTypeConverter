@@ -106,7 +106,7 @@ namespace easyTypeConverter.Transformation.Transformer
         /// <item><description>Otherwise, return the masked value as-is</description></item>
         /// </list>
         /// </remarks>
-        protected override bool OnTransform(DataTransformOutput inData, [NotNullWhen(true)] out DataTransformOutput? outData)
+        protected override bool OnTransform(DataTransformContext inData, [NotNullWhen(true)] out DataTransformContext? outData)
         {
             var value = Convert.ToUInt64(inData.Value);
             var masked = value & options.Mask;
@@ -115,7 +115,7 @@ namespace easyTypeConverter.Transformation.Transformer
             if (IsSingleBit(options.Mask))
             {
                 var val = masked != 0;
-                outData =  DataTransformOutput.From(val, inData.ValueUnit);
+                outData =  DataTransformContext.From(val, inData.ValueUnit);
                 return true;
             }
 
@@ -123,11 +123,11 @@ namespace easyTypeConverter.Transformation.Transformer
             if (options.Normalize)
             { 
                 var val = masked >> _lsbPosition;
-                outData = DataTransformOutput.From(val, inData.ValueUnit);
+                outData = DataTransformContext.From(val, inData.ValueUnit);
                 return true;
             }
 
-            outData = DataTransformOutput.From(masked, inData.ValueUnit);
+            outData = DataTransformContext.From(masked, inData.ValueUnit);
             return true;
         }
 

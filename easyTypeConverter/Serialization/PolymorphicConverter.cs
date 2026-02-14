@@ -1,5 +1,4 @@
 ﻿using easyTypeConverter.Common;
-using easyTypeConverter.Evaluating.Action.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,5 +1,5 @@
-﻿using easyTypeConverter.Evaluating.Action.Options;
-using easyTypeConverter.Evaluating.Evaluator.Options;
+﻿using easyTypeConverter.Triggering.Action.Options;
+using easyTypeConverter.Triggering.Evaluator.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -8,14 +8,14 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace easyTypeConverter.Evaluating
+namespace easyTypeConverter.Triggering
 {        
-    public abstract class DataEvaluator
+    public abstract class Trigger
     {
         readonly HashSet<Type> sourceTypes = new HashSet<Type>();
-        readonly DataEvaluatorOptions options;
-        readonly IDataEvaluatorActionHandler actionHandler;
-        public DataEvaluator(DataEvaluatorOptions options, IDataEvaluatorActionHandler actionHandler)
+        readonly TriggerOptions options;
+        readonly ITriggerActionHandler actionHandler;
+        public Trigger(TriggerOptions options, ITriggerActionHandler actionHandler)
         {
             this.options = options;
             this.actionHandler = actionHandler;
@@ -29,8 +29,8 @@ namespace easyTypeConverter.Evaluating
         }
 
 
-        protected abstract bool OnEvaluate(DataEvaluatorInputContext? inputContext);
-        public void Evaluate(DataEvaluatorInputContext? inputContext)
+        protected abstract bool OnEvaluate(TriggerInputContext? inputContext);
+        public void Evaluate(TriggerInputContext? inputContext)
         {
             if(OnEvaluate(inputContext))
             {

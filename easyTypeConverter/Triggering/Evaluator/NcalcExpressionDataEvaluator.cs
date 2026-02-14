@@ -1,4 +1,5 @@
-﻿using easyTypeConverter.Evaluating.Evaluator.Options;
+﻿using easyTypeConverter.Triggering;
+using easyTypeConverter.Triggering.Evaluator.Options;
 using NCalc;
 using NCalc.Handlers;
 using System;
@@ -8,14 +9,14 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace easyTypeConverter.Evaluating.Evaluator
+namespace easyTypeConverter.Triggering.Evaluator
 {
-    public class ExpressionDataEvaluator : DataEvaluator
+    public class NcalcExpressionDataEvaluator : Trigger
     {
-        readonly ExpressionEvaluatorOptions options;
+        readonly NcalcExpressionTriggerOptions options;
         readonly Expression expression;
-        DataEvaluatorInputContext? inputContext;
-        public ExpressionDataEvaluator(ExpressionEvaluatorOptions options, IDataEvaluatorActionHandler actionHandler) : base(options, actionHandler)
+        TriggerInputContext? inputContext;
+        public NcalcExpressionDataEvaluator(NcalcExpressionTriggerOptions options, ITriggerActionHandler actionHandler) : base(options, actionHandler)
         {
             this.options = options;
 
@@ -51,9 +52,9 @@ namespace easyTypeConverter.Evaluating.Evaluator
             }
         }
 
-        protected override bool OnEvaluate(DataEvaluatorInputContext? inputContext)
+        protected override bool OnEvaluate(TriggerInputContext? inputContext)
         {
-            this.inputContext = inputContext ?? new DataEvaluatorInputContext() { Value = null, Status = null };
+            this.inputContext = inputContext ?? new TriggerInputContext() { Value = null, Status = null };
             
             var result = expression.Evaluate();
 

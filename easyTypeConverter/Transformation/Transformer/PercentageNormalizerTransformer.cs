@@ -86,11 +86,11 @@ namespace easyTypeConverter.Transformation.Transformer
         /// The method normalizes the input value by subtracting the minimum and dividing by the range (Max - Min).
         /// Values outside the specified range will produce values outside [0, 1].
         /// </remarks>
-        protected override bool OnTransform(DataTransformOutput inData, [NotNullWhen(true)] out DataTransformOutput? outData)
+        protected override bool OnTransform(DataTransformContext inData, [NotNullWhen(true)] out DataTransformContext? outData)
         {
             var doubleValue = (double)Convert.ChangeType(inData, typeof(double));
 
-            outData = DataTransformOutput.From((doubleValue - options.Min) / (options.Max - options.Min), inData.ValueUnit);
+            outData = DataTransformContext.From((doubleValue - options.Min) / (options.Max - options.Min), inData.ValueUnit);
             return true;
         }
     }

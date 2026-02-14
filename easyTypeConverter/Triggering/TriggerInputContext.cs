@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace easyTypeConverter.Evaluating
+namespace easyTypeConverter.Triggering
 {
-    public class DataEvaluatorInputContext
+    public class TriggerInputContext
     {
         public object? Value { get; set; }
         public string? Status { get; set; } = null;

@@ -1,6 +1,6 @@
-﻿using easyTypeConverter.Evaluating.Action.Options;
-using easyTypeConverter.Evaluating.Evaluator.Options;
-using easyTypeConverter.Transformation.Transformer.Options;
+﻿using easyTypeConverter.Transformation.Transformer.Options;
+using easyTypeConverter.Triggering.Action.Options;
+using easyTypeConverter.Triggering.Evaluator.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,38 +12,38 @@ namespace easyTypeConverter.Serialization
 {
     public class DataEvaluatorSerializer
     {
-        PolymorphicConverter<DataEvaluatorActionOptions> extensibleConverter = new();
-        PolymorphicConverter<DataEvaluatorOptions> evaluatorConverter = new();
+        PolymorphicConverter<TriggerActionOptions> extensibleConverter = new();
+        PolymorphicConverter<TriggerOptions> evaluatorConverter = new();
         public DataEvaluatorSerializer()
         {
 
         }
 
-        public void RegisterEvaluator<TDerived>(string typeDiscriminator) where TDerived : DataEvaluatorOptions, new()
+        public void RegisterEvaluator<TDerived>(string typeDiscriminator) where TDerived : TriggerOptions, new()
         {
             evaluatorConverter.RegisterSubtype<TDerived>(typeDiscriminator);
         }
 
-        public void RegisterEvaluatorAction<TDerived>(string typeDiscriminator) where TDerived : DataEvaluatorActionOptions,new()
+        public void RegisterEvaluatorAction<TDerived>(string typeDiscriminator) where TDerived : TriggerActionOptions,new()
         {
             extensibleConverter.RegisterSubtype<TDerived>(typeDiscriminator);
         }
 
-        public string SerializeEvaluator(DataEvaluatorOptions options)
+        public string SerializeEvaluator(TriggerOptions options)
         {
             JsonSerializerOptions serializerOptions = new JsonSerializerOptions();
             serializerOptions.Converters.Add(extensibleConverter);
             serializerOptions.Converters.Add(evaluatorConverter);
-            return System.Text.Json.JsonSerializer.Serialize<DataEvaluatorOptions>(options, serializerOptions);
+            return System.Text.Json.JsonSerializer.Serialize<TriggerOptions>(options, serializerOptions);
         }
 
-        public DataEvaluatorOptions DeserializeEvaluator(string json)
+        public TriggerOptions DeserializeEvaluator(string json)
         {
             JsonSerializerOptions serializerOptions = new JsonSerializerOptions();
             serializerOptions.Converters.Add(extensibleConverter);
             serializerOptions.Converters.Add(evaluatorConverter);
 
-            return System.Text.Json.JsonSerializer.Deserialize<DataEvaluatorOptions>(json, serializerOptions) ?? throw new InvalidOperationException("Deserialization failed");
+            return System.Text.Json.JsonSerializer.Deserialize<TriggerOptions>(json, serializerOptions) ?? throw new InvalidOperationException("Deserialization failed");
         }
     }
 }

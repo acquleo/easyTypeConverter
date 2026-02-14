@@ -23,7 +23,7 @@ namespace easyTypeConverter.Transformation.Transformer
 
         public override List<Type> SourceTypeList => new();
 
-        protected override bool OnTransform(DataTransformOutput inData, [NotNullWhen(true)] out DataTransformOutput? outData)
+        protected override bool OnTransform(DataTransformContext inData, [NotNullWhen(true)] out DataTransformContext? outData)
         {
             if (this.converterHandler==null)
             {
@@ -44,7 +44,7 @@ namespace easyTypeConverter.Transformation.Transformer
                 return false;
             }
 
-            outData = DataTransformOutput.From(convertedData, inData.ValueUnit);
+            outData = DataTransformContext.From(convertedData, inData.ValueUnit);
 
             return true;
         }
