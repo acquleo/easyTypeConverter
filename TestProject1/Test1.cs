@@ -28,7 +28,40 @@ namespace TestProject1
 
         public Test1()
         {
-            
+
+        }
+        [TestMethod]
+        public void TestStringEqualityEvaluation()
+        {
+            StringEqualityEvaluatorOptions options = new StringEqualityEvaluatorOptions()
+                .WithValue("ciao")
+                .WithParameter("val");
+
+            var mockHandler = new Mock<IEvaluatorContext>();
+
+            var evaluator = options.Build(mockHandler.Object);
+
+            mockHandler.Reset();
+
+            mockHandler.Setup(h => h.Evaluate(It.IsAny<ParamType>(), It.IsAny<string>(), It.IsAny<object[]>()))
+           .Returns((ParamType paramType, string name, object[] args) =>
+           {
+               if (paramType == ParamType.Param && name == "val") return "ciao";
+               return null; // default
+
+           });
+
+
+            evaluator.Analyze();
+
+            var result = evaluator.Evaluate();
+
+            mockHandler.Verify(m => m.Analyze(ParamType.Param, "val", It.IsAny<object[]>()), Times.Once());
+
+            mockHandler.Verify(m => m.Evaluate(ParamType.Param, "val", It.IsAny<object[]>()), Times.Once());
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(true, result);
         }
         [TestMethod]
         public void TestExpressionGreather()

@@ -18,4 +18,22 @@ namespace easyTypeConverter.Evaluating.Evaluators.Options
         }
 
     }
+
+    public static class StringEqualityEvaluatorOptionsExtensions
+    {
+        public static T WithValue<T>(this T obj, string value)
+                where T : StringEqualityEvaluatorOptions
+        {
+            obj.Value = value;
+            return obj;
+        }
+
+        public static T WithParameter<T>(this T obj, string parameter)
+                where T : StringEqualityEvaluatorOptions
+        {
+            obj.Parameter = parameter;
+            return obj;
+
+        }
+    }
 }

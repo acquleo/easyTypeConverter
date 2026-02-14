@@ -16,6 +16,7 @@ namespace easyTypeConverter.Triggering.Evaluator
             this.options = options;
         }
 
+        
         protected override bool OnEvaluate(TriggerInputContext? inputContext)
         {
             if(inputContext?.Value?.ToString() == options.ValueToCompare.ToString())
