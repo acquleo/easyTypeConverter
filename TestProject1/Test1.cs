@@ -193,7 +193,7 @@ namespace TestProject1
 
             evaluator.Evaluate(new TriggerInputContext { Value = "pippo" });
 
-            DataEvaluatorSerializer serializer = new DataEvaluatorSerializer();
+            TriggerSerializer serializer = new TriggerSerializer();
 
             serializer.RegisterEvaluatorAction<SetStatusActionOptions>("set_status");
 

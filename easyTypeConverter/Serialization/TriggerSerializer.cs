@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Serialization
 {
-    public class DataEvaluatorSerializer
+    public class TriggerSerializer
     {
         PolymorphicConverter<TriggerActionOptions> extensibleConverter = new();
         PolymorphicConverter<TriggerOptions> evaluatorConverter = new();
-        public DataEvaluatorSerializer()
+        public TriggerSerializer()
         {
 
         }
