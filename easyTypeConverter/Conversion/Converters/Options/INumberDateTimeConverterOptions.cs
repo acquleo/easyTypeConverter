@@ -1,0 +1,21 @@
+namespace easyTypeConverter.Conversion.Converters.Options
+{
+    public interface INumberDateTimeConverterOptions
+    {
+        NumberDateTimeUnit Unit { get; set; }
+        DateTime Epoch { get; set; }
+        DateTimeType Kind { get; set; }
+    }
+    public enum NumberDateTimeUnit
+    {
+        Ticks,
+        Seconds,
+        Milliseconds,
+        Microseconds,
+        Minutes,
+        Hours,
+        Days,
+        OADate
+    }
+
+}

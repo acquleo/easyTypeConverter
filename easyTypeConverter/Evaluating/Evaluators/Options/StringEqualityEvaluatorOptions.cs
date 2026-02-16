@@ -1,4 +1,4 @@
-﻿using easyTypeConverter.Triggering.Action.Options;
+﻿using easyTypeConverter.Triggering.Actions.Options;
 using easyTypeConverter.Triggering;
 using System;
 using System.Collections.Generic;

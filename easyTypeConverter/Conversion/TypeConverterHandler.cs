@@ -1,5 +1,5 @@
 ﻿using easyTypeConverter.Common;
-using easyTypeConverter.Conversion.Converter.Options;
+using easyTypeConverter.Conversion.Converters.Options;
 using easyTypeConverter.Conversion.Exceptions;
 using System;
 using System.Collections.Concurrent;

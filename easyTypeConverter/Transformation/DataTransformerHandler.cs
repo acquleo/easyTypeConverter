@@ -1,6 +1,6 @@
-﻿using easyTypeConverter.Conversion.Converter.Options;
+﻿using easyTypeConverter.Conversion.Converters.Options;
 using easyTypeConverter.Transformation;
-using easyTypeConverter.Transformation.Transformer.Options;
+using easyTypeConverter.Transformation.Transformers.Options;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;

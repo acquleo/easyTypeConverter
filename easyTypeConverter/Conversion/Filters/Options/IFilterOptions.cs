@@ -1,6 +1,6 @@
 ﻿using easyTypeConverter.Common;
 using easyTypeConverter.Conversion;
-using easyTypeConverter.Conversion.Converter.Options;
+using easyTypeConverter.Conversion.Converters.Options;
 using easyTypeConverter.Serialization;
 using System;
 using System.Collections.Generic;

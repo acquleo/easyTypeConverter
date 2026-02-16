@@ -1,5 +1,5 @@
 ﻿using easyTypeConverter.Common;
-using easyTypeConverter.Conversion.Converter.Options;
+using easyTypeConverter.Conversion.Converters.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;

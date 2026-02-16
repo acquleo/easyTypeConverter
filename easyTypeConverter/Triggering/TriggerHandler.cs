@@ -1,6 +1,6 @@
 ﻿using easyTypeConverter.Evaluating;
-using easyTypeConverter.Triggering.Action.Options;
-using easyTypeConverter.Triggering.Evaluators.Options;
+using easyTypeConverter.Triggering.Actions.Options;
+using easyTypeConverter.Triggering.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;

@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using easyTypeConverter.Common;
 using easyTypeConverter.Conversion;
-using easyTypeConverter.Conversion.Converter.Options;
+using easyTypeConverter.Conversion.Converters.Options;
 using easyTypeConverter.Conversion.Filters.Options;
 using System.Globalization;
 

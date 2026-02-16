@@ -1,4 +1,4 @@
-﻿using easyTypeConverter.Conversion.Converter.Options;
+﻿using easyTypeConverter.Conversion.Converters.Options;
 using easyTypeConverter.Conversion.Filters.Options;
 
 using System;
