@@ -1,5 +1,6 @@
 ﻿using easyTypeConverter.Triggering;
 using easyTypeConverter.Triggering.Action.Options;
+using easyTypeConverter.Triggering.Evaluators.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,5 +22,15 @@ namespace TestProject1
     {
         public string StatusToBeSet { get; set; } = string.Empty;
 
+    }
+
+    public static class SetStatusActionOptionsExtensions
+    {
+        public static T WithStatusToBeSet<T>(this T obj, string status)
+                where T : SetStatusActionOptions
+        {
+            obj.StatusToBeSet = status;
+            return obj;
+        }
     }
 }

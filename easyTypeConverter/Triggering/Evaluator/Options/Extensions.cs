@@ -9,6 +9,16 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Triggering.Evaluators.Options
 {
+    public static class TriggerHandlerOptionsExtensions
+    {
+        public static T WithTrigger<T>(this T obj, TriggerOptions trigger)
+                where T : TriggerHandlerOptions
+        {
+            obj.Triggers.Add(trigger);
+            return obj;
+        }
+    }
+
     public static class TriggerOptionsExtensions
     {
         public static T WithAction<T>(this T obj, TriggerActionOptions action)

@@ -20,7 +20,7 @@ namespace easyTypeConverter.Evaluating.Evaluators
 
         }
 
-        public override void Analyze()
+        public override void OnAnalyze()
         {
             if (this.Context == null) return;
 
@@ -34,7 +34,7 @@ namespace easyTypeConverter.Evaluating.Evaluators
             }
         }
 
-        public override object? Evaluate()
+        public override object? OnEvaluate()
         {
             if(this.Context==null) return null;
 

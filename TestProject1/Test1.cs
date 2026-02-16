@@ -13,6 +13,7 @@ using easyTypeConverter.Transformation;
 using easyTypeConverter.Transformation.Transformer;
 using easyTypeConverter.Transformation.Transformer.Options;
 using easyTypeConverter.Triggering;
+using easyTypeConverter.Triggering.Action.Options;
 using easyTypeConverter.Triggering.Evaluators.Options;
 using Moq;
 using System.Globalization;
@@ -30,6 +31,159 @@ namespace TestProject1
         {
 
         }
+
+        public class StatusEvaluatorContext : IEvaluatorContext
+        {
+            string statusValue = string.Empty;
+            public void SetStatusValue(string value)
+            {
+                statusValue = value;
+            }
+
+            public void Analyze(ParamType paramType, string name, params object[] args)
+            {
+                if (paramType == ParamType.Function && name == "status")
+                {
+                    var id = args.Length > 0 ? args[0].ToString() : null;
+                    Console.WriteLine($@"mi devo registrare alla variazione dello stato di {id}");
+                }
+                if (paramType == ParamType.Function && name == "val")
+                {
+                    var id = args.Length > 0 ? args[0].ToString() : null;
+                    Console.WriteLine($@"mi devo registrare alla variazione del valore di {id}");
+                }
+                // No analysis needed for this simple example
+            }
+            public object? Evaluate(ParamType paramType, string name, params object[] args)
+            {
+                if (paramType == ParamType.Param && name == "status")
+                {
+                    return statusValue; // Simulate a status value
+                }
+                if (paramType == ParamType.Param && name == "null")
+                {
+                    return null; // Simulate a status value
+                }
+                if (paramType == ParamType.Function && name == "null")
+                {
+                    return null; // Simulate a status value
+                }
+                if (paramType == ParamType.Function && name == "val")
+                {
+                    var id = args.Length > 0 ? args[0].ToString() : null;
+                    if(id == "DIA_0012") return 10;
+                    if(id == "DIA_0016") return 2;
+                }
+                if (paramType == ParamType.Function && name == "status")
+                {
+                    var id = args.Length > 0 ? args[0].ToString() : null;
+                    if (id == "DIA_0012") return "Down";
+                    if (id == "DIA_0016") return "Up";
+                }
+                return null; // default
+            }
+        }
+
+        public class ActionHandler : ITriggerActionHandler
+        {
+            public bool Handle(TriggerActionOptions action)
+            {
+                if (action is SetStatusActionOptions setStatusAction)
+                {
+                    Console.WriteLine($"Setting status to: {setStatusAction.StatusToBeSet}");
+                    return true; // Indicate that the action was handled
+                }
+                return false; // Action not handled
+            }
+
+        }
+
+        [TestMethod]
+        public void TestTriggersPrtgEvaluation()
+        {
+            TriggerHandlerOptions options = new TriggerHandlerOptions()
+                .WithTrigger(new TriggerOptions()
+                    .WithEvaluator(new StringEqualityEvaluatorOptions()
+                        .WithValue("Warning")
+                        .WithParameter("status"))
+                    .WithAction(new SetStatusActionOptions()
+                        .WithStatusToBeSet("WARNING")))
+                .WithTrigger(new TriggerOptions()
+                    .WithEvaluator(new StringEqualityEvaluatorOptions()
+                        .WithValue("Down")
+                        .WithParameter("status"))
+                    .WithAction(new SetStatusActionOptions()
+                        .WithStatusToBeSet("FAULT")));
+
+            var context = new StatusEvaluatorContext();
+            var trigger = options.Build(context, new ActionHandler());
+
+            context.SetStatusValue("Warning");
+
+            trigger.Evaluate();
+
+            context.SetStatusValue("Down");
+
+            trigger.Evaluate();
+
+
+            TriggerHandlerOptions options2 = new TriggerHandlerOptions()
+                .WithTrigger(new TriggerOptions()
+                    .WithEvaluator(new NcalcExpressionEvaluatorOptions()
+                        .WithExpression("status == \"Warning\""))
+                    .WithAction(new SetStatusActionOptions()
+                        .WithStatusToBeSet("WARNING")))
+                .WithTrigger(new TriggerOptions()
+                    .WithEvaluator(new NcalcExpressionEvaluatorOptions()
+                        .WithExpression("status == \"Down\""))
+                    .WithAction(new SetStatusActionOptions()
+                        .WithStatusToBeSet("FAULT")));
+
+
+            options2.Build(context, new ActionHandler()).Analyze();
+
+
+            TriggerHandlerOptions options3 = new TriggerHandlerOptions()
+                .WithTrigger(new TriggerOptions()
+                    .WithEvaluator(new NcalcExpressionEvaluatorOptions()
+                        .WithExpression("status == null"))
+                    .WithAction(new SetStatusActionOptions()
+                        .WithStatusToBeSet("WARNING")))
+                .WithTrigger(new TriggerOptions()
+                    .WithEvaluator(new NcalcExpressionEvaluatorOptions()
+                        .WithExpression("status == null()"))
+                    .WithAction(new SetStatusActionOptions()
+                        .WithStatusToBeSet("FAULT")));
+
+
+            options3.Build(context, new ActionHandler()).Analyze();
+            options3.Build(context, new ActionHandler()).Evaluate();
+
+            TriggerHandlerOptions options4 = new TriggerHandlerOptions()
+                .WithTrigger(new TriggerOptions()
+                    .WithEvaluator(new NcalcExpressionEvaluatorOptions()
+                        .WithExpression(@"val(""DIA_0012"") > val(""DIA_0016"")"))
+                    .WithAction(new SetStatusActionOptions()
+                        .WithStatusToBeSet("VAL MATCHED"))
+                    .WithDefaultAction(new SetStatusActionOptions()
+                        .WithStatusToBeSet("VAL UNMATCHED")))
+                
+                .WithTrigger(new TriggerOptions()
+                    .WithEvaluator(new NcalcExpressionEvaluatorOptions()
+                        .WithExpression("status(\"DIA_0012\") == status(\"DIA_0016\")"))
+                    .WithAction(new SetStatusActionOptions()
+                        .WithStatusToBeSet("STS MATCHED")))
+                .WithTrigger(new TriggerOptions()
+                    .WithEvaluator(new NcalcExpressionEvaluatorOptions()
+                        .WithExpression("status(\"DIA_0012\") != status(\"DIA_0016\")"))
+                    .WithAction(new SetStatusActionOptions()
+                        .WithStatusToBeSet("STS NOT MATCHED")));
+
+
+            options4.Build(context, new ActionHandler()).Analyze();
+            options4.Build(context, new ActionHandler()).Evaluate();
+        }
+
         [TestMethod]
         public void TestStringEqualityEvaluation()
         {
@@ -71,13 +225,14 @@ namespace TestProject1
 
 
             var mockHandler = new Mock<IEvaluatorContext>();
-            
-            
+
+
             var evaluator = options.Build(mockHandler.Object);
 
             mockHandler.Reset();
 
-            mockHandler.Setup(h => h.Evaluate(It.IsAny<ParamType>(), It.IsAny<string>(), It.IsAny<object[]>()))
+            mockHandler.Setup
+                (h => h.Evaluate(It.IsAny<ParamType>(), It.IsAny<string>(), It.IsAny<object[]>()))
            .Returns((ParamType paramType, string name, object[] args) =>
            {
                if (paramType == ParamType.Function && name == "val" && args.Length == 1 && args[0].ToString() == "A") return 10;

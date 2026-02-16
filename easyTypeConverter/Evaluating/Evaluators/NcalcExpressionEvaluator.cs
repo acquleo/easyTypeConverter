@@ -65,32 +65,23 @@ namespace easyTypeConverter.Evaluating.Evaluators
             args.Result = this.Context.Evaluate(ParamType.Function, function, parameters);
         }
 
-        public override void Analyze()
+        public override void OnAnalyze()
         {
             try
             {
                 analyze = true;
                 expression.Evaluate();
             }
-            catch (Exception ex)
+            catch 
             {
-                throw new Exception($"Error analyzing expression: {ex.Message}", ex);
+                throw;
             }
             finally { analyze = false; }
         }
 
-        public override object? Evaluate()
+        public override object? OnEvaluate()
         {
-            try
-            {
-                var result = expression.Evaluate();
-
-                return result;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error analyzing expression: {ex.Message}", ex);
-            }            
+            return expression.Evaluate();
         }
     }
 }

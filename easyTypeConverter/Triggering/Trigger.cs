@@ -43,15 +43,17 @@ namespace easyTypeConverter.Triggering
             if (!evaluationResult)
                 return false;
 
+            bool actionExecuted = false;
             foreach (var action in options.Actions)
             {
-                if (this.actionHandler.Handle(action) && options.ExitOnFirstMatch)
+                actionExecuted = actionExecuted | this.actionHandler.Handle(action);
+                if (actionExecuted && options.ExitOnFirstMatch)
                 {
                     break;
                 }
             }
 
-            if (options.DefaultAction != null)
+            if (!actionExecuted && options.DefaultAction != null)
             {
                 this.actionHandler.Handle(options.DefaultAction);
             }

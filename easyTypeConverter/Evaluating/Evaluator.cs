@@ -1,4 +1,5 @@
 ﻿using easyTypeConverter.Evaluating.Evaluators.Options;
+using easyTypeConverter.Evaluating.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,30 @@ namespace easyTypeConverter.Evaluating
         }
         
         protected IEvaluatorContext? Context { get; private set; }
-        public abstract void Analyze();
-        public abstract object? Evaluate();
+        public abstract void OnAnalyze();
+        public void Analyze()
+        {
+            try
+            {
+                OnAnalyze();
+            }
+            catch (Exception ex)
+            {
+                throw new EvaluatorException("An error occurred during analyze.", ex);
+            }
+        }
+
+        public abstract object? OnEvaluate();
+        public object? Evaluate()
+        {
+            try
+            {
+                return OnEvaluate();
+            }
+            catch (Exception ex)
+            {
+                throw new EvaluatorException("An error occurred during evaluation.", ex);
+            }
+        }
     }
 }
