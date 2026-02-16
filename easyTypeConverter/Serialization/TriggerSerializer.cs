@@ -1,6 +1,7 @@
-﻿using easyTypeConverter.Transformation.Transformer.Options;
+﻿using easyTypeConverter.Evaluating.Evaluators.Options;
+using easyTypeConverter.Transformation.Transformer.Options;
 using easyTypeConverter.Triggering.Action.Options;
-using easyTypeConverter.Triggering.Evaluator.Options;
+using easyTypeConverter.Triggering.Evaluators.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +14,13 @@ namespace easyTypeConverter.Serialization
     public class TriggerSerializer
     {
         PolymorphicConverter<TriggerActionOptions> extensibleConverter = new();
-        PolymorphicConverter<TriggerOptions> evaluatorConverter = new();
+        PolymorphicConverter<EvaluatorOptions> evaluatorConverter = new();
         public TriggerSerializer()
         {
 
         }
 
-        public void RegisterEvaluator<TDerived>(string typeDiscriminator) where TDerived : TriggerOptions, new()
+        public void RegisterEvaluator<TDerived>(string typeDiscriminator) where TDerived : EvaluatorOptions, new()
         {
             evaluatorConverter.RegisterSubtype<TDerived>(typeDiscriminator);
         }

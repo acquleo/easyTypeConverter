@@ -16,13 +16,29 @@ namespace TestProject1
 
         public object? Evaluate(ParamType paramType, string name, params object?[] args)
         {
-            if (args[0]?.ToString() == "A")
+            if (args.Length>0 && args[0]?.ToString() == "A")
             {
                 return 10;
             }
-            if (args[0]?.ToString() == "B")
+            if (args.Length>0 && args[0]?.ToString() == "B")
             {
                 return 2;
+            }
+            if (name == "val")
+            {
+                return "pippo";
+            }
+            if (name  == "sts")
+            {
+                return null;
+            }
+            if (name == "null")
+            {
+                return null;
+            }
+            if (name == "pippo")
+            {
+                return "pollo";
             }
             return null;
         }

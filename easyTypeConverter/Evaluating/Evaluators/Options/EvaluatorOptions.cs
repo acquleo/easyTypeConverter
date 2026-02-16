@@ -11,6 +11,7 @@ namespace easyTypeConverter.Evaluating.Evaluators.Options
 {
     [Polymorphic(TypeDiscriminatorPropertyName = "$type")]
     [PolymorphicDerivedType(typeof(NcalcExpressionEvaluatorOptions), "exp")]
+    [PolymorphicDerivedType(typeof(StringEqualityEvaluatorOptions), "str_eq")]
 
     public abstract class EvaluatorOptions : IExtensibleOptions
     {

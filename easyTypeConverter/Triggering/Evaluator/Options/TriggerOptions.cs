@@ -1,4 +1,6 @@
 ﻿using easyTypeConverter.Common;
+using easyTypeConverter.Evaluating;
+using easyTypeConverter.Evaluating.Evaluators.Options;
 using easyTypeConverter.Serialization;
 using easyTypeConverter.Transformation.Transformer.Options;
 using easyTypeConverter.Triggering;
@@ -10,14 +12,12 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace easyTypeConverter.Triggering.Evaluator.Options
+namespace easyTypeConverter.Triggering.Evaluators.Options
 {
-    [Polymorphic(TypeDiscriminatorPropertyName = "$type")]
-    [PolymorphicDerivedType(typeof(EqualityTriggerOptions), "eq")]
-    [PolymorphicDerivedType(typeof(NcalcExpressionTriggerOptions), "exp")]
-
-    public abstract class TriggerOptions : IExtensibleOptions
+    public class TriggerOptions : ITriggerOptions
     {
+        [JsonPropertyName("evaluator")]
+        public EvaluatorOptions? Evaluator { get; set; }
         [JsonPropertyName("actions")]
         public List<TriggerActionOptions> Actions { get; set; } = new List<TriggerActionOptions>();
 
@@ -25,6 +25,9 @@ namespace easyTypeConverter.Triggering.Evaluator.Options
         public TriggerActionOptions? DefaultAction { get; set; }
         [JsonPropertyName("exitOnFirstMatch")]
         public bool ExitOnFirstMatch { get; set; } = false;
-        public abstract Trigger Build(ITriggerActionHandler actionHandler);
+        public Trigger Build(IEvaluatorContext evaluatorContext, ITriggerActionHandler actionHandler)
+        {
+            return new Trigger(this, evaluatorContext, actionHandler);
+        }
     }
 }

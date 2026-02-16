@@ -9,6 +9,6 @@ namespace easyTypeConverter.Triggering
 {
     public interface ITriggerActionHandler
     {
-        public bool Handle(TriggerInputContext? inputContext, TriggerActionOptions options);
+        public bool Handle(TriggerActionOptions options);
     }
 }

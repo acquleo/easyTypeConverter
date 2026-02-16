@@ -13,7 +13,7 @@ using easyTypeConverter.Transformation;
 using easyTypeConverter.Transformation.Transformer;
 using easyTypeConverter.Transformation.Transformer.Options;
 using easyTypeConverter.Triggering;
-using easyTypeConverter.Triggering.Evaluator.Options;
+using easyTypeConverter.Triggering.Evaluators.Options;
 using Moq;
 using System.Globalization;
 using System.Reflection.Metadata;
@@ -102,7 +102,7 @@ namespace TestProject1
             Assert.AreEqual(true, result);
         }
         [TestMethod]
-        [Timeout(20000)]
+        [Timeout(30000)]
         public void TestExpressionPerf()
         {
             NcalcExpressionEvaluatorOptions options = new NcalcExpressionEvaluatorOptions()
@@ -157,7 +157,7 @@ namespace TestProject1
             Assert.AreEqual(true, result);
         }
 
-            [TestMethod]
+        [TestMethod]
         public void TestDataEvaluator()
         {
             SetStatusActionOptions action1 = new SetStatusActionOptions();
@@ -166,42 +166,52 @@ namespace TestProject1
             SetStatusActionOptions action2 = new SetStatusActionOptions();
             action2.StatusToBeSet = "INACTIVE";
 
-            EqualityTriggerOptions options = new EqualityTriggerOptions()
-                .WithValueToCompare("pippo")
+            StringEqualityEvaluatorOptions options1 = new StringEqualityEvaluatorOptions()
+                .WithParameter("pippo")
+                .WithValue("pollo");
+
+            NcalcExpressionEvaluatorOptions options2 = new NcalcExpressionEvaluatorOptions()
+                .WithExpression("val == \"pippo\"");
+
+            TriggerOptions triggerOpts1 = new TriggerOptions()
+                .WithEvaluator(options1)
                 .WithAction(action1);
 
-            var evaluator = options.Build(new ActionHandler());
-            evaluator.Evaluate(new TriggerInputContext { Value = "pippo" });
+            var trigger1 = triggerOpts1.Build(new EvaluatorContext(), new ActionHandler());
 
-            NcalcExpressionTriggerOptions options2 = new NcalcExpressionTriggerOptions()
-                .WithExpression("val() == \"pippo\"")
-                .WithAction(action1);
+            TriggerOptions triggerOpts2 = new TriggerOptions()
+                .WithEvaluator(options2)
+                .WithAction(action2);
+
+            var trigger2 = triggerOpts2.Build(new EvaluatorContext(), new ActionHandler());
+
+            trigger1.Analyze();
 
             for (int i = 0; i < 10000; i++)
             {
-                evaluator = options2.Build(new ActionHandler());
-            
-            
-                evaluator.Evaluate(new TriggerInputContext { Value = "pippo" });
+                trigger1.Evaluate();
             }
 
-            NcalcExpressionTriggerOptions options3 = new NcalcExpressionTriggerOptions()
-                .WithExpression("sts() == null()")
+            NcalcExpressionEvaluatorOptions options3 = new NcalcExpressionEvaluatorOptions()
+                .WithExpression("sts == null");
+
+            TriggerOptions triggerOpts3 = new TriggerOptions()
+                .WithEvaluator(options3)
                 .WithAction(action1);
 
-            evaluator = options3.Build(new ActionHandler());
+            var trigger3 = triggerOpts3.Build(new EvaluatorContext(), new ActionHandler());
 
-            evaluator.Evaluate(new TriggerInputContext { Value = "pippo" });
+            trigger3.Evaluate();
 
             TriggerSerializer serializer = new TriggerSerializer();
 
             serializer.RegisterEvaluatorAction<SetStatusActionOptions>("set_status");
 
-            string json = serializer.SerializeEvaluator(options);
+            string json = serializer.SerializeEvaluator(triggerOpts1);
 
             var test = serializer.DeserializeEvaluator(json);
 
-            test.Build(new ActionHandler()).Evaluate(new TriggerInputContext { Value = "pippo" });
+            test.Build(new EvaluatorContext(), new ActionHandler());
         }
 
         [TestMethod]

@@ -1,4 +1,5 @@
-﻿using easyTypeConverter.Triggering.Action.Options;
+﻿using easyTypeConverter.Evaluating.Evaluators.Options;
+using easyTypeConverter.Triggering.Action.Options;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -6,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace easyTypeConverter.Triggering.Evaluator.Options
+namespace easyTypeConverter.Triggering.Evaluators.Options
 {
-    public static class DataEvaluatorOptionsExtensions
+    public static class TriggerOptionsExtensions
     {
         public static T WithAction<T>(this T obj, TriggerActionOptions action)
                 where T : TriggerOptions
@@ -17,27 +18,20 @@ namespace easyTypeConverter.Triggering.Evaluator.Options
             return obj;
         }
 
-    }
-
-    public static class EqualityEvaluatorOptionsExtensions
-    {
-        public static T WithValueToCompare<T>(this T obj, string valueToCompare)
-                where T : EqualityTriggerOptions
+        public static T WithDefaultAction<T>(this T obj, TriggerActionOptions action)
+                where T : TriggerOptions
         {
-            obj.ValueToCompare = valueToCompare;
+            obj.DefaultAction = action;
             return obj;
         }
 
-    }
-
-    public static class ExpressionEvaluatorOptionsExtensions
-    {
-        public static T WithExpression<T>(this T obj, string expression )
-                where T : NcalcExpressionTriggerOptions
+        public static T WithEvaluator<T>(this T obj, EvaluatorOptions evaluator)
+                where T : TriggerOptions
         {
-            obj.Expression = expression;
+            obj.Evaluator = evaluator;
             return obj;
-        }
 
+        }
     }
+
 }

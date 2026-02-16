@@ -10,7 +10,7 @@ namespace TestProject1
 {
     public class ActionHandler : ITriggerActionHandler
     {
-        public bool Handle(TriggerInputContext? inputContext, TriggerActionOptions options)
+        public bool Handle(TriggerActionOptions options)
         {
             Console.WriteLine($@"handling {options.GetType().Name}");
             return true;

@@ -1,5 +1,6 @@
-﻿using easyTypeConverter.Triggering.Action.Options;
-using easyTypeConverter.Triggering.Evaluator.Options;
+﻿using easyTypeConverter.Evaluating;
+using easyTypeConverter.Triggering.Action.Options;
+using easyTypeConverter.Triggering.Evaluators.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -10,15 +11,18 @@ using System.Threading.Tasks;
 
 namespace easyTypeConverter.Triggering
 {        
-    public abstract class Trigger
+    public class Trigger
     {
         readonly HashSet<Type> sourceTypes = new HashSet<Type>();
         readonly TriggerOptions options;
         readonly ITriggerActionHandler actionHandler;
-        public Trigger(TriggerOptions options, ITriggerActionHandler actionHandler)
+        readonly Evaluator? evaluator;
+        public Trigger(TriggerOptions options,IEvaluatorContext evaluatorContext, ITriggerActionHandler actionHandler)
         {
             this.options = options;
             this.actionHandler = actionHandler;
+            this.evaluator = options.Evaluator?.Build(evaluatorContext); //TODO: eccezione se l'evaluator è null
+
         }
         protected bool IsSourceType(Type type) 
         { 
@@ -28,25 +32,31 @@ namespace easyTypeConverter.Triggering
             return sourceTypes.Contains(type); 
         }
 
-
-        protected abstract bool OnEvaluate(TriggerInputContext? inputContext);
-        public void Evaluate(TriggerInputContext? inputContext)
+        public void Analyze()
         {
-            if(OnEvaluate(inputContext))
-            {
-                foreach (var action in options.Actions)
-                {
-                    if(this.actionHandler.Handle(inputContext, action) && options.ExitOnFirstMatch)
-                    {
-                        break;
-                    }
-                }
+            this.evaluator?.Analyze();
+        }
 
-                if(options.DefaultAction!= null)
+        public bool Evaluate()
+        {
+            var evaluationResult = Convert.ToBoolean(this.evaluator?.Evaluate());
+            if (!evaluationResult)
+                return false;
+
+            foreach (var action in options.Actions)
+            {
+                if (this.actionHandler.Handle(action) && options.ExitOnFirstMatch)
                 {
-                    this.actionHandler.Handle(inputContext, options.DefaultAction);
+                    break;
                 }
             }
+
+            if (options.DefaultAction != null)
+            {
+                this.actionHandler.Handle(options.DefaultAction);
+            }
+
+            return evaluationResult;
         }
     }
 }
